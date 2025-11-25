@@ -20,8 +20,6 @@ sidebar_position: 3
 - **Data de Entrega Estimada para Desenvolvimento:**
 <!-- Exemplo: 19/04/2025 -->
 
-- **Link para Documento de Visão de Produto:**
-<!-- Exemplo: https://github.com/empresa/docs/projeto-reservas/visao.md -->
 
 ---
 
@@ -62,7 +60,7 @@ Criar uma interface moderna, clara e acessível para facilitar reservas de salas
 <!-- Os wireframes devem ser validados com o cliente a fim de se determinar o fluxo da solução junto ao cliente. -->
 
 **Link para protótipo (Figma, Excalidraw, etc):**
-<!-- Exemplo: https://figma.com/projeto-reservas -->
+https://www.figma.com/design/Ky30Qp5DRGmmEr0X25t6b8/GEDUI-LP?node-id=0-1&t=11sKMuI5AshKu8Kf-1
 
 ---
 
