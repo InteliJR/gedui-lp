@@ -358,7 +358,7 @@ Todas as páginas importantes devem ter imagens OG personalizadas.
 
 - **Dimensões:** 1200x630px (ratio 1.91:1)
 - **Formato:** PNG ou JPG
-- **Peso máximo:** 8MB (ideal: <300KB)
+- **Peso máximo:** 8MB (ideal: &lt;300KB)
 - **Design:** Logo, título da página, visual atrativo
 
 **Ferramentas recomendadas:**
