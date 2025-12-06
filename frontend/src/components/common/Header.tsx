@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import logo from "../../../public/logo.png";
-import ReactCountryFlag from "react-country-flag";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
