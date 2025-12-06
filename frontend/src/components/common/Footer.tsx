@@ -25,7 +25,7 @@ export default function Footer() {
       name: "Whatsapp",
       href: "https://wa.link/mbg92f",
       icon: (
-        <FaWhatsapp className="text-primary"/>
+        <FaWhatsapp className="text-primary" />
       ),
     },
     {
@@ -55,61 +55,118 @@ export default function Footer() {
     <footer className="bg-custom-gradient text-gray-300">
       <div className="flex flex-col md:flex-row justify-between mt-20 px-4 sm:px-6 lg:px-8 py-12 gap-8 xl:px-30">
 
-        {/* Logo */}
-        <section className="gap-3 flex flex-col items-center">
-          <Image src={logo} width={300} height={150} alt="Logo" />
-          <p className="text-sm md:text-md lg:text-lg font-semibold text-white text-center">
+        {/* LOGO + COPYRIGHT */}
+        <section
+          className="gap-3 flex flex-col items-center text-center"
+          aria-label="Informações institucionais"
+        >
+          <figure>
+            <Image src={logo} width={300} height={150} alt="Logo da Gedui" />
+          </figure>
+
+          <p className="text-sm md:text-md lg:text-lg font-semibold text-white">
             © {new Date().getFullYear()} Gedui. Todos os direitos reservados.
           </p>
         </section>
 
-        {/* Links */}
-        <section className="flex md:grid-cols-3 gap-8">
-          {/* Produto */}
-          <div>
-            <h3 className="text-secondary font-semibold mb-3 md:text-md lg:text-lg">Soluções</h3>
+        {/* LINKS DO FOOTER */}
+        <nav
+          className="flex gap-8 md:grid md:grid-cols-3"
+          aria-label="Navegação do rodapé"
+        >
+
+          {/* Coluna: Soluções */}
+          <section aria-labelledby="footer-solucoes">
+            <h3
+              id="footer-solucoes"
+              className="text-secondary font-semibold mb-3 md:text-md lg:text-lg"
+            >
+              Soluções
+            </h3>
+
             <ul className="space-y-1">
               {footerLinks.solucoes.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm md:text-md lg:text-lg text-white font-semibold hover:text-sky-500 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm md:text-md lg:text-lg text-white font-semibold hover:text-sky-500 transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          {/* Gerais */}
-          <div>
-            <h3 className="text-secondary font-semibold mb-3">Links</h3>
+          {/* Coluna: Links Gerais */}
+          <section aria-labelledby="footer-gerais">
+            <h3
+              id="footer-gerais"
+              className="text-secondary font-semibold mb-3 md:text-md lg:text-lg"
+            >
+              Links
+            </h3>
+
             <ul className="space-y-1">
               {footerLinks.links.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm md:text-md lg:text-lg text-white font-semibold hover:text-sky-500 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm md:text-md lg:text-lg text-white font-semibold hover:text-sky-500 transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          {/* Contato */}
-          <div>
-            <h3 className="text-white font-semibold mb-1 md:text-md lg:text-lg">Contato</h3>
-            <h3 className="text-white font-semibold md:text-md lg:text-lg">falecom@gedui.com.br</h3>
-          </div>
+          {/* Coluna: Contato */}
+          <section aria-labelledby="footer-contato">
+            <h3
+              id="footer-contato"
+              className="text-white font-semibold mb-1 md:text-md lg:text-lg"
+            >
+              Contato
+            </h3>
+
+            <address className="not-italic">
+              <a
+                href="mailto:falecom@gedui.com.br"
+                className="text-white font-semibold md:text-md lg:text-lg hover:text-sky-500 transition-colors"
+              >
+                falecom@gedui.com.br
+              </a>
+            </address>
+          </section>
+
+        </nav>
+
+        {/* REDES SOCIAIS */}
+        <section
+          aria-label="Redes sociais"
+          className="flex justify-center md:flex-col gap-3"
+        >
+          <ul className="flex md:flex-col gap-3">
+            {socialLinks.map((social) => (
+              <li key={social.name}>
+                <a
+                  href={social.href}
+                  aria-label={`Visitar o perfil da Gedui no ${social.name}`}
+                  className="bg-white p-2 md:p-4 rounded-full flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        {/* Redes sociais */}
-        <section className="flex justify-center md:flex-col gap-3">
-          {socialLinks.map((social) => (
-            <a key={social.name} href={social.href} className="bg-white p-2 md:p-4 rounded-full">
-              {social.icon}
-            </a>
-          ))}
-        </section>
       </div>
     </footer>
+
 
   );
 }
