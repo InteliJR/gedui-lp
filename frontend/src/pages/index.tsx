@@ -6,6 +6,7 @@ import Recursos from "@/components/sections/Recursos";
 import Depoimentos from "@/components/sections/Depoimentos";
 import BlogPreview from "@/components/sections/BlogPreview";
 import CTA from "@/components/sections/CTA";
+import QuemSomos from "@/components/sections/QuemSomos";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
 
       <Layout>
         <Hero />
+        <QuemSomos />
         <Recursos />
         <Depoimentos />
         <BlogPreview />
