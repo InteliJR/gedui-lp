@@ -13,7 +13,7 @@ export default function Hero() {
 
       {/*background overlay */}
       <div
-        className="absolute inset-0 bg-blur-sm bg-[rgba(5,41,79,0.9)]"
+        className="absolute inset-0 bg-blur-sm bg-primary/90"
         aria-hidden="true"
       />
 
@@ -102,7 +102,7 @@ export default function Hero() {
               bg-gradient-to-b
               from-transparent
               via-[rgba(5,41,79,0.4)]
-              to-[rgba(5,41,79,1)]
+              to-primary
         "
           aria-hidden="true"
         />
