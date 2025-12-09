@@ -13,14 +13,13 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <nav
-        className="mx-auto sm:px-6 lg:px-8"
+        className="mx-auto sm:px-6"
         role="navigation"
         aria-label="Navegação principal"
       >
-        <div className="flex justify-between items-center h-16 mx-10 md:mx-20">
-
+        <div className="flex justify-between items-center py-4 mx-10 md:mx-20">
           <section className="md:flex items-center space-x-8" aria-label="Logo e navegação">
 
             {/* Logo */}
