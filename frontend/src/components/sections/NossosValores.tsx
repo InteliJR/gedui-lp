@@ -37,7 +37,7 @@ export default function NossosValores() {
   };
 
   return (
-    <section className="relative w-full bg-[#072b59] py-20 lg:py-28 overflow-hidden">
+    <section className="relative w-full bg-[#05294F] py-20 lg:py-28 overflow-hidden">
       {/* Grafismo de fundo */}
       <div className="absolute inset-0 opacity-100">
         <Image

@@ -103,7 +103,7 @@ export default function VantagensGestao() {
   ];
 
   return (
-    <section className="relative w-full bg-[#072b59] py-14 md:py-20 overflow-hidden">
+    <section className="relative w-full bg-[#05294F] py-14 md:py-20 overflow-hidden">
       {/* Fundo */}
       <div className="absolute inset-0 z-0">
         <Image

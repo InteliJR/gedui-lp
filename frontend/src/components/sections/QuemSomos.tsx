@@ -53,7 +53,7 @@ const ArrowIcon = () => (
 
 export default function QuemSomos() {
   return (
-    <section className="w-full bg-[#072b59] py-20 lg:py-28 overflow-hidden">
+    <section className="w-full bg-[#05294F] py-20 lg:py-28 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 relative">
         {/* COLUNA ESQUERDA - NOTEBOOK */}
         <div className="relative lg:absolute lg:left-0 lg:top-0 lg:h-full lg:w-1/2 flex items-center">

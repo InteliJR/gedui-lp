@@ -25,7 +25,7 @@ export default function Home() {
         <QuemSomos />
         <NossosValores />
         <VantagensGestao />
-        <Recursos />
+
         <Depoimentos />
         <BlogPreview />
         <CTA />
