@@ -11,10 +11,6 @@ export default function Document() {
                 {/* Preconnect para performance */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link rel="preconnect" href="https://assets.calendly.com" />
-
-                {/* Calendly Widget CSS */}
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
                 {/* Favicon (adicione mais tamanhos depois) */}
                 <link rel="icon" href="/favicon.ico" />
