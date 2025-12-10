@@ -1,3 +1,5 @@
+import SmartVideo from "../common/SmartVideo";
+
 export default function QuemSomos() {
     return (
         <section
@@ -53,10 +55,13 @@ export default function QuemSomos() {
                     {/* COLUNA DIREITA */}
                     <div className="flex items-center justify-center lg:justify-end">
                         <aside
-                            className="max-w-2xl w-full rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg p-10"
+                            className="max-w-2xl w-full rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg px-5 py-6"
                             aria-label="Vídeo institucional"
                         >
-                            {/* vídeo futuramente */}
+                            <SmartVideo
+                                src="/videos/gedui_portugues.mp4"
+                                poster="/videos/poster.png"
+                            />
                         </aside>
                     </div>
 
