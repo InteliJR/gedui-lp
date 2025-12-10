@@ -7,7 +7,7 @@ export default function HeroSolucoes() {
     <section className="relative w-full h-[520px] md:h-[620px] overflow-hidden -mt-16 pt-16">
       {/* IMAGEM DE FUNDO */}
       <Image
-        src="/hero/solucoes.png"
+        src="/solucoes/hero.png"
         alt="Pessoas estudando"
         fill
         priority

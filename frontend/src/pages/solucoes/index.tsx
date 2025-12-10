@@ -2,6 +2,8 @@
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
 import SolucoesHero from "@/components/solucoes/SolucoesHero";
+import SecaoEducacaoCorporativa from "@/components/solucoes/EducacaoCorporativa";
+import { SiEducative } from "react-icons/si";
 
 export default function SolucoesPage() {
   return (
@@ -14,8 +16,8 @@ export default function SolucoesPage() {
 
       <Layout>
         <SolucoesHero />
+        <SecaoEducacaoCorporativa />
       </Layout>
     </>
   );
 }
-
