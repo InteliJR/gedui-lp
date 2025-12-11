@@ -1,3 +1,7 @@
+/**
+ * BlogCard - Componente de card individual para exibir posts do blog
+ * Alterna a posição da imagem (esquerda/direita) e inclui overlay com bordas transparentes
+ */
 import Link from "next/link";
 import Image from "next/image";
 

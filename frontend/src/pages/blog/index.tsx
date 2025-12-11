@@ -1,3 +1,7 @@
+/**
+ * Blog Index - Página principal do blog que lista todos os posts
+ * Exibe os cards de blog com paginação através do componente BlogCardList
+ */
 // src/pages/blog/index.tsx
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";

@@ -1,3 +1,7 @@
+/**
+ * BlogCardList - Componente que exibe a lista de cards de blog com paginação
+ * Gerencia o estado da página atual e renderiza os cards paginados
+ */
 "use client";
 
 import { useState } from "react";

@@ -1,3 +1,8 @@
+/**
+ * Blog Post Detail - Página dinâmica para exibir posts individuais do blog
+ * Usa o slug da URL para buscar e exibir o conteúdo completo do post
+ * Inclui imagem hero, metadados, título, introdução e seções de conteúdo
+ */
 // src/pages/blog/[slug].tsx
 import React from "react";
 import Link from "next/link";

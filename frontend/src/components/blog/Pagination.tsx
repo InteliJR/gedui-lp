@@ -1,3 +1,7 @@
+/**
+ * Pagination - Componente de paginação para navegar entre páginas do blog
+ * Exibe botões anterior/próximo e números de página com ellipsis quando necessário
+ */
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
