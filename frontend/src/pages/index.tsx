@@ -7,6 +7,8 @@ import Depoimentos from "@/components/sections/Depoimentos";
 import BlogPreview from "@/components/sections/BlogPreview";
 import CTA from "@/components/sections/CTA";
 import QuemSomos from "@/components/sections/QuemSomos";
+import NossosValores from "@/components/sections/NossosValores";
+import VantagensGestao from "@/components/sections/Vantagens";
 
 export default function Home() {
   return (
@@ -21,7 +23,9 @@ export default function Home() {
       <Layout>
         <Hero />
         <QuemSomos />
-        <Recursos />
+        <NossosValores />
+        <VantagensGestao />
+
         <Depoimentos />
         <BlogPreview />
         <CTA />
