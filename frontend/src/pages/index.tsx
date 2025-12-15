@@ -9,6 +9,7 @@ import CTA from "@/components/sections/CTA";
 import QuemSomos from "@/components/sections/QuemSomos";
 import NossosValores from "@/components/sections/NossosValores";
 import VantagensGestao from "@/components/sections/Vantagens";
+import ParaQuemSomos from "@/components/sections/ParaQuemSomos";
 
 export default function Home() {
   return (
@@ -23,12 +24,13 @@ export default function Home() {
       <Layout>
         <Hero />
         <QuemSomos />
+        <ParaQuemSomos />
         <NossosValores />
         <VantagensGestao />
 
         <Depoimentos />
         <BlogPreview />
-        <CTA />
+        {/* <CTA /> */}
       </Layout>
     </>
   );
