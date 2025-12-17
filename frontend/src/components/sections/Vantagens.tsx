@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 
+/* =======================
+   SVG DA TRILHA (DESKTOP)
+======================= */
 function TrilhaSVG() {
   return (
     <div className="w-full flex justify-center">
@@ -11,9 +14,9 @@ function TrilhaSVG() {
       >
         <g filter="url(#shadow)">
           <path
-            d="M177.729 102H316.427H547.289H778.153H1044V263.761H778.153H547.289H316.427H106V424H336.029H547.289H778.153H1044"
+            d="M100 102H316.427H547.289H778.153H1044V263.761H778.153H547.289H316.427H106V424H336.029H547.289H778.153H1044"
             stroke="#91AF51"
-            strokeWidth="32"
+            strokeWidth="20"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
@@ -57,6 +60,9 @@ function TrilhaSVG() {
   );
 }
 
+/* =======================
+   DADOS
+======================= */
 const cardTitles = [
   "Criação de múltiplas redes",
   "Gestão de usuários",
@@ -68,15 +74,24 @@ const cardTitles = [
   "Gamificação",
 ];
 
-// Componente para renderizar um único card
-const Card = ({ titulo, className = "" }) => (
+/* =======================
+   CARD
+======================= */
+const Card = ({
+  titulo,
+  className = "",
+}: {
+  titulo: string;
+  className?: string;
+}) => (
   <div
     className={`
       bg-[#0B4C95] text-white 
       rounded-xl shadow-lg backdrop-blur-sm
       flex items-center justify-center text-center
       aspect-square 
-      w-full max-w-[130px] sm:max-w-[150px] md:max-w-[160px] mx-auto
+      w-full
+      max-w-[130px] sm:max-w-[150px] md:max-w-[160px]
       p-3 md:p-4
       ${className}
     `}
@@ -87,19 +102,22 @@ const Card = ({ titulo, className = "" }) => (
   </div>
 );
 
+/* =======================
+   COMPONENTE PRINCIPAL
+======================= */
 export default function VantagensGestao() {
   const cardPositions = [
-    // Linha Inferior (Y=424) - Cards 1 a 4
-    { title: cardTitles[0], x: "left-[10%]", y: "top-[80%]" }, // Criação de múltiplas redes
-    { title: cardTitles[1], x: "left-[37%]", y: "top-[80%]" }, // Gestão de usuários
-    { title: cardTitles[2], x: "left-[63%]", y: "top-[80%]" }, // Agenda digital ativa
-    { title: cardTitles[3], x: "left-[90%]", y: "top-[80%]" }, // GEDUIVox
+    // Linha inferior
+    { title: cardTitles[0], x: "left-[10%]", y: "top-[80%]" },
+    { title: cardTitles[1], x: "left-[37%]", y: "top-[80%]" },
+    { title: cardTitles[2], x: "left-[63%]", y: "top-[80%]" },
+    { title: cardTitles[3], x: "left-[90%]", y: "top-[80%]" },
 
-    // Linha Superior/Média (Y=102 e Y=263) - Cards 5 a 8
-    { title: cardTitles[4], x: "left-[10%]", y: "top-[20%]" }, // White label
-    { title: cardTitles[5], x: "left-[37%]", y: "top-[20%]" }, // Gedui Box – Vídeos e arquivos
-    { title: cardTitles[6], x: "left-[63%]", y: "top-[20%]" }, // Multilingue
-    { title: cardTitles[7], x: "left-[90%]", y: "top-[20%]" }, // Gamificação
+    // Linha superior
+    { title: cardTitles[4], x: "left-[10%]", y: "top-[20%]" },
+    { title: cardTitles[5], x: "left-[37%]", y: "top-[20%]" },
+    { title: cardTitles[6], x: "left-[63%]", y: "top-[20%]" },
+    { title: cardTitles[7], x: "left-[90%]", y: "top-[20%]" },
   ];
 
   return (
@@ -114,9 +132,9 @@ export default function VantagensGestao() {
         />
       </div>
 
-      {/* Conteúdo principal (mantido inalterado) */}
+      {/* Conteúdo principal */}
       <div className="relative z-10 container mx-auto px-4 sm:px-8 lg:px-16 xl:px-28 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
-        {/* Direita (Título) - order-1 em telas pequenas, order-2 em telas grandes */}
+        {/* Título */}
         <div className="w-full lg:w-[45%] flex justify-center items-center order-1 lg:order-2">
           <div className="bg-white/10 backdrop-blur-sm border border-white/10 p-6 md:p-10 rounded-xl max-w-md text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight">
@@ -128,10 +146,10 @@ export default function VantagensGestao() {
           </div>
         </div>
 
-        {/* Cards coluna esquerda - order-2 em telas pequenas, order-1 em telas grandes */}
+        {/* Listas */}
         <div className="flex flex-col gap-4 md:gap-6 w-full lg:w-[45%] order-2 lg:order-1">
-          <div className="bg-[#042E60]/90 text-white p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm">
-            <ul className="list-disc list-inside space-y-1.5 md:space-y-2 text-base md:text-lg font-normal">
+          <div className="bg-[#042E60]/90 p-4 md:p-6 rounded-xl">
+            <ul className="list-disc list-inside space-y-2 text-white">
               <li>Estrutura em nuvem</li>
               <li>Segurança e confiabilidade</li>
               <li>Maior retenção</li>
@@ -141,8 +159,8 @@ export default function VantagensGestao() {
             </ul>
           </div>
 
-          <div className="bg-[#9FE23A]/50 text-white p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm">
-            <ul className="list-disc list-inside space-y-1.5 md:space-y-2 text-base md:text-lg font-normal">
+          <div className="bg-[#9FE23A]/50 p-4 md:p-6 rounded-xl">
+            <ul className="list-disc list-inside space-y-2 text-white">
               <li>Sustentabilidade</li>
               <li>Aprendizagem personalizada</li>
               <li>Adaptação às tendências</li>
@@ -154,26 +172,49 @@ export default function VantagensGestao() {
         </div>
       </div>
 
-      {/* Trilha + cards */}
-      {/* O contêiner da trilha deve ser `relative` para que os cards `absolute` se posicionem corretamente */}
-      <div className="relative w-full mt-20 md:mt-28">
-        <TrilhaSVG />
-
-        {/* Cards posicionados absolutamente sobre o SVG */}
-        <div className="absolute inset-0 z-10">
-          {cardPositions.map((pos, index) => (
-            <Card
-              key={index}
-              titulo={pos.title}
-              className={`
-                absolute transform -translate-x-1/2 -translate-y-1/2 
-                ${pos.x} ${pos.y}
-                w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]
-              `}
-            />
-          ))}
-        </div>
+      {/* =======================
+        GRID — MOBILE & TABLET
+      ======================= */}
+        < div className="relative z-10 w-full mt-16 lg:hidden flex justify-center">
+      <div
+        className="
+      grid
+      grid-cols-2        /* mobile: 2 por linha */
+      md:grid-cols-3     /* md: 3 por linha */
+      gap-5 md:gap-6
+      place-items-center /* centraliza os cards */
+      max-w-[420px] md:max-w-[720px]
+      px-4
+    "
+      >
+        {cardTitles.map((title, index) => (
+          <Card key={index} titulo={title} />
+        ))}
       </div>
-    </section>
+    </div>
+
+
+      {/* =======================
+         TRILHA — DESKTOP
+      ======================= */}
+  <div className="relative w-full mt-24 hidden lg:block">
+    <TrilhaSVG />
+
+    <div className="absolute inset-0 z-10">
+      {cardPositions.map((pos, index) => (
+        <Card
+          key={index}
+          titulo={pos.title}
+          className={`
+                absolute
+                transform -translate-x-1/2 -translate-y-1/2
+                ${pos.x} ${pos.y}
+                w-[160px] h-[160px]
+              `}
+        />
+      ))}
+    </div>
+  </div>
+    </section >
   );
 }
