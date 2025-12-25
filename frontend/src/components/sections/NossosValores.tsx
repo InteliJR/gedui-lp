@@ -37,7 +37,7 @@ export default function NossosValores() {
   };
 
   return (
-    <section className="relative w-full bg-[#05294F] py-20 lg:py-28 overflow-hidden">
+    <section className="relative w-full bg-primary py-20 lg:py-28 overflow-hidden min-h-screen flex items-center justify-center">
       {/* Grafismo de fundo */}
       <div className="absolute inset-0 opacity-100">
         <Image
@@ -48,13 +48,13 @@ export default function NossosValores() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24">
         {/* Título */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#95c743] mb-12 lg:mb-16 text-center">
           Nossos Valores
         </h2>
 
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center w-full">
           {/* Botão anterior */}
           <button
             onClick={scrollPrev}
@@ -76,7 +76,7 @@ export default function NossosValores() {
           </button>
 
           {/* Container dos 3 cards */}
-          <div className="flex items-center justify-center gap-6 max-w-5xl mx-auto">
+          <div className="flex items-center justify-center gap-8 w-full max-w-[1600px] mx-auto">
             {getVisibleCards().map((valor, idx) => {
               const isCenter = valor.position === 0;
 
@@ -85,20 +85,19 @@ export default function NossosValores() {
                   key={`${valor.id}-${idx}`}
                   className={`transition-all duration-500 ${
                     isCenter
-                      ? "w-[280px] scale-100 opacity-100"
-                      : "w-[240px] scale-90 opacity-50"
-                  }`}
+                      ? "w-[340px] scale-100 opacity-100"
+                      : "w-[260px] scale-90 opacity-50"
+
+                    }`}
                 >
                   <div
-                    className={`rounded-2xl bg-gradient-to-br from-[#A2A2A2]/20 backdrop-blur-sm border border-white/10 p-6 flex flex-col items-center justify-center shadow-xl transition-all duration-500 ${
-                      isCenter ? "h-[280px]" : "h-[240px]"
-                    }`}
+                    className={`rounded-2xl bg-gradient-to-br from-[#A2A2A2]/20 backdrop-blur-sm border border-white/10 p-6 flex flex-col items-center justify-center shadow-xl transition-all duration-500 ${isCenter ? "h-[340px]" : "h-[260px]"
+                      }`}
                   >
                     {/* Título acima */}
                     <h3
-                      className={`font-medium text-white text-center mb-6 transition-all duration-500 ${
-                        isCenter ? "text-xl" : "text-lg"
-                      }`}
+                      className={`font-medium text-white text-center mb-6 transition-all duration-500 ${isCenter ? "text-xl" : "text-lg"
+                        }`}
                     >
                       {valor.titulo}
                     </h3>
@@ -144,9 +143,8 @@ export default function NossosValores() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#95c743] w-8" : "bg-white/30 w-2"
-              }`}
+              className={`h-2 rounded-full transition-all ${index === currentIndex ? "bg-[#95c743] w-8" : "bg-white/30 w-2"
+                }`}
               aria-label={`Ir para valor ${index + 1}`}
             />
           ))}

@@ -16,7 +16,7 @@ function TrilhaSVG() {
           <path
             d="M100 102H316.427H547.289H778.153H1044V263.761H778.153H547.289H316.427H106V424H336.029H547.289H778.153H1044"
             stroke="#91AF51"
-            strokeWidth="20"
+            strokeWidth="16"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
@@ -40,7 +40,7 @@ function TrilhaSVG() {
               result="hardAlpha"
             />
             <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="45" />
+            <feGaussianBlur stdDeviation="20" />
             <feComposite in2="hardAlpha" operator="out" />
             <feColorMatrix
               type="matrix"
@@ -121,14 +121,15 @@ export default function VantagensGestao() {
   ];
 
   return (
-    <section className="relative w-full bg-[#05294F] py-14 md:py-20 overflow-hidden">
-      {/* Fundo */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full min-h-screen bg-primary py-14 md:pt-14 overflow-visible">
+      {/* Fundo infinito */}
+      <div className="absolute top-0 left-0 w-full h-[200%] z-0 pointer-events-none">
         <Image
-          src="/vantagens/grafismo.svg"
+          src="/grafismo_vertical.png"
           alt=""
           fill
-          className="object-cover opacity-80 rotate-[70deg]"
+          className="w-full -mt-150"
+          priority
         />
       </div>
 
@@ -175,46 +176,46 @@ export default function VantagensGestao() {
       {/* =======================
         GRID — MOBILE & TABLET
       ======================= */}
-        < div className="relative z-10 w-full mt-16 lg:hidden flex justify-center">
-      <div
-        className="
-      grid
-      grid-cols-2        /* mobile: 2 por linha */
-      md:grid-cols-3     /* md: 3 por linha */
-      gap-5 md:gap-6
-      place-items-center /* centraliza os cards */
-      max-w-[420px] md:max-w-[720px]
-      px-4
-    "
-      >
-        {cardTitles.map((title, index) => (
-          <Card key={index} titulo={title} />
-        ))}
+      < div className="relative z-10 w-full mt-16 lg:hidden flex justify-center">
+        <div
+          className="
+            grid
+            grid-cols-2        /* mobile: 2 por linha */
+            md:grid-cols-3     /* md: 3 por linha */
+            gap-5 md:gap-6
+            place-items-center /* centraliza os cards */
+            max-w-[420px] md:max-w-[720px]
+            px-4
+          "
+        >
+          {cardTitles.map((title, index) => (
+            <Card key={index} titulo={title} />
+          ))}
+        </div>
       </div>
-    </div>
 
 
       {/* =======================
          TRILHA — DESKTOP
       ======================= */}
-  <div className="relative w-full mt-24 hidden lg:block">
-    <TrilhaSVG />
+      <div className="relative max-w-5xl mx-auto mt-24 hidden lg:block">
+        <TrilhaSVG />
 
-    <div className="absolute inset-0 z-10">
-      {cardPositions.map((pos, index) => (
-        <Card
-          key={index}
-          titulo={pos.title}
-          className={`
+        <div className="absolute inset-0 z-10">
+          {cardPositions.map((pos, index) => (
+            <Card
+              key={index}
+              titulo={pos.title}
+              className={`
                 absolute
                 transform -translate-x-1/2 -translate-y-1/2
                 ${pos.x} ${pos.y}
                 w-[160px] h-[160px]
               `}
-        />
-      ))}
-    </div>
-  </div>
+            />
+          ))}
+        </div>
+      </div>
     </section >
   );
 }

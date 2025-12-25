@@ -13,7 +13,7 @@ export default function Hero() {
 
       {/*background overlay */}
       <div
-        className="absolute inset-0 bg-blur-sm bg-primary/90"
+        className="absolute inset-0 bg-blur-sm bg-primary/80"
         aria-hidden="true"
       />
 
