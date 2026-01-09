@@ -1,77 +1,28 @@
 "use client";
-import Image from "next/image";
 
-/* =======================
-   SVG DA TRILHA (DESKTOP)
-======================= */
-function TrilhaSVG() {
-  return (
-    <div className="w-full flex justify-center">
-      <svg
-        viewBox="0 0 1150 534"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto mx-auto"
-      >
-        <g filter="url(#shadow)">
-          <path
-            d="M100 102H316.427H547.289H778.153H1044V263.761H778.153H547.289H316.427H106V424H336.029H547.289H778.153H1044"
-            stroke="#91AF51"
-            strokeWidth="16"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-        </g>
-        <defs>
-          <filter
-            id="shadow"
-            x="0"
-            y="0"
-            width="1150"
-            height="534"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="20" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.85 0"
-            />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="shadow" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="shadow"
-              result="shape"
-            />
-          </filter>
-        </defs>
-      </svg>
-    </div>
-  );
-}
+import { useRef } from "react";
+import Image from "next/image";
+import { TrilhaSVG } from "@/components/common/TrilhaSVG";
+import { useIntersection } from "@/hooks/useIntersection";
+
+
+
 
 /* =======================
    DADOS
 ======================= */
 const cardTitles = [
-  "Criação de múltiplas redes",
+  //linha inferior
+  "White label",
+  "Gedui Box vpideos e arquivos",
+  "Multilingue",
+  "Gamificação",
+
+  //linha superior
+  "Criação de múltiplas reders",
   "Gestão de usuários",
   "Agenda digital ativa",
   "GEDUIVox",
-  "White label",
-  "Gedui Box – Vídeos e arquivos",
-  "Multilingue",
-  "Gamificação",
 ];
 
 /* =======================
@@ -120,8 +71,14 @@ export default function VantagensGestao() {
     { title: cardTitles[7], x: "left-[90%]", y: "top-[20%]" },
   ];
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const trilhaVisivel = useIntersection(sectionRef, 0.4);
+
   return (
-    <section className="relative w-full min-h-screen bg-primary py-14 md:pt-14 overflow-visible">
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-screen bg-primary py-14 md:pt-14 overflow-visible"
+    >
       {/* Fundo infinito */}
       <div className="absolute top-0 left-0 w-full h-[200%] z-0 pointer-events-none">
         <Image
@@ -180,10 +137,10 @@ export default function VantagensGestao() {
         <div
           className="
             grid
-            grid-cols-2        /* mobile: 2 por linha */
-            md:grid-cols-3     /* md: 3 por linha */
+            grid-cols-2
+            md:grid-cols-3
             gap-5 md:gap-6
-            place-items-center /* centraliza os cards */
+            place-items-center
             max-w-[420px] md:max-w-[720px]
             px-4
           "
@@ -198,8 +155,9 @@ export default function VantagensGestao() {
       {/* =======================
          TRILHA — DESKTOP
       ======================= */}
+      {/* TRILHA — DESKTOP */}
       <div className="relative max-w-5xl mx-auto mt-24 hidden lg:block">
-        <TrilhaSVG />
+        <TrilhaSVG animate={trilhaVisivel} />
 
         <div className="absolute inset-0 z-10">
           {cardPositions.map((pos, index) => (
@@ -207,15 +165,16 @@ export default function VantagensGestao() {
               key={index}
               titulo={pos.title}
               className={`
-                absolute
-                transform -translate-x-1/2 -translate-y-1/2
-                ${pos.x} ${pos.y}
-                w-[160px] h-[160px]
-              `}
+          absolute
+          transform -translate-x-1/2 -translate-y-1/2
+          ${pos.x} ${pos.y}
+          w-[160px] h-[160px]
+        `}
             />
           ))}
         </div>
       </div>
+
     </section >
   );
 }
