@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import CardBlog from "../common/CardBlog";
+import Link from "next/link";
 
 interface BlogPost {
   title: string;
@@ -195,7 +196,9 @@ export default function BlogPreview() {
             <span className="text-secondary">futuro do aprendizado.</span>
           </h2>
 
-          <button
+
+          <Link
+            href="/agendar"
             className="
             px-8 py-3
             rounded-full
@@ -208,9 +211,10 @@ export default function BlogPreview() {
             -mb-15
             shadow-[0_4px_30px_2px_#0E55A5]
           "
+            role="menuitem"
           >
-            Agendar demonstração
-          </button>
+            Agendar Demonstração
+          </Link>
         </div>
       </div>
     </section>
