@@ -19,7 +19,7 @@ export default function Header() {
         role="navigation"
         aria-label="Navegação principal"
       >
-        <div className="flex justify-between items-center py-4 mx-10 md:mx-20">
+        <div className="flex justify-between items-center py-4 mx-10 md:mx-10">
           <section className="md:flex items-center space-x-8" aria-label="Logo e navegação">
 
             {/* Logo */}

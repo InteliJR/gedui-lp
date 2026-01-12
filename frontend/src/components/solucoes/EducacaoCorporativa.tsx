@@ -10,7 +10,7 @@ export default function SecaoEducacaoCorporativa() {
 
       {/* FAIXA AZUL CLARA BEM PEQUENA E FIXA */}
       <div className="absolute bottom-0 left-0 w-full z-10 pointer-events-none">
-        <div className="bg-[#072B59] w-full h-10 relative">
+        <div className="bg-primary w-full h-10 relative">
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-full bg-[#051D39]"
             style={{

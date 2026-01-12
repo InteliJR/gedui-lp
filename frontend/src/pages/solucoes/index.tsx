@@ -4,6 +4,10 @@ import Layout from "@/components/common/Layout";
 import SolucoesHero from "@/components/solucoes/SolucoesHero";
 import SecaoEducacaoCorporativa from "@/components/solucoes/EducacaoCorporativa";
 import { SiEducative } from "react-icons/si";
+import CTASolucoes from "@/components/solucoes/CTASolucoes";
+import SecaoEducacaoAcademica from "@/components/solucoes/EducacaoAcademica";
+import SecaoBeneficiosEdu from "@/components/solucoes/BeneficiosEdu";
+import SecaoBeneficiosCorp from "@/components/solucoes/BeneficiosCorp";
 
 export default function SolucoesPage() {
   return (
@@ -16,7 +20,11 @@ export default function SolucoesPage() {
 
       <Layout>
         <SolucoesHero />
+        <CTASolucoes />
+        <SecaoEducacaoAcademica />
+        <SecaoBeneficiosEdu />
         <SecaoEducacaoCorporativa />
+        <SecaoBeneficiosCorp />
       </Layout>
     </>
   );

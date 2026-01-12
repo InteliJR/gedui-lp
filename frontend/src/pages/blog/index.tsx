@@ -6,6 +6,7 @@
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
 import BlogCardList from "@/components/blog/BlogCardList";
+import BlogHero from "@/components/blog/BlogHero";
 
 export default function BlogIndex() {
   return (
@@ -19,6 +20,7 @@ export default function BlogIndex() {
 
       <Layout>
         <main>
+          <BlogHero />
           <BlogCardList />
         </main>
       </Layout>

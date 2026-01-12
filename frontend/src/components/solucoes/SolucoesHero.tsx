@@ -4,22 +4,39 @@ import Image from "next/image";
 
 export default function HeroSolucoes() {
   return (
-    <section className="relative w-full h-[520px] md:h-[620px] overflow-hidden -mt-16 pt-16">
+    <section className="relative w-full min-h-screen overflow-hidden -mt-16 pt-16">
       {/* IMAGEM DE FUNDO */}
       <Image
         src="/solucoes/hero.png"
         alt="Pessoas estudando"
         fill
         priority
-        className="object-cover"
+        className="object-cover z-0"
       />
 
-      {/* RADIAL GRADIENT DO FIGMA */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#0E55A5_20%,_#05294F_50%)] opacity-90 mix-blend-multiply"></div>
+      {/* OVERLAY ESCURO */}
+      <div
+        className="absolute inset-0 bg-primary/60 z-10"
+        aria-hidden="true"
+      />
 
-      {/* Conteúdo */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6 text-white">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+      {/* GLOW */}
+      <div
+        className="absolute left-1/2 top-1/2 
+                   -translate-x-1/2 -translate-y-1/2
+                   w-[420px] h-[420px]
+                   rounded-full
+                   bg-sky-400/50
+                   blur-[120px]
+                   opacity-80
+                   z-20
+                   pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* CONTEÚDO CENTRALIZADO */}
+      <div className="absolute inset-0 z-30 flex flex-col justify-center items-center text-center px-6 text-white pt-16">
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-4xl">
           Soluções que transformam
           <br />
           o aprendizado em sua
@@ -33,6 +50,20 @@ export default function HeroSolucoes() {
           dinâmico, eficiente e inclusivo.
         </p>
       </div>
+
+      {/*Degradê inferior */}
+      <footer className="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <div
+          className="
+              h-52
+              bg-gradient-to-b
+              from-transparent
+              via-[rgba(5,41,79,0.4)]
+              to-primary
+        "
+          aria-hidden="true"
+        />
+      </footer>
     </section>
   );
 }

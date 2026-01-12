@@ -52,7 +52,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-custom-gradient text-gray-300">
+    <footer className="bg-gradient-to-b from-primary to-secondary/60 text-gray-300">
       <div className="flex flex-col md:flex-row justify-between mt-20 px-4 sm:px-6 lg:px-8 py-12 gap-8 xl:px-30">
 
         {/* LOGO + COPYRIGHT */}
