@@ -21,5 +21,39 @@
       "src": "/videos/gedui_english.mp4",
       "poster": "/videos/poster.png"
     }
+  },
+  "paraQuemSomos": {
+    "aria": {
+      "notebookAlt": "Laptop showing Gedui interface",
+      "logoAlt": "Gedui logo"
+    },
+    "notebook": {
+      "eyebrow": "Who is it for?",
+      "title": "The innovative tools in our educational ecosystem are versatile and adaptable, helping transform learning across different sectors."
+    },
+    "cards": [
+      {
+        "icon": "/quem-somos/icon-schools.svg",
+        "text": "Private and public schools, early childhood, elementary, high school, technical education, and universities.",
+        "iconSize": 190,
+        "iconTop": "-top-16",
+        "iconHorizontal": "-right-22"
+      },
+      {
+        "icon": "/quem-somos/icon-courses.svg",
+        "text": "Extracurricular, open courses or specialization programs, mentoring, and franchise networks.",
+        "iconSize": 180,
+        "iconTop": "-top-17",
+        "iconHorizontal": "-left-22"
+      },
+      {
+        "icon": "/quem-somos/icon-industry.svg",
+        "text": "Industries, service providers, companies, call centers, HR consulting, and franchise networks.",
+        "cta": "Learn more",
+        "iconSize": 140,
+        "iconTop": "-top-9",
+        "iconHorizontal": "-right-14"
+      }
+    ]
   }
 }

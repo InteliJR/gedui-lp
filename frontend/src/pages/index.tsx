@@ -32,8 +32,8 @@ export default function HomePage({
       <Layout>
         <Hero t={t.hero} />
         <QuemSomos t={t.quemSomos} />
-        {/* <ParaQuemSomos t={t.paraQuemSomos} />
-        <NossosValores t={t.nossosValores} />
+        <ParaQuemSomos t={t.paraQuemSomos} />
+        {/* <NossosValores t={t.nossosValores} />
         <VantagensGestao t={t.vantagensGestao} />
         <Depoimentos t={t.depoimentos} />
         <BlogPreview t={t.blogPreview} /> */}

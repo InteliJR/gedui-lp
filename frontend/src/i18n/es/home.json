@@ -21,5 +21,39 @@
       "src": "/videos/gedui_espanhol.mp4",
       "poster": "/videos/poster.png"
     }
+  },
+  "paraQuemSomos": {
+    "aria": {
+      "notebookAlt": "Portátil mostrando la interfaz de Gedui",
+      "logoAlt": "Logo de Gedui"
+    },
+    "notebook": {
+      "eyebrow": "¿Para quién es?",
+      "title": "Las herramientas innovadoras de nuestro ecosistema educativo son versátiles y adaptables, y pueden transformar el aprendizaje en distintos sectores."
+    },
+    "cards": [
+      {
+        "icon": "/quem-somos/icon-schools.svg",
+        "text": "Escuelas privadas y públicas, infantil, primaria, secundaria, formación técnica y universidades.",
+        "iconSize": 190,
+        "iconTop": "-top-16",
+        "iconHorizontal": "-right-22"
+      },
+      {
+        "icon": "/quem-somos/icon-courses.svg",
+        "text": "Cursos extracurriculares, libres o de especialización, mentoría y redes de franquicias.",
+        "iconSize": 180,
+        "iconTop": "-top-17",
+        "iconHorizontal": "-left-22"
+      },
+      {
+        "icon": "/quem-somos/icon-industry.svg",
+        "text": "Industrias, proveedores de servicios, empresas, call centers, consultoría de RR. HH. y redes de franquicias.",
+        "cta": "Saber más",
+        "iconSize": 140,
+        "iconTop": "-top-9",
+        "iconHorizontal": "-right-14"
+      }
+    ]
   }
 }
