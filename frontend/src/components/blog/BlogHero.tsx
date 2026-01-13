@@ -8,7 +8,6 @@ export default function BlogHero() {
             aria-labelledby="hero-heading"
             role="region"
         >
-
             {/*background overlay */}
             <div
                 className="absolute inset-0 bg-blur-sm bg-primary/60"
@@ -18,10 +17,9 @@ export default function BlogHero() {
             <div className="relative px-4 sm:px-6 lg:px-8 lg:mx-20 pt-32 md:pt-40 pb-20">
                 {/* Coluna da esquerda (texto e botão) */}
                 <article className="text-left mt-20">
-
                     <h1
                         id="blog-hero-heading"
-                        className="text-2xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight max-w-5xl"
+                        className="text-3xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight max-w-5xl"
                     >
                         Aprender é evoluir. Aqui, você encontra conhecimento para ir além.
                     </h1>
@@ -31,7 +29,7 @@ export default function BlogHero() {
             {/* Faixa azul inferior + CTA */}
             <footer className="absolute bottom-0 left-0 right-0">
                 {/* Faixa azul */}
-                <div className="relative h-90 overflow-hidden">
+                <div className="relative h-72 md:h-90 overflow-hidden">
                     {/* FUNDO EM SVG */}
                     <svg
                         viewBox="0 0 1440 329"
@@ -44,6 +42,7 @@ export default function BlogHero() {
                             fill="#05294F"
                         />
                     </svg>
+
                     {/* GRAFISMO */}
                     <Image
                         src="/blog/grafismo_blog.png"
@@ -52,6 +51,7 @@ export default function BlogHero() {
                         height={750}
                         aria-hidden="true"
                         className="
+                            hidden md:block
                             absolute
                             left-1/2
                             -translate-x-1/2
@@ -62,7 +62,6 @@ export default function BlogHero() {
                         "
                     />
 
-
                     {/* CTA */}
                     <p
                         className="
@@ -71,24 +70,27 @@ export default function BlogHero() {
                             left-1/2
                             -translate-x-1/2
                             z-10
-                            px-12
-                            py-8
+
+                            w-[min(80vw,520px)] md:w-[min(80vw,550px)]
+                            px-6 sm:px-8 md:px-12
+                            py-5 sm:py-6 md:py-8
+
                             rounded-2xl
                             border border-white/20
                             bg-white/10
                             backdrop-blur-md
                             shadow-[0_4px_30px_2px_#0E55A5]
-                            text-4xl
+
+                            text-xl sm:text-2xl md:text-4xl
                             text-white
+                            text-center
                             flex items-center justify-center
-                            whitespace-nowrap
+                            leading-snug
                         "
                     >
                         Conheça o nosso <span className="text-secondary ml-2">blog</span>
                     </p>
-
                 </div>
-
             </footer>
         </section>
     );
