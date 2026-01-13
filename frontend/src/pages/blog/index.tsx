@@ -7,6 +7,7 @@ import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
 import BlogCardList from "@/components/blog/BlogCardList";
 import BlogHero from "@/components/blog/BlogHero";
+import CTA_Blog from "@/components/blog/CTA";
 
 export default function BlogIndex() {
   return (
@@ -22,6 +23,7 @@ export default function BlogIndex() {
         <main>
           <BlogHero />
           <BlogCardList />
+          <CTA_Blog />
         </main>
       </Layout>
     </>
