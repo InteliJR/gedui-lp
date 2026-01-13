@@ -31,10 +31,19 @@ export default function BlogHero() {
             {/* Faixa azul inferior + CTA */}
             <footer className="absolute bottom-0 left-0 right-0">
                 {/* Faixa azul */}
-                <div
-                    className="relative h-56 bg-primary flex items-center justify-center overflow-hidden"
-                    style={{ clipPath: "polygon(0 25%, 100% 0, 100% 100%, 0 100%)" }}
-                >
+                <div className="relative h-90 overflow-hidden">
+                    {/* FUNDO EM SVG */}
+                    <svg
+                        viewBox="0 0 1440 329"
+                        className="absolute inset-0 w-full h-full"
+                        preserveAspectRatio="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M-1.36929 0C45.0498 -5.34058e-05 814.05 108.5 1438.63 93C2063.21 77.5 1438.63 329 1438.63 329H-1.36929C-1.36929 329 -47.7884 5.34058e-05 -1.36929 0Z"
+                            fill="#05294F"
+                        />
+                    </svg>
                     {/* GRAFISMO */}
                     <Image
                         src="/blog/grafismo_blog.png"
@@ -42,28 +51,42 @@ export default function BlogHero() {
                         width={750}
                         height={750}
                         aria-hidden="true"
-                        className="absolute z-0 pointer-events-none select-none"
+                        className="
+                            absolute
+                            left-1/2
+                            -translate-x-1/2
+                            bottom-[-10px]
+                            z-0
+                            pointer-events-none
+                            select-none
+                        "
                     />
+
 
                     {/* CTA */}
                     <p
                         className="
-                        relative
-                        z-10
-                        px-12
-                        py-8
-                        rounded-2xl
-                        border border-white/20 w-xl
-                        bg-white/10
-                        backdrop-blur-md
-                        shadow-[0_4px_30px_2px_#0E55A5]
-                        text-4xl
-                        text-white
-                        flex items-center justify-center
+                            absolute
+                            bottom-20
+                            left-1/2
+                            -translate-x-1/2
+                            z-10
+                            px-12
+                            py-8
+                            rounded-2xl
+                            border border-white/20
+                            bg-white/10
+                            backdrop-blur-md
+                            shadow-[0_4px_30px_2px_#0E55A5]
+                            text-4xl
+                            text-white
+                            flex items-center justify-center
+                            whitespace-nowrap
                         "
                     >
                         Conheça o nosso <span className="text-secondary ml-2">blog</span>
                     </p>
+
                 </div>
 
             </footer>
