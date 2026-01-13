@@ -6,5 +6,20 @@
     "ctaPrimary": "Schedule a Demo",
     "ctaPrimaryAriaLabel": "Schedule a demo",
     "helperText": "Access more information"
+  },
+  "quemSomos": {
+    "whoWeAre": {
+      "heading": "Who we are",
+      "text": "We are a team passionate about education and innovation, using technology to break traditional learning barriers and positively impact personal, academic, and professional development."
+    },
+    "whatWeDo": {
+      "heading": "What we do",
+      "text": "We contribute to social transformation through education, preparing people for future challenges and opportunities. We empower learners with solutions that make learning more dynamic, efficient, and inclusive."
+    },
+    "video": {
+      "ariaLabel": "Institutional video",
+      "src": "/videos/gedui_english.mp4",
+      "poster": "/videos/poster.png"
+    }
   }
 }

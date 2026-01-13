@@ -6,5 +6,20 @@
     "ctaPrimary": "Agendar Demonstração",
     "ctaPrimaryAriaLabel": "Agendar uma demonstração",
     "helperText": "Acessar mais informações"
+  },
+  "quemSomos": {
+    "whoWeAre": {
+      "heading": "Quem somos",
+      "text": "Uma equipe formada por pessoas apaixonadas pela educação e inovação, que valoriza o poder da tecnologia para quebrar as barreiras tradicionais de aprendizado e impactar positivamente o desenvolvimento pessoal, acadêmico e profissional."
+    },
+    "whatWeDo": {
+      "heading": "O que fazemos",
+      "text": "Contribuímos para a transformação social por meio da educação, preparando os indivíduos para os desafios e oportunidades do futuro. Capacitamos indivíduos com soluções que tornam o aprendizado mais dinâmico, eficiente e inclusivo."
+    },
+    "video": {
+      "ariaLabel": "Vídeo institucional",
+      "src": "/videos/gedui_portugues.mp4",
+      "poster": "/videos/poster.png"
+    }
   }
 }
