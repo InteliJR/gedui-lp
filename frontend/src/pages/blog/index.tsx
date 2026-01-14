@@ -1,15 +1,18 @@
-/**
- * Blog Index - Página principal do blog que lista todos os posts
- * Exibe os cards de blog com paginação através do componente BlogCardList
- */
 // src/pages/blog/index.tsx
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
+
 import BlogCardList from "@/components/blog/BlogCardList";
 import BlogHero from "@/components/blog/BlogHero";
 import CTA_Blog from "@/components/blog/CTA";
 
-export default function BlogIndex() {
+import loadBlogDictionary from "@/i18n/loadBlogDictionary";
+
+export default function BlogIndex({
+  t,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <SEO
@@ -21,11 +24,16 @@ export default function BlogIndex() {
 
       <Layout>
         <main>
-          <BlogHero />
-          <BlogCardList />
-          <CTA_Blog />
+          <BlogHero t={t.hero} />
+          <BlogCardList t={t.cardList} />
+          <CTA_Blog t={t.cta} />
         </main>
       </Layout>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const t = await loadBlogDictionary(locale);
+  return { props: { t } };
+};

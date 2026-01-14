@@ -1,34 +1,40 @@
-// src/components/sections/Hero.tsx
+// src/components/blog/BlogHero.tsx
 import Image from "next/image";
 
-export default function BlogHero() {
+export type BlogHeroDict = {
+    heading: string;
+    cta: {
+        prefix: string;
+        highlight: string;
+    };
+};
+
+export default function BlogHero({ t }: { t: BlogHeroDict }) {
     return (
         <section
             className="relative min-h-screen text-white overflow-hidden bg-[url('/blog/hero_blog.jpg')] bg-cover bg-[length:100%_auto] bg-top bg-no-repeat -mt-16"
-            aria-labelledby="hero-heading"
+            aria-labelledby="blog-hero-heading"
             role="region"
         >
-            {/*background overlay */}
+            {/* background overlay */}
             <div
                 className="absolute inset-0 bg-blur-sm bg-primary/60"
                 aria-hidden="true"
             />
 
             <div className="relative px-4 sm:px-6 lg:px-8 lg:mx-20 pt-32 md:pt-40 pb-20">
-                {/* Coluna da esquerda (texto e botão) */}
                 <article className="text-left mt-20">
                     <h1
                         id="blog-hero-heading"
                         className="text-3xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight max-w-5xl"
                     >
-                        Aprender é evoluir. Aqui, você encontra conhecimento para ir além.
+                        {t.heading}
                     </h1>
                 </article>
             </div>
 
             {/* Faixa azul inferior + CTA */}
             <footer className="absolute bottom-0 left-0 right-0">
-                {/* Faixa azul */}
                 <div className="relative h-72 md:h-90 overflow-hidden">
                     {/* FUNDO EM SVG */}
                     <svg
@@ -88,7 +94,8 @@ export default function BlogHero() {
                             leading-snug
                         "
                     >
-                        Conheça o nosso <span className="text-secondary ml-2">blog</span>
+                        {t.cta.prefix}
+                        <span className="text-secondary ml-2">{t.cta.highlight}</span>
                     </p>
                 </div>
             </footer>

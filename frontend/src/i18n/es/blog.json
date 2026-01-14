@@ -1,0 +1,78 @@
+{
+    "hero": {
+        "heading": "Aprender es evolucionar. Aquí encuentras conocimiento para ir más allá.",
+        "cta": {
+            "prefix": "Conoce nuestro",
+            "highlight": "blog"
+        }
+    },
+    "cardList": {
+        "posts": [
+            {
+                "id": "1",
+                "title": "Tendencias y Desafíos para 2025",
+                "subtitle": "Educación Corporativa y Tecnología:",
+                "description": "La educación corporativa, esencial para el éxito y el crecimiento de las organizaciones, está atravesando una revolución impulsada por los avances tecnológicos y los cambios en las dinámicas de trabajo.",
+                "imageUrl": "/blog/educacaocorporativa.png",
+                "imageAlt": "Gráficos y documentos",
+                "link": "/blog/tendencias-educacao-2025"
+            },
+            {
+                "id": "2",
+                "title": "Inclusión y Accesibilidad para Todos",
+                "subtitle": "Impacto Social de la Tecnología Educativa:",
+                "description": "La tecnología educativa accesible desempeña un papel central en el desafío de garantizar una educación de calidad, inclusiva y equitativa para todas las personas, independientemente de sus limitaciones o circunstancias socioeconómicas.",
+                "imageUrl": "/blog/inclusao.png",
+                "imageAlt": "Personas trabajando juntas",
+                "link": "/blog/inclusao-acessibilidade"
+            },
+            {
+                "id": "3",
+                "title": "La Transformación de los Cursos de Pedagogía y el Papel de la Formación Continua",
+                "subtitle": "Tecnología en la Educación:",
+                "description": "Una necesidad cada vez más presente en la educación moderna, especialmente para capacitar a docentes y equipos a integrar tecnología de forma eficaz y significativa en sus prácticas pedagógicas.",
+                "imageUrl": "/blog/transformacao.png",
+                "imageAlt": "Aula moderna",
+                "link": "/blog/transformacao-pedagogia"
+            },
+            {
+                "id": "4",
+                "title": "La Transformación que Está Redefiniendo el Futuro de las Escuelas",
+                "subtitle": "IA en la Educación:",
+                "description": "Un artículo de Education Next explora cómo la inteligencia artificial está transformando la educación, desde la personalización del aprendizaje hasta la automatización de tareas administrativas.",
+                "imageUrl": "/blog/futuro.png",
+                "imageAlt": "Estudiante usando tecnología",
+                "link": "/blog/futuro-escolas"
+            },
+            {
+                "id": "5",
+                "title": "Promoviendo la Diversidad y la Inclusión a través de la Educación Corporativa",
+                "subtitle": "Educación Corporativa:",
+                "description": "En el competitivo escenario corporativo actual, promover la diversidad y la inclusión no es solo una responsabilidad social, sino también una estrategia esencial para el éxito organizacional y la innovación.",
+                "imageUrl": "/blog/diversidade.png",
+                "imageAlt": "Diversidad e inclusión",
+                "link": "/blog/diversidade-inclusao-corporativa"
+            }
+        ],
+        "card": {
+            "readMoreLabel": "Saber más",
+            "readMoreAriaLabel": "Saber más sobre: {title}"
+        },
+        "pagination": {
+            "prevAriaLabel": "Página anterior",
+            "nextAriaLabel": "Página siguiente",
+            "goToPageAriaLabel": "Ir a la página {page}"
+        }
+    },
+    "cta": {
+        "heading": {
+            "text": "Innova, conecta áreas y",
+            "highlight": "aprende!"
+        },
+        "button": {
+            "label": "Agendar demostración",
+            "ariaLabel": "Agendar una demostración",
+            "href": "/agendar"
+        }
+    }
+}

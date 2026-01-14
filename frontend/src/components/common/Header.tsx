@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import logo from "../../../public/logo.png";
 
-export default function Header() {
+type HeaderVariant = "transparent" | "primary";
+
+export default function Header({ variant = "transparent" }: { variant?: HeaderVariant }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
@@ -12,8 +14,10 @@ export default function Header() {
     { name: "Blog", href: "/blog" },
   ];
 
+  const headerBgClass = variant === "primary" ? "bg-primary" : "bg-transparent";
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <header className={`fixed top-0 left-0 right-0 z-50 ${headerBgClass}`}>
       <nav
         className="mx-auto sm:px-6"
         role="navigation"
@@ -21,20 +25,13 @@ export default function Header() {
       >
         <div className="flex justify-between items-center py-4 mx-10 md:mx-10">
           <section className="md:flex items-center space-x-8" aria-label="Logo e navegação">
-
             {/* Logo */}
             <Link
               href="/"
               className="flex items-center space-x-2 flex-shrink-0"
               aria-label="Ir para a página inicial"
             >
-              <Image
-                src={logo}
-                width={100}
-                height={100}
-                alt="Logo da Gedui"
-                priority
-              />
+              <Image src={logo} width={100} height={100} alt="Logo da Gedui" priority />
             </Link>
 
             {/* Navegação Desktop */}
@@ -51,12 +48,10 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-
           </section>
 
           {/* IDIOMAS + CTA DESKTOP */}
           <section className="flex items-center" aria-label="Troca de idioma e agendamento">
-
             <ul className="hidden md:flex items-center space-x-6" aria-label="Seleção de idioma">
               {[
                 { src: "/flags/br.svg", alt: "Português" },
@@ -64,15 +59,8 @@ export default function Header() {
                 { src: "/flags/gb.svg", alt: "Inglês" },
               ].map((flag) => (
                 <li key={flag.alt}>
-                  <figure
-                    className="w-10 h-10 rounded-full overflow-hidden relative"
-                  >
-                    <Image
-                      src={flag.src}
-                      alt={`Idioma: ${flag.alt}`}
-                      fill
-                      className="object-cover"
-                    />
+                  <figure className="w-10 h-10 rounded-full overflow-hidden relative">
+                    <Image src={flag.src} alt={`Idioma: ${flag.alt}`} fill className="object-cover" />
                   </figure>
                 </li>
               ))}
@@ -84,24 +72,21 @@ export default function Header() {
             >
               Agendar Demonstração
             </Link>
-
           </section>
 
           {/* BOTÃO MENU MOBILE */}
           <button
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Abrir ou fechar menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? (
-              // Ícone fechar
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              // Ícone hamburguer
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -113,7 +98,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <section
             id="mobile-menu"
-            className="flex flex-col md:hidden py-4 border-t text-center items-center"
+            className="flex flex-col md:hidden py-4 border-t border-white/15 text-center items-center bg-primary"
             aria-label="Menu móvel"
           >
             <ul role="menu" className="w-full">
@@ -121,7 +106,7 @@ export default function Header() {
                 <li key={item.name} className="w-full">
                   <Link
                     href={item.href}
-                    className="block py-3 text-gray-700 hover:text-sky-600 transition-colors"
+                    className="block py-3 text-white hover:text-sky-200 transition-colors"
                     role="menuitem"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -133,7 +118,7 @@ export default function Header() {
               <li className="w-full">
                 <Link
                   href="/agendar"
-                  className="block mt-4 border border-solid text-gray-700 px-6 py-3 rounded-3xl text-center font-medium w-90"
+                  className="block mt-4 border border-solid text-white px-6 py-3 rounded-3xl text-center font-medium w-90"
                   role="menuitem"
                   onClick={() => setMobileMenuOpen(false)}
                 >
