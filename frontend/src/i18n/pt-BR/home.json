@@ -55,5 +55,155 @@
         "iconHorizontal": "-right-14"
       }
     ]
+  },
+   "nossosValores": {
+    "heading": "Nossos Valores",
+    "aria": {
+      "prev": "Anterior",
+      "next": "Próximo",
+      "goToValue": "Ir para valor {n}"
+    },
+    "items": [
+      { "id": 1, "title": "Inovação", "icon": "/valores/inovacao.png" },
+      { "id": 2, "title": "Ética", "icon": "/valores/etica.png" },
+      { "id": 3, "title": "Conhecimento", "icon": "/valores/conhecimento.png" },
+      { "id": 4, "title": "Resultado", "icon": "/valores/resultado.png" },
+      {
+        "id": 5,
+        "title": "Responsabilidade social",
+        "icon": "/valores/responsabilidadesocial.png"
+      }
+    ]
+  },
+  "vantagensGestao": {
+    "heading": {
+      "line1": "Vantagens para",
+      "line2": "transformar e",
+      "highlight": "otimizar a sua gestão"
+    },
+    "lists": {
+      "blue": [
+        "Estrutura em nuvem",
+        "Segurança e confiabilidade",
+        "Maior retenção",
+        "Melhoria na comunicação",
+        "Acesso a recursos de alta qualidade",
+        "Indicadores de resultados"
+      ],
+      "green": [
+        "Sustentabilidade",
+        "Aprendizagem personalizada",
+        "Adaptação às tendências",
+        "Otimização de tempo e recursos",
+        "Aumento da produtividade",
+        "Inovação contínua"
+      ]
+    },
+    "cards": [
+      "White label",
+      "Gedui Box vídeos e arquivos",
+      "Multilíngue",
+      "Gamificação",
+      "Criação de múltiplas redes",
+      "Gestão de usuários",
+      "Agenda digital ativa",
+      "GEDUIVox"
+    ]
+  },
+  "depoimentos": {
+    "heading": {
+      "line1": "O que estão falando",
+      "line2": "sobre a gente"
+    },
+    "aria": {
+      "prev": "Slide anterior",
+      "next": "Próximo slide",
+      "goToSlide": "Ir para slide {n}"
+    },
+    "items": [
+      {
+        "id": 1,
+        "nome": "Rosemary Aparecida Ribeiro",
+        "titulo": "Auxiliar de Secretaria",
+        "formacao": ["Cursando Pedagogia"],
+        "imagem": "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
+        "texto": "A GEDUI é uma excelente plataforma para os alunos, proporcionando suporte para estudos e atividades. Durante a pandemia, tornou-se de utilidade prioritária para o acesso dos alunos e comunicação com os pais. A plataforma me auxilia a economizar tempo com os diários dos professores, boletins, atas e verificação dos trabalhos, contribuindo para uma gestão eficiente de tempo e recursos."
+      },
+      {
+        "id": 2,
+        "nome": "Soraia Véras",
+        "titulo": "Professora",
+        "formacao": [
+          "Licenciatura em Letras e Pedagogia",
+          "Pós-Graduação - Psicopedagogia"
+        ],
+        "imagem": "/depoimentos/Soraia_Veras.png",
+        "texto": "A Gedui é um facilitador incrível para meu trabalho como professora. Acesso fácil às ferramentas, diário disponível, eficácia na duplicação de conteúdos. Durante a pandemia, proporcionou aos alunos acesso total às atividades e aos pais, controle em tempo real das aulas. Agradeço à equipe Gedui pelo apoio constante e por facilitar nossa prática educacional."
+      },
+      {
+        "id": 3,
+        "nome": "Rev. Heitor Beranger Junior",
+        "titulo": "Docente em Letras",
+        "formacao": [
+          "Colégios Tableau - Sorocaba",
+          "Colégio Objetivo - Salto de Pirapora"
+        ],
+        "imagem": "/depoimentos/Heitor_Beranger.png",
+        "texto": "Após anos buscando a solução ideal em softwares de gestão escolar, encontrei na GEDUI um sistema surpreendente. Sua desenvoltura, praticidade e alcance são notáveis. A plataforma é leve, acessível em rede, e responde eficientemente às necessidades diárias do profissional da educação. Encontrar essa solução foi um marco para otimizar minha prática educacional e gestão escolar de forma eficaz."
+      },
+      {
+        "id": 4,
+        "nome": "Claudio Rodrigues de Proença",
+        "titulo": "Professor de Geografia",
+        "formacao": [
+          "Colégio Tableau Sorocaba",
+          "Seminário João Paulo II",
+          "Curso Direto, Universidade Aberta do Brasil"
+        ],
+        "imagem": "/depoimentos/Claudio-Rodrigues-de-Proenca.png",
+        "texto": "O ecossistema tem ferramentas incríveis, proporcionando uma conexão direta e eficiente entre alunos, professores, famílias e a escola. Com fácil manuseio, otimiza tarefas diárias, como o lançamento de notas, de forma clara e confiável. A segurança e tranquilidade que oferece fazem toda a diferença, tornando-o sempre a minha escolha pelos benefícios proporcionados."
+      },
+      {
+        "id": 5,
+        "nome": "Silvia Graciete Oliveira De Almeida",
+        "titulo": "Secretária",
+        "formacao": ["Objetivo Salto de Pirapora"],
+        "imagem": "/depoimentos/Silvia_Objetivo.png",
+        "texto": "A interface da Gedui é muito fácil e intuitiva de ser utilizada, ajudando muito na secretaria tornando a parte de gestão muito mais fácil e objetiva."
+      }
+    ]
+  },
+  "blogPreview": {
+    "heading": "Últimas do blog",
+    "loadingText": "Carregando...",
+    "aria": {
+      "prevPost": "Post anterior",
+      "nextPost": "Próximo post"
+    },
+    "cta": {
+      "title": "Comece a transformação para o",
+      "highlight": "futuro do aprendizado.",
+      "button": "Agendar Demonstração"
+    },
+    "mockPosts": [
+      {
+        "title": "Educação corporativa e tecnologia: tendências e desafios para 2025",
+        "slug": "educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "url": "/pt-br/blog/educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post26.webp"
+      },
+      {
+        "title": "Impacto social da educação tecnológica: inclusão e acessibilidade para todos",
+        "slug": "impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "url": "/pt-br/blog/impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "img_url": "https://gedui.blob.core.windows.net/geral/25_blog_gedui.jpg"
+      },
+      {
+        "title": "Tecnologia na educação: a transformação dos cursos de pedagogia e o papel da formação continuada",
+        "slug": "tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "url": "/pt-br/blog/tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post_24.jpg"
+      }
+    ]
   }
 }

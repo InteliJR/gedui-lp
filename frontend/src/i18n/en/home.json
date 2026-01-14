@@ -55,5 +55,155 @@
         "iconHorizontal": "-right-14"
       }
     ]
+  },
+  "nossosValores": {
+    "heading": "Our Values",
+    "aria": {
+      "prev": "Previous",
+      "next": "Next",
+      "goToValue": "Go to value {n}"
+    },
+    "items": [
+      { "id": 1, "title": "Innovation", "icon": "/valores/inovacao.png" },
+      { "id": 2, "title": "Ethics", "icon": "/valores/etica.png" },
+      { "id": 3, "title": "Knowledge", "icon": "/valores/conhecimento.png" },
+      { "id": 4, "title": "Results", "icon": "/valores/resultado.png" },
+      {
+        "id": 5,
+        "title": "Social responsibility",
+        "icon": "/valores/responsabilidadesocial.png"
+      }
+    ]
+  },
+  "vantagensGestao": {
+    "heading": {
+      "line1": "Benefits to",
+      "line2": "transform and",
+      "highlight": "optimize your management"
+    },
+    "lists": {
+      "blue": [
+        "Cloud-based structure",
+        "Security and reliability",
+        "Higher retention",
+        "Improved communication",
+        "Access to high-quality resources",
+        "Performance indicators"
+      ],
+      "green": [
+        "Sustainability",
+        "Personalized learning",
+        "Adaptation to trends",
+        "Time and resource optimization",
+        "Increased productivity",
+        "Continuous innovation"
+      ]
+    },
+    "cards": [
+      "White label",
+      "Gedui Box videos and files",
+      "Multilingual",
+      "Gamification",
+      "Multiple networks creation",
+      "User management",
+      "Active digital agenda",
+      "GEDUIVox"
+    ]
+  },
+  "depoimentos": {
+    "heading": {
+      "line1": "What people are saying",
+      "line2": "about us"
+    },
+    "aria": {
+      "prev": "Previous slide",
+      "next": "Next slide",
+      "goToSlide": "Go to slide {n}"
+    },
+    "items": [
+      {
+        "id": 1,
+        "nome": "Rosemary Aparecida Ribeiro",
+        "titulo": "Administrative Assistant",
+        "formacao": ["Currently studying Pedagogy"],
+        "imagem": "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
+        "texto": "GEDUI is an excellent platform for students, providing strong support for studies and activities. During the pandemic, it became a priority tool for student access and communication with parents. The platform helps me save time on teachers’ records, report cards, meeting minutes, and assignment verification, contributing to efficient time and resource management."
+      },
+      {
+        "id": 2,
+        "nome": "Soraia Véras",
+        "titulo": "Teacher",
+        "formacao": [
+          "Bachelor’s Degree in Languages and Pedagogy",
+          "Postgraduate Degree in Psychopedagogy"
+        ],
+        "imagem": "/depoimentos/Soraia_Veras.png",
+        "texto": "Gedui is an incredible facilitator for my work as a teacher. Easy access to tools, an available digital diary, and efficiency in duplicating content. During the pandemic, it provided students with full access to activities and allowed parents to monitor classes in real time. I am grateful to the Gedui team for their constant support and for making our educational practice easier."
+      },
+      {
+        "id": 3,
+        "nome": "Rev. Heitor Beranger Junior",
+        "titulo": "Literature Lecturer",
+        "formacao": [
+          "Tableau Schools – Sorocaba",
+          "Objetivo School – Salto de Pirapora"
+        ],
+        "imagem": "/depoimentos/Heitor_Beranger.png",
+        "texto": "After years searching for the ideal school management software, I found GEDUI to be a surprising system. Its performance, practicality, and reach are remarkable. The platform is lightweight, network-accessible, and efficiently meets the daily needs of education professionals. Finding this solution was a milestone in optimizing my educational practice and school management."
+      },
+      {
+        "id": 4,
+        "nome": "Claudio Rodrigues de Proença",
+        "titulo": "Geography Teacher",
+        "formacao": [
+          "Tableau School – Sorocaba",
+          "João Paulo II Seminary",
+          "Curso Direto, Open University of Brazil"
+        ],
+        "imagem": "/depoimentos/Claudio-Rodrigues-de-Proenca.png",
+        "texto": "The ecosystem offers incredible tools, providing a direct and efficient connection between students, teachers, families, and the school. With easy handling, it optimizes daily tasks such as grading in a clear and reliable way. The security and peace of mind it offers make all the difference, making it my preferred choice due to the benefits provided."
+      },
+      {
+        "id": 5,
+        "nome": "Silvia Graciete Oliveira De Almeida",
+        "titulo": "School Secretary",
+        "formacao": ["Objetivo School – Salto de Pirapora"],
+        "imagem": "/depoimentos/Silvia_Objetivo.png",
+        "texto": "Gedui’s interface is very easy and intuitive to use, greatly supporting administrative work and making management tasks much simpler and more objective."
+      }
+    ]
+  },
+  "blogPreview": {
+    "heading": "Latest from the blog",
+    "loadingText": "Loading...",
+    "aria": {
+      "prevPost": "Previous post",
+      "nextPost": "Next post"
+    },
+    "cta": {
+      "title": "Start your transformation toward the",
+      "highlight": "future of learning.",
+      "button": "Schedule a Demo"
+    },
+    "mockPosts": [
+      {
+        "title": "Corporate education and technology: trends and challenges for 2025",
+        "slug": "educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "url": "/en/blog/educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post26.webp"
+      },
+      {
+        "title": "The social impact of educational technology: inclusion and accessibility for everyone",
+        "slug": "impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "url": "/en/blog/impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "img_url": "https://gedui.blob.core.windows.net/geral/25_blog_gedui.jpg"
+      },
+      {
+        "title": "Technology in education: how pedagogy programs are changing and the role of continuous training",
+        "slug": "tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "url": "/en/blog/tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post_24.jpg"
+      }
+    ]
   }
 }

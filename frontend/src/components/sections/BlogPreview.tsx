@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import CardBlog from "../common/CardBlog";
@@ -11,28 +13,23 @@ interface BlogPost {
   date?: string;
 }
 
-const mockUltimasBlog: BlogPost[] = [
-  {
-    title: "Educacao corporativa e tecnologia tendencias e desafios para 2025",
-    slug: "educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
-    url: "/pt-br/blog/educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
-    img_url: "https://gedui.blob.core.windows.net/geral/post26.webp",
-  },
-  {
-    title: "Impacto social da educacao tecnologica inclusao e acessibilidade para todos",
-    slug: "impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
-    url: "/pt-br/blog/impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
-    img_url: "https://gedui.blob.core.windows.net/geral/25_blog_gedui.jpg",
-  },
-  {
-    title: "Tecnologia na educacao a transformacao dos cursos de pedagogia e o papel da formacao continuada",
-    slug: "tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
-    url: "/pt-br/blog/tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
-    img_url: "https://gedui.blob.core.windows.net/geral/post_24.jpg",
-  },
-];
+export type BlogPreviewDict = {
+  heading: string;
+  loadingText: string;
+  aria: {
+    prevPost: string;
+    nextPost: string;
+  };
+  cta: {
+    title: string;
+    highlight: string;
+    button: string;
+  };
+  // mocks por idioma (pra não ficar travado em pt-br)
+  mockPosts: BlogPost[];
+};
 
-export default function BlogPreview() {
+export default function BlogPreview({ t }: { t: BlogPreviewDict }) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -57,25 +54,23 @@ export default function BlogPreview() {
         setPosts(postsOrdenados);
       } catch {
         console.warn("API indisponível, usando mock local.");
-        setPosts(mockUltimasBlog);
+        setPosts(t.mockPosts);
       } finally {
         setLoading(false);
       }
     }
 
     fetchPosts();
-  }, []);
+  }, [t.mockPosts]);
 
   function handlePrev() {
-    setCurrentIndex((prev) =>
-      prev === 0 ? posts.length - 1 : prev - 1
-    );
+    if (!posts.length) return;
+    setCurrentIndex((prev) => (prev === 0 ? posts.length - 1 : prev - 1));
   }
 
   function handleNext() {
-    setCurrentIndex((prev) =>
-      prev === posts.length - 1 ? 0 : prev + 1
-    );
+    if (!posts.length) return;
+    setCurrentIndex((prev) => (prev === posts.length - 1 ? 0 : prev + 1));
   }
 
   return (
@@ -84,14 +79,15 @@ export default function BlogPreview() {
       aria-labelledby="blog-heading"
       role="region"
     >
-      <div className="
-        min-h-screen
-        p-10
-        flex flex-col
-        items-center
-        justify-between
-      ">
-
+      <div
+        className="
+          min-h-screen
+          p-10
+          flex flex-col
+          items-center
+          justify-between
+        "
+      >
         <h2
           id="blog-heading"
           className="
@@ -101,12 +97,13 @@ export default function BlogPreview() {
             mb-16 md:mb-20 lg:mb-0
           "
         >
-          Últimas do blog
+          {t.heading}
         </h2>
 
-
         {loading ? (
-          <p className="text-white mt-10">Carregando...</p>
+          <p className="text-white mt-10">{t.loadingText}</p>
+        ) : posts.length === 0 ? (
+          <p className="text-white mt-10">{t.loadingText}</p>
         ) : (
           <>
             {/* =====================
@@ -116,7 +113,8 @@ export default function BlogPreview() {
               {/* Botão esquerda */}
               <button
                 onClick={handlePrev}
-                aria-label="Post anterior"
+                aria-label={t.aria.prevPost}
+                type="button"
                 className="
                   absolute left-0 z-10
                   w-10 h-10
@@ -143,7 +141,8 @@ export default function BlogPreview() {
               {/* Botão direita */}
               <button
                 onClick={handleNext}
-                aria-label="Próximo post"
+                aria-label={t.aria.nextPost}
+                type="button"
                 className="
                   absolute right-0 z-10
                   w-10 h-10
@@ -178,42 +177,41 @@ export default function BlogPreview() {
         {/* CTA */}
         <div
           className="
-          mx-auto
-          mt-20 
-          w-full
-          max-w-[90%] sm:max-w-lg lg:max-w-4xl
-          px-6 pt-8 sm:px-10 py-10
-          rounded-2xl
-          border border-[rgba(162,162,162,0.5)]
-          bg-[rgba(162,162,162,0.10)]
-          shadow-[0_4px_10px_rgba(0,0,0,0.15)]
-          backdrop-blur-sm
-          flex flex-col items-center gap-4
-        "
+            mx-auto
+            mt-20 
+            w-full
+            max-w-[90%] sm:max-w-lg lg:max-w-4xl
+            px-6 pt-8 sm:px-10 py-10
+            rounded-2xl
+            border border-[rgba(162,162,162,0.5)]
+            bg-[rgba(162,162,162,0.10)]
+            shadow-[0_4px_10px_rgba(0,0,0,0.15)]
+            backdrop-blur-sm
+            flex flex-col items-center gap-4
+          "
         >
           <h2 className="text-base sm:text-lg lg:text-3xl font-bold text-center text-white leading-snug">
-            Comece a transformação para o{" "}
-            <span className="text-secondary">futuro do aprendizado.</span>
+            {t.cta.title}{" "}
+            <span className="text-secondary">{t.cta.highlight}</span>
           </h2>
-
 
           <Link
             href="/agendar"
             className="
-            px-8 py-3
-            rounded-full
-            bg-gradient-to-r from-white to-[#0E55A5]/78
-            text-primary
-            font-semibold
-            text-sm sm:text-base
-            hover:bg-white
-            transition
-            -mb-15
-            shadow-[0_4px_30px_2px_#0E55A5]
-          "
+              px-8 py-3
+              rounded-full
+              bg-gradient-to-r from-white to-[#0E55A5]/78
+              text-primary
+              font-semibold
+              text-sm sm:text-base
+              hover:bg-white
+              transition
+              -mb-15
+              shadow-[0_4px_30px_2px_#0E55A5]
+            "
             role="menuitem"
           >
-            Agendar Demonstração
+            {t.cta.button}
           </Link>
         </div>
       </div>

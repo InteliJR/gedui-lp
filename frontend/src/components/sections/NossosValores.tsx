@@ -2,19 +2,22 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const valores = [
-  { id: 1, titulo: "Inovação", icone: "/valores/inovacao.png" },
-  { id: 2, titulo: "Ética", icone: "/valores/etica.png" },
-  { id: 3, titulo: "Conhecimento", icone: "/valores/conhecimento.png" },
-  { id: 4, titulo: "Resultado", icone: "/valores/resultado.png" },
-  {
-    id: 5,
-    titulo: "Responsabilidade social",
-    icone: "/valores/responsabilidadesocial.png",
-  },
-];
+export type NossosValoresDict = {
+  heading: string;
+  aria: {
+    prev: string;
+    next: string;
+    goToValue: string;
+  };
+  items: Array<{
+    id: number;
+    title: string;
+    icon: string;
+  }>;
+};
 
-export default function NossosValores() {
+export default function NossosValores({ t }: { t: NossosValoresDict }) {
+  const valores = t.items;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Carousel infinito
@@ -28,7 +31,10 @@ export default function NossosValores() {
 
   // Função para obter os 3 cards visíveis
   const getVisibleCards = () => {
-    const cards = [];
+    const cards: Array<
+      (typeof valores)[number] & { position: number }
+    > = [];
+
     for (let i = -1; i <= 1; i++) {
       const index = (currentIndex + i + valores.length) % valores.length;
       cards.push({ ...valores[index], position: i });
@@ -40,27 +46,22 @@ export default function NossosValores() {
     <section className="relative w-full bg-primary py-20 lg:py-28 overflow-hidden min-h-screen flex items-center justify-center">
       {/* Grafismo de fundo */}
       <div className="absolute inset-0 opacity-100">
-        <Image
-          src="/valores/grafismo.svg"
-          alt=""
-          fill
-          className="object-cover"
-        />
+        <Image src="/valores/grafismo.svg" alt="" fill className="object-cover" />
       </div>
 
       <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24">
         {/* Título */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#95c743] mb-12 lg:mb-16 text-center">
-          Nossos Valores
+          {t.heading}
         </h2>
 
         <div className="relative flex items-center justify-center w-full">
           {/* Botão anterior */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 z-20 flex items-center justify-center p-4 
-             text-white cursor-pointer hover:opacity-80 transition"
-            aria-label="Anterior"
+            className="absolute left-0 z-20 flex items-center justify-center p-4 text-white cursor-pointer hover:opacity-80 transition"
+            aria-label={t.aria.prev}
+            type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -83,11 +84,9 @@ export default function NossosValores() {
               return (
                 <div
                   key={`${valor.id}-${idx}`}
-                  className={`transition-all duration-500 ${
-                    isCenter
+                  className={`transition-all duration-500 ${isCenter
                       ? "w-[340px] scale-100 opacity-100"
                       : "w-[260px] scale-90 opacity-50"
-
                     }`}
                 >
                   <div
@@ -99,13 +98,13 @@ export default function NossosValores() {
                       className={`font-medium text-white text-center mb-6 transition-all duration-500 ${isCenter ? "text-xl" : "text-lg"
                         }`}
                     >
-                      {valor.titulo}
+                      {valor.title}
                     </h3>
 
                     {/* Imagem abaixo */}
                     <Image
-                      src={valor.icone}
-                      alt={valor.titulo}
+                      src={valor.icon}
+                      alt={valor.title}
                       width={isCenter ? 200 : 170}
                       height={isCenter ? 200 : 170}
                       className="transition-all duration-500"
@@ -119,9 +118,9 @@ export default function NossosValores() {
           {/* Botão próximo */}
           <button
             onClick={scrollNext}
-            className="absolute right-0 z-20 flex items-center justify-center p-4
-             text-white cursor-pointer hover:opacity-80 transition"
-            aria-label="Próximo"
+            className="absolute right-0 z-20 flex items-center justify-center p-4 text-white cursor-pointer hover:opacity-80 transition"
+            aria-label={t.aria.next}
+            type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +144,8 @@ export default function NossosValores() {
               onClick={() => setCurrentIndex(index)}
               className={`h-2 rounded-full transition-all ${index === currentIndex ? "bg-[#95c743] w-8" : "bg-white/30 w-2"
                 }`}
-              aria-label={`Ir para valor ${index + 1}`}
+              aria-label={t.aria.goToValue.replace("{n}", String(index + 1))}
+              type="button"
             />
           ))}
         </div>

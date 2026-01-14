@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 
-
-// TIPOS E DADOS
-interface Depoimento {
+// TIPOS
+export interface Depoimento {
   id: number;
   nome: string;
   titulo: string;
@@ -14,63 +13,18 @@ interface Depoimento {
   texto: string;
 }
 
-const DEPOIMENTOS: Depoimento[] = [
-  {
-    id: 1,
-    nome: "Rosemary Aparecida Ribeiro",
-    titulo: "Auxiliar de Secretaria",
-    formacao: ["Cursando Pedagogia"],
-    imagem: "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
-    texto:
-      "A GEDUI é uma excelente plataforma para os alunos, proporcionando suporte para estudos e atividades. Durante a pandemia, tornou-se de utilidade prioritária para o acesso dos alunos e comunicação com os pais. A plataforma me auxilia a economizar tempo com os diários dos professores, boletins, atas e verificação dos trabalhos, contribuindo para uma gestão eficiente de tempo e recursos.",
-  },
-  {
-    id: 2,
-    nome: "Soraia Véras",
-    titulo: "Professora",
-    formacao: [
-      "Licenciatura em Letras e Pedagogia",
-      "Pós-Graduação - Psicopedagogia",
-    ],
-    imagem: "/depoimentos/Soraia_Veras.png",
-    texto:
-      "A Gedui é um facilitador incrível para meu trabalho como professora. Acesso fácil às ferramentas, diário disponível, eficácia na duplicação de conteúdos. Durante a pandemia, proporcionou aos alunos acesso total às atividades e aos pais, controle em tempo real das aulas. Agradeço à equipe Gedui pelo apoio constante e por facilitar nossa prática educacional.",
-  },
-  {
-    id: 3,
-    nome: "Rev. Heitor Beranger Junior",
-    titulo: "Docente em Letras",
-    formacao: [
-      "Colégios Tableau - Sorocaba",
-      "Colégio Objetivo - Salto de Pirapora",
-    ],
-    imagem: "/depoimentos/Heitor_Beranger.png",
-    texto:
-      "Após anos buscando a solução ideal em softwares de gestão escolar, encontrei na GEDUI um sistema surpreendente. Sua desenvoltura, praticidade e alcance são notáveis. A plataforma é leve, acessível em rede, e responde eficientemente às necessidades diárias do profissional da educação. Encontrar essa solução foi um marco para otimizar minha prática educacional e gestão escolar de forma eficaz.",
-  },
-  {
-    id: 4,
-    nome: "Claudio Rodrigues de Proença",
-    titulo: "Professor de Geografia",
-    formacao: [
-      "Colégio Tableau Sorocaba",
-      "Seminário João Paulo II",
-      "Curso Direto, Universidade Aberta do Brasil",
-    ],
-    imagem: "/depoimentos/Claudio-Rodrigues-de-Proenca.png",
-    texto:
-      "O ecossistema tem ferramentas incríveis, proporcionando uma conexão direta e eficiente entre alunos, professores, famílias e a escola. Com fácil manuseio, otimiza tarefas diárias, como o lançamento de notas, de forma clara e confiável. A segurança e tranquilidade que oferece fazem toda a diferença, tornando-o sempre a minha escolha pelos benefícios proporcionados.",
-  },
-  {
-    id: 5,
-    nome: "Silvia Graciete Oliveira De Almeida",
-    titulo: "Secretária",
-    formacao: ["Objetivo Salto de Pirapora"],
-    imagem: "/depoimentos/Silvia_Objetivo.png",
-    texto:
-      "A interface da Gedui é muito fácil e intuitiva de ser utilizada, ajudando muito na secretaria tornando a parte de gestão muito mais fácil e objetiva.",
-  },
-];
+export type DepoimentosDict = {
+  heading: {
+    line1: string;
+    line2: string;
+  };
+  aria: {
+    prev: string;
+    next: string;
+    goToSlide: string;
+  };
+  items: Depoimento[];
+};
 
 // CONSTANTES
 const CARDS_PER_VIEW = {
@@ -139,14 +93,17 @@ const DepoimentoCard = ({ depoimento }: DepoimentoCardProps) => {
             fill
           />
         </div>
+
         <h3 className="text-white text-sm sm:text-base font-bold text-center sm:text-left mb-2 leading-tight">
           {depoimento.nome}
         </h3>
+
         <ul className="text-white text-xs sm:text-sm space-y-1 list-none text-center sm:text-left">
           <li className="flex items-start justify-center sm:justify-start">
             <span className="text-gray-200 mr-1.5 flex-shrink-0 mt-0.5">•</span>
             <span>{depoimento.titulo}</span>
           </li>
+
           {depoimento.formacao.map((item, index) => (
             <li
               key={index}
@@ -172,7 +129,9 @@ const DepoimentoCard = ({ depoimento }: DepoimentoCardProps) => {
 };
 
 // COMPONENTE PRINCIPAL
-export default function DepoimentosCarrossel() {
+export default function DepoimentosCarrossel({ t }: { t: DepoimentosDict }) {
+  const DEPOIMENTOS = t.items;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(CARDS_PER_VIEW.desktop);
 
@@ -236,15 +195,14 @@ export default function DepoimentosCarrossel() {
         />
       </div>
 
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl relative z-10">
         {/* Título */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-2 text-white">
-            O que estão falando
+            {t.heading.line1}
           </h2>
           <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-lime-400">
-            sobre a gente
+            {t.heading.line2}
           </p>
         </div>
 
@@ -255,8 +213,9 @@ export default function DepoimentosCarrossel() {
             <div
               className="flex gap-6 transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${validatedIndex * (cardsPerView === 1 ? 100 : 50 + 3)
-                  }%)`,
+                transform: `translateX(-${
+                  validatedIndex * (cardsPerView === 1 ? 100 : 50 + 3)
+                }%)`,
               }}
             >
               {DEPOIMENTOS.map((depoimento) => (
@@ -277,11 +236,13 @@ export default function DepoimentosCarrossel() {
           <button
             onClick={prevSlide}
             disabled={isFirstSlide}
-            className={`absolute top-1/2 -left-12 lg:-left-16 xl:-left-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${isFirstSlide
+            className={`absolute top-1/2 -left-12 lg:-left-16 xl:-left-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${
+              isFirstSlide
                 ? "opacity-30 cursor-not-allowed"
                 : "opacity-100 hover:opacity-80 cursor-pointer hover:bg-white/10"
-              }`}
-            aria-label="Slide anterior"
+            }`}
+            aria-label={t.aria.prev}
+            type="button"
           >
             <ArrowLeft className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
           </button>
@@ -290,11 +251,13 @@ export default function DepoimentosCarrossel() {
           <button
             onClick={nextSlide}
             disabled={isLastSlide}
-            className={`absolute top-1/2 -right-12 lg:-right-16 xl:-right-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${isLastSlide
+            className={`absolute top-1/2 -right-12 lg:-right-16 xl:-right-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${
+              isLastSlide
                 ? "opacity-30 cursor-not-allowed"
                 : "opacity-100 hover:opacity-80 cursor-pointer hover:bg-white/10"
-              }`}
-            aria-label="Próximo slide"
+            }`}
+            aria-label={t.aria.next}
+            type="button"
           >
             <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
           </button>
@@ -306,12 +269,14 @@ export default function DepoimentosCarrossel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all duration-300 cursor-pointer ${validatedIndex === index
+              className={`rounded-full transition-all duration-300 cursor-pointer ${
+                validatedIndex === index
                   ? "bg-white w-3 h-3 sm:w-3 sm:h-3 scale-125"
                   : "bg-white/40 w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 hover:bg-white/60"
-                }`}
-              aria-label={`Ir para slide ${index + 1}`}
+              }`}
+              aria-label={t.aria.goToSlide.replace("{n}", String(index + 1))}
               aria-current={validatedIndex === index ? "true" : "false"}
+              type="button"
             />
           ))}
         </div>

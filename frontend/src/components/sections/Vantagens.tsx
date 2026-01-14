@@ -5,25 +5,21 @@ import Image from "next/image";
 import { TrilhaSVG } from "@/components/common/TrilhaSVG";
 import { useIntersection } from "@/hooks/useIntersection";
 
-
-
-
 /* =======================
-   DADOS
+   TIPOS (i18n)
 ======================= */
-const cardTitles = [
-  //linha inferior
-  "White label",
-  "Gedui Box vpideos e arquivos",
-  "Multilingue",
-  "Gamificação",
-
-  //linha superior
-  "Criação de múltiplas reders",
-  "Gestão de usuários",
-  "Agenda digital ativa",
-  "GEDUIVox",
-];
+export type VantagensGestaoDict = {
+  heading: {
+    line1: string;
+    line2: string;
+    highlight: string;
+  };
+  lists: {
+    blue: string[];  // lista azul
+    green: string[]; // lista verde
+  };
+  cards: string[]; // 8 cards (ordem importa)
+};
 
 /* =======================
    CARD
@@ -56,7 +52,9 @@ const Card = ({
 /* =======================
    COMPONENTE PRINCIPAL
 ======================= */
-export default function VantagensGestao() {
+export default function VantagensGestao({ t }: { t: VantagensGestaoDict }) {
+  const cardTitles = t.cards;
+
   const cardPositions = [
     // Linha inferior
     { title: cardTitles[0], x: "left-[10%]", y: "top-[80%]" },
@@ -96,9 +94,10 @@ export default function VantagensGestao() {
         <div className="w-full lg:w-[45%] flex justify-center items-center order-1 lg:order-2">
           <div className="bg-white/10 backdrop-blur-sm border border-white/10 p-6 md:p-10 rounded-xl max-w-md text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight">
-              Vantagens para <br /> transformar e <br />
+              {t.heading.line1} <br />
+              {t.heading.line2} <br />
               <span className="text-[#95c743] font-bold">
-                otimizar a sua gestão
+                {t.heading.highlight}
               </span>
             </h2>
           </div>
@@ -108,23 +107,17 @@ export default function VantagensGestao() {
         <div className="flex flex-col gap-4 md:gap-6 w-full lg:w-[45%] order-2 lg:order-1">
           <div className="bg-[#042E60]/90 p-4 md:p-6 rounded-xl">
             <ul className="list-disc list-inside space-y-2 text-white">
-              <li>Estrutura em nuvem</li>
-              <li>Segurança e confiabilidade</li>
-              <li>Maior retenção</li>
-              <li>Melhoria na comunicação</li>
-              <li>Acesso a recursos de alta qualidade</li>
-              <li>Indicadores de resultados</li>
+              {t.lists.blue.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </div>
 
           <div className="bg-[#9FE23A]/50 p-4 md:p-6 rounded-xl">
             <ul className="list-disc list-inside space-y-2 text-white">
-              <li>Sustentabilidade</li>
-              <li>Aprendizagem personalizada</li>
-              <li>Adaptação às tendências</li>
-              <li>Otimização de tempo e recursos</li>
-              <li>Aumento da produtividade</li>
-              <li>Inovação contínua</li>
+              {t.lists.green.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -133,7 +126,7 @@ export default function VantagensGestao() {
       {/* =======================
         GRID — MOBILE & TABLET
       ======================= */}
-      < div className="relative z-10 w-full mt-16 lg:hidden flex justify-center">
+      <div className="relative z-10 w-full mt-16 lg:hidden flex justify-center">
         <div
           className="
             grid
@@ -151,11 +144,9 @@ export default function VantagensGestao() {
         </div>
       </div>
 
-
       {/* =======================
          TRILHA — DESKTOP
       ======================= */}
-      {/* TRILHA — DESKTOP */}
       <div className="relative max-w-5xl mx-auto mt-24 hidden lg:block">
         <TrilhaSVG animate={trilhaVisivel} />
 
@@ -165,16 +156,15 @@ export default function VantagensGestao() {
               key={index}
               titulo={pos.title}
               className={`
-          absolute
-          transform -translate-x-1/2 -translate-y-1/2
-          ${pos.x} ${pos.y}
-          w-[160px] h-[160px]
-        `}
+                absolute
+                transform -translate-x-1/2 -translate-y-1/2
+                ${pos.x} ${pos.y}
+                w-[160px] h-[160px]
+              `}
             />
           ))}
         </div>
       </div>
-
-    </section >
+    </section>
   );
 }
