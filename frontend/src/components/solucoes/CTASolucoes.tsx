@@ -1,4 +1,16 @@
-export default function CTASolucoes() {
+export type CTASolucoesDict = {
+    heading: {
+        text: string;
+        highlight: string;
+    };
+    description: string;
+    button: {
+        label: string;
+        ariaLabel: string;
+    };
+};
+
+export default function CTASolucoes({ t }: { t: CTASolucoesDict }) {
     return (
         <section
             className="
@@ -26,23 +38,19 @@ export default function CTASolucoes() {
             {/* Conteúdo */}
             <div className="relative z-10 mx-auto w-full px-4 sm:px-6 lg:px-8 lg:mx-20">
                 <div className="space-y-8 flex flex-col w-full">
-
                     <div className="max-w-2xl lg:max-w-3xl">
                         <h2
                             id="cta-solucoes-heading"
                             className="font-semibold text-3xl md:text-5xl leading-tight text-white"
                         >
-                            Com inovação e conhecimento{" "}
-                            <span className="text-secondary">
-                                impulsionamos o aprendizado dos indivíduos
-                            </span>
+                            {t.heading.text}{" "}
+                            <span className="text-secondary">{t.heading.highlight}</span>
                         </h2>
                     </div>
 
                     <div className="flex w-full justify-end">
                         <p className="text-md md:text-xl text-white/90 max-w-xl lg:max-w-3xl text-end italic">
-                            Um ecossistema educacional, onde a gestão se consolida à informação,
-                            capacitação e certificação para fortalecer o desenvolvimento do indivíduo.
+                            {t.description}
                         </p>
                     </div>
 
@@ -61,14 +69,14 @@ export default function CTASolucoes() {
                 focus:outline-none focus:ring-2 focus:ring-secondary/60
                 shadow-lg shadow-white/35
               "
+                            type="button"
+                            aria-label={t.button.ariaLabel}
                         >
-                            Agendar demonstração
+                            {t.button.label}
                         </button>
                     </div>
-
                 </div>
             </div>
-
         </section>
     );
 }

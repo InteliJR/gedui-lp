@@ -1,0 +1,118 @@
+{
+    "hero": {
+        "aria": {
+            "backgroundAlt": "Personas estudiando"
+        },
+        "title": {
+            "line1": "Soluciones que transforman",
+            "line2": "el aprendizaje en tu",
+            "line3": "institución o empresa."
+        },
+        "description": "GEDUI es la plataforma que ayuda a transformar los métodos tradicionales, incorporando innovación y haciendo el aprendizaje más dinámico, eficiente e inclusivo."
+    },
+    "cta": {
+        "heading": {
+            "text": "Con innovación y conocimiento,",
+            "highlight": "impulsamos el aprendizaje de las personas"
+        },
+        "description": "Un ecosistema educativo donde la gestión se consolida con información, capacitación y certificación para fortalecer el desarrollo individual.",
+        "button": {
+            "label": "Agendar demostración",
+            "ariaLabel": "Agendar una demostración"
+        }
+    },
+    "educacaoAcademica": {
+        "aria": {
+            "imageAlt": "Persona escribiendo en un portátil con GEDUI"
+        },
+        "heading": {
+            "line1": "Educación Académica",
+            "highlight": "digital con Gedui Edu"
+        },
+        "description": "GEDUI impulsa la educación digital de tu institución con herramientas inteligentes que fortalecen el proceso de enseñanza."
+    },
+    "beneficiosEdu": {
+        "heading": "Beneficios con Gedui Edu",
+        "description": "Explora los beneficios que pueden transformar tu institución educativa, ofreciendo una experiencia innovadora de intercambio de aprendizaje para estudiantes, docentes y gestores. Conoce algunos de estos beneficios. Para más detalles, agenda una demostración con nuestros especialistas.",
+        "aria": {
+            "logoAlt": "Logo de Gedui"
+        },
+        "benefits": [
+            "Capacitaciones y certificaciones",
+            "Potencia los resultados de tu institución",
+            "Seguridad y confiabilidad",
+            "Seguimiento individual",
+            "Gestión de usuarios y grupos",
+            "Educación participativa",
+            "Potencia y orienta las experiencias y los resultados",
+            "Apoyo en el aprendizaje de tus estudiantes",
+            "Reducción de brechas de aprendizaje",
+            "Análisis de la curva de aprendizaje"
+        ],
+        "trilha": {
+            "cards": [
+                "Informes",
+                "Gestión de actividades y evaluaciones",
+                "Gestión de clases personalizadas",
+                "Horario de clases",
+                "Gestión de calificaciones",
+                "Recordatorios y alertas",
+                "Banco de preguntas",
+                "Diario de clase digital"
+            ],
+            "cta": {
+                "title": "¿Buscas la solución perfecta para ampliar el conocimiento en tu empresa?",
+                "subtitle": "Habla con nuestros especialistas.",
+                "button": "Agendar demostración",
+                "buttonAriaLabel": "Agendar una demonstración"
+            }
+        }
+    },
+    "educacaoCorporativa": {
+        "aria": {
+            "phoneAlt": "Teléfono móvil con el logo de GEDUI"
+        },
+        "heading": {
+            "line1": "Educación Corporativa",
+            "highlight": "digital con Gedui Corp"
+        },
+        "description": "GEDUI ayuda a mejorar el aprendizaje en todas las áreas de tu empresa."
+    },
+    "beneficiosCorp": {
+        "heading": "Beneficios con Gedui Corp",
+        "description": "Conoce los beneficios de las soluciones dinámicas, eficientes e inclusivas de nuestro ecosistema para el aprendizaje de nuevas habilidades y conocimientos. Potencian los resultados y optimizan tiempo y recursos para tu empresa. Agenda una demostración con nuestros especialistas para más detalles.",
+        "aria": {
+            "logoAlt": "Logo de Gedui"
+        },
+        "benefits": [
+            "Capacitaciones y certificaciones",
+            "Estructura en la nube",
+            "Seguimiento individual",
+            "Campañas de marketing e incentivos",
+            "Gestión de usuarios y grupos",
+            "Ahorro de tiempo y recursos para participar en capacitaciones",
+            "Potencia y orienta las experiencias y los resultados",
+            "Mayor satisfacción, motivación y desempeño",
+            "Análisis del compromiso en el aprendizaje",
+            "Entorno integrado: todo en un solo acceso"
+        ],
+        "trilha": {
+            "cards": [
+                "Gestión de soporte al usuario",
+                "Feed de noticias inteligente",
+                "Muro adaptativo interactivo",
+                "Interacción digital",
+                "Certificación",
+                "Administrador de red",
+                "Administrador de unidades",
+                "Creación de múltiples organizaciones"
+            ],
+            "cta": {
+                "title": "¿Buscas la solución perfecta para ampliar el conocimiento en tu empresa?",
+                "subtitle": "Habla con nuestros especialistas.",
+                "button": "Agendar demostración",
+                "buttonAriaLabel": "Agendar una demostración"
+            }
+        }
+    }
+}
