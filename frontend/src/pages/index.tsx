@@ -4,13 +4,13 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
 
-import Hero from "@/components/sections/Hero";
-import QuemSomos from "@/components/sections/QuemSomos";
-import ParaQuemSomos from "@/components/sections/ParaQuemSomos";
-import NossosValores from "@/components/sections/NossosValores";
-import VantagensGestao from "@/components/sections/Vantagens";
-import Depoimentos from "@/components/sections/Depoimentos";
-import BlogPreview from "@/components/sections/BlogPreview";
+import Hero from "@/components/homepage/Hero";
+import QuemSomos from "@/components/homepage/QuemSomos";
+import ParaQuemSomos from "@/components/homepage/ParaQuemSomos";
+import NossosValores from "@/components/homepage/NossosValores";
+import VantagensGestao from "@/components/homepage/Vantagens";
+import Depoimentos from "@/components/homepage/Depoimentos";
+import BlogPreview from "@/components/homepage/BlogPreview";
 
 import loadHomeDictionary from "@/i18n/loadHomeDictionary";
 
