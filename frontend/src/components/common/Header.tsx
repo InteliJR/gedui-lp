@@ -1,18 +1,58 @@
 // src/components/common/Header.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
 import logo from "../../../public/logo.png";
+
+import loadCommonDictionary from "@/i18n/loadCommonDictionary";
+import type { CommonDict } from "@/i18n/loadCommonDictionary";
 
 type HeaderVariant = "transparent" | "primary";
 
-export default function Header({ variant = "transparent" }: { variant?: HeaderVariant }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+type HeaderProps = {
+  variant?: HeaderVariant;
+  t: CommonDict["header"];
+};
 
-  const navigation = [
-    { name: "Soluções", href: "/solucoes" },
-    { name: "Blog", href: "/blog" },
-  ];
+export default function Header({ variant = "transparent", t }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const [tHeader, setTHeader] = useState<CommonDict["header"]>(t);
+
+  useEffect(() => {
+    let alive = true;
+
+    async function syncHeaderDict() {
+      const dict = await loadCommonDictionary(router.locale);
+      if (!alive) return;
+      setTHeader(dict.header);
+    }
+
+    syncHeaderDict();
+
+    return () => {
+      alive = false;
+    };
+  }, [router.locale]);
+
+  const navigation = useMemo(
+    () => [
+      { name: tHeader.nav.solutions, href: "/solucoes" },
+      { name: tHeader.nav.blog, href: "/blog" },
+    ],
+    [tHeader]
+  );
+
+  const languages = useMemo(
+    () => [
+      { src: "/flags/br.svg", alt: tHeader.languages.pt, locale: "pt-BR" },
+      { src: "/flags/es.svg", alt: tHeader.languages.es, locale: "es" },
+      { src: "/flags/gb.svg", alt: tHeader.languages.en, locale: "en" },
+    ],
+    [tHeader]
+  );
 
   const headerBgClass = variant === "primary" ? "bg-primary" : "bg-transparent";
 
@@ -21,7 +61,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
       <nav
         className="mx-auto sm:px-6"
         role="navigation"
-        aria-label="Navegação principal"
+        aria-label={tHeader.aria.mainNav}
       >
         <div className="flex justify-between items-center py-4 mx-10 md:mx-10">
           <section className="md:flex items-center space-x-8" aria-label="Logo e navegação">
@@ -29,7 +69,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
             <Link
               href="/"
               className="flex items-center space-x-2 flex-shrink-0"
-              aria-label="Ir para a página inicial"
+              aria-label={tHeader.aria.logoLink}
             >
               <Image src={logo} width={100} height={100} alt="Logo da Gedui" priority />
             </Link>
@@ -37,7 +77,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
             {/* Navegação Desktop */}
             <ul className="hidden md:flex space-x-10" role="menubar">
               {navigation.map((item) => (
-                <li key={item.name} role="none">
+                <li key={item.href} role="none">
                   <Link
                     href={item.href}
                     className="text-white hover:text-sky-600 transition-colors font-medium"
@@ -52,16 +92,27 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
 
           {/* IDIOMAS + CTA DESKTOP */}
           <section className="flex items-center" aria-label="Troca de idioma e agendamento">
-            <ul className="hidden md:flex items-center space-x-6" aria-label="Seleção de idioma">
-              {[
-                { src: "/flags/br.svg", alt: "Português" },
-                { src: "/flags/es.svg", alt: "Espanhol" },
-                { src: "/flags/gb.svg", alt: "Inglês" },
-              ].map((flag) => (
-                <li key={flag.alt}>
-                  <figure className="w-10 h-10 rounded-full overflow-hidden relative">
-                    <Image src={flag.src} alt={`Idioma: ${flag.alt}`} fill className="object-cover" />
-                  </figure>
+            <ul
+              className="hidden md:flex items-center space-x-6"
+              aria-label={tHeader.aria.languageSwitcher}
+            >
+              {languages.map((flag) => (
+                <li key={flag.locale}>
+                  <Link
+                    href={router.asPath}
+                    locale={flag.locale}
+                    className="block cursor-pointer hover:opacity-80 transition-opacity"
+                    aria-label={`${tHeader.aria.languageSwitcher}: ${flag.alt}`}
+                  >
+                    <figure className="w-10 h-10 rounded-full overflow-hidden relative m-0">
+                      <Image
+                        src={flag.src}
+                        alt={`Idioma: ${flag.alt}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </figure>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -70,7 +121,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
               href="/agendar"
               className="hidden md:block border border-solid text-white px-6 py-2 rounded-3xl font-medium ml-6"
             >
-              Agendar Demonstração
+              {tHeader.cta}
             </Link>
           </section>
 
@@ -78,7 +129,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
           <button
             className="md:hidden p-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Abrir ou fechar menu"
+            aria-label={tHeader.aria.openCloseMenu}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -103,7 +154,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
           >
             <ul role="menu" className="w-full">
               {navigation.map((item) => (
-                <li key={item.name} className="w-full">
+                <li key={item.href} className="w-full">
                   <Link
                     href={item.href}
                     className="block py-3 text-white hover:text-sky-200 transition-colors"
@@ -122,7 +173,7 @@ export default function Header({ variant = "transparent" }: { variant?: HeaderVa
                   role="menuitem"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Agendar Demonstração
+                  {tHeader.cta}
                 </Link>
               </li>
             </ul>
