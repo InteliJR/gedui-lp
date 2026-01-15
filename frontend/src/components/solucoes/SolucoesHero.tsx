@@ -2,23 +2,32 @@
 
 import Image from "next/image";
 
-export default function HeroSolucoes() {
+export type SolucoesHeroDict = {
+  aria: {
+    backgroundAlt: string;
+  };
+  title: {
+    line1: string;
+    line2: string;
+    line3: string;
+  };
+  description: string;
+};
+
+export default function HeroSolucoes({ t }: { t: SolucoesHeroDict }) {
   return (
     <section className="relative w-full min-h-screen overflow-hidden -mt-16 pt-16">
       {/* IMAGEM DE FUNDO */}
       <Image
         src="/solucoes/hero.png"
-        alt="Pessoas estudando"
+        alt={t.aria.backgroundAlt}
         fill
         priority
         className="object-cover z-0"
       />
 
       {/* OVERLAY ESCURO */}
-      <div
-        className="absolute inset-0 bg-primary/60 z-10"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-primary/60 z-10" aria-hidden="true" />
 
       {/* GLOW */}
       <div
@@ -37,30 +46,22 @@ export default function HeroSolucoes() {
       {/* CONTEÚDO CENTRALIZADO */}
       <div className="absolute inset-0 z-30 flex flex-col justify-center items-center text-center px-6 text-white pt-16">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-4xl">
-          Soluções que transformam
+          {t.title.line1}
           <br />
-          o aprendizado em sua
+          {t.title.line2}
           <br />
-          instituição ou empresa.
+          {t.title.line3}
         </h1>
 
         <p className="mt-6 text-base md:text-lg max-w-2xl leading-relaxed opacity-90">
-          A GEDUI é a plataforma para ajudar na transformação dos métodos
-          tradicionais, adaptando-os com inovação e tornando o aprendizado mais
-          dinâmico, eficiente e inclusivo.
+          {t.description}
         </p>
       </div>
 
       {/*Degradê inferior */}
       <footer className="absolute bottom-0 left-0 right-0 pointer-events-none">
         <div
-          className="
-              h-52
-              bg-gradient-to-b
-              from-transparent
-              via-[rgba(5,41,79,0.4)]
-              to-primary
-        "
+          className="h-52 bg-gradient-to-b from-transparent via-[rgba(5,41,79,0.4)] to-primary"
           aria-hidden="true"
         />
       </footer>

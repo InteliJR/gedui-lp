@@ -5,26 +5,28 @@ import Image from "next/image";
 import { useIntersection } from "@/hooks/useIntersection";
 import { TrilhaBeneficiosCorpSVG } from "./TrilhaBeneficiosCorpSVG";
 
-export default function TrilhaBeneficiosCorp() {
+export type TrilhaBeneficiosCorpDict = {
+    cards: string[]; // 8 textos
+    cta: {
+        title: string;
+        subtitle: string;
+        button: string;
+        buttonAriaLabel: string;
+    };
+};
+
+export default function TrilhaBeneficiosCorp({
+    t,
+}: {
+    t: TrilhaBeneficiosCorpDict;
+}) {
     const sectionRef = useRef<HTMLElement>(null);
     const animate = useIntersection(sectionRef, 0.4);
 
-    const cards = [
-        "Gestão de suporte ao usuário",
-        "Feed de notícias inteligente",
-        "Mural adaptativo interativo",
-        "Interação digital",
-        "Certificação",
-        "Admin de rede",
-        "Admin de unidades",
-        "Criação de múltiplas organizações",
-    ];
+    const cards = t.cards;
 
     return (
-        <section
-            ref={sectionRef}
-            className="relative w-full bg-primary overflow-hidden -mt-8"
-        >
+        <section ref={sectionRef} className="relative w-full bg-primary overflow-hidden -mt-8">
             {/* FUNDO: imagem beneficios (desktop) */}
             <div className="absolute inset-0 pointer-events-none z-0 hidden lg:block">
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-full w-1/2">
@@ -34,6 +36,7 @@ export default function TrilhaBeneficiosCorp() {
                         fill
                         priority
                         className="object-contain"
+                        aria-hidden="true"
                     />
                 </div>
             </div>
@@ -46,7 +49,7 @@ export default function TrilhaBeneficiosCorp() {
                     ))}
                 </div>
 
-                <CallToAction className="mt-16" />
+                <CallToAction t={t.cta} className="mt-16" />
             </div>
 
             {/* DESKTOP */}
@@ -61,23 +64,23 @@ export default function TrilhaBeneficiosCorp() {
 
                 <div className="relative pt-[150px]">
                     <div className="flex justify-around mb-30">
-                        <Card text="Gestão de suporte ao usuário" />
-                        <Card text="Feed de notícias inteligente" />
-                        <Card text="Mural adaptativo interativo" />
+                        <Card text={cards[0]} />
+                        <Card text={cards[1]} />
+                        <Card text={cards[2]} />
                     </div>
 
                     <div className="flex justify-center gap-32 mb-28">
-                        <Card text="Interação digital" />
-                        <Card text="Certificação" />
+                        <Card text={cards[3]} />
+                        <Card text={cards[4]} />
                     </div>
 
                     <div className="flex justify-around">
-                        <Card text="Admin de rede" />
-                        <Card text="Admin de unidades" />
-                        <Card text="Criação de múltiplas organizações" />
+                        <Card text={cards[5]} />
+                        <Card text={cards[6]} />
+                        <Card text={cards[7]} />
                     </div>
 
-                    <CallToAction className="mt-35 ml-95" />
+                    <CallToAction t={t.cta} className="mt-35 ml-95" />
                 </div>
             </div>
         </section>
@@ -113,7 +116,13 @@ function Card({ text }: { text: string }) {
 /* =========================
    CTA (reutilizável)
 ========================= */
-function CallToAction({ className = "" }: { className?: string }) {
+function CallToAction({
+    t,
+    className = "",
+}: {
+    t: TrilhaBeneficiosCorpDict["cta"];
+    className?: string;
+}) {
     return (
         <div
             className={`
@@ -131,16 +140,16 @@ function CallToAction({ className = "" }: { className?: string }) {
             `}
         >
             <div className="text-center space-y-2">
-                <span className="block text-white text-lg font-medium">
-                    Quer a solução perfeita para ampliar conhecimento em sua empresa?
-                </span>
-                <p className="text-secondary text-md">
-                    Fale com os nossos especialistas.
-                </p>
+                <span className="block text-white text-lg font-medium">{t.title}</span>
+                <p className="text-secondary text-md">{t.subtitle}</p>
             </div>
 
-            <button className="px-8 py-3 rounded-full bg-secondary text-primary font-semibold hover:bg-white/90 transition">
-                Agendar demonstração
+            <button
+                type="button"
+                aria-label={t.buttonAriaLabel}
+                className="px-8 py-3 rounded-full bg-secondary text-primary font-semibold hover:bg-white/90 transition"
+            >
+                {t.button}
             </button>
         </div>
     );

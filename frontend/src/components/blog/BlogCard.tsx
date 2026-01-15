@@ -1,9 +1,10 @@
-/**
- * BlogCard - Componente de card individual para exibir posts do blog
- * Alterna a posição da imagem (esquerda/direita) e inclui overlay com bordas transparentes
- */
 import Link from "next/link";
 import Image from "next/image";
+
+export type BlogCardDict = {
+  readMoreLabel: string;
+  readMoreAriaLabel: string; // pode usar com {title} se quiser
+};
 
 interface BlogCardProps {
   title: string;
@@ -13,6 +14,7 @@ interface BlogCardProps {
   imageAlt: string;
   link: string;
   isImageLeft: boolean;
+  t: BlogCardDict;
 }
 
 export default function BlogCard({
@@ -23,7 +25,10 @@ export default function BlogCard({
   imageAlt,
   link,
   isImageLeft,
+  t,
 }: BlogCardProps) {
+  const aria = t.readMoreAriaLabel.replace("{title}", title);
+
   return (
     <section className="relative w-full h-[520px] md:h-[580px] overflow-hidden bg-[#05294F]">
       {/* Container com layout lado a lado */}
@@ -31,12 +36,7 @@ export default function BlogCard({
         {/* Imagem - lado esquerdo OU direito, ocupando ~45% */}
         {isImageLeft && (
           <div className="relative w-0 md:w-[45%] hidden md:block py-4">
-            <Image
-              src={imageUrl}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-            />
+            <Image src={imageUrl} alt={imageAlt} fill className="object-cover" />
 
             {/* Overlay com bordas transparentes */}
             <div
@@ -56,7 +56,7 @@ export default function BlogCard({
                   linear-gradient(to bottom, rgba(5, 41, 79, 0.15) 0%, transparent 25%, transparent 75%, rgba(5, 41, 79, 0.15) 100%)
                 `,
               }}
-            ></div>
+            />
 
             {/* Gradiente radial sobre a imagem */}
             <div
@@ -66,20 +66,19 @@ export default function BlogCard({
                 opacity-65
                 mix-blend-multiply
               "
-            ></div>
+            />
           </div>
         )}
 
         {/* Gradiente de transição suave entre imagem e conteúdo */}
         {isImageLeft && (
-          <div className="hidden md:block absolute right-[52%] top-0 bottom-0 w-28 bg-gradient-to-r from-transparent via-[#05294F] to-[#05294F] opacity-70 pointer-events-none"></div>
+          <div className="hidden md:block absolute right-[52%] top-0 bottom-0 w-28 bg-gradient-to-r from-transparent via-[#05294F] to-[#05294F] opacity-70 pointer-events-none" />
         )}
 
         {/* Conteúdo - lado direito OU esquerdo */}
         <div
-          className={`w-full md:w-[55%] bg-[#05294F] flex items-center px-8 md:px-12 lg:px-16 ${
-            !isImageLeft ? "order-first" : ""
-          }`}
+          className={`w-full md:w-[55%] bg-[#05294F] flex items-center px-8 md:px-12 lg:px-16 ${!isImageLeft ? "order-first" : ""
+            }`}
         >
           <div className="w-full">
             <h2 className="text-2xl md:text-[32px] font-semibold text-white opacity-80">
@@ -97,11 +96,11 @@ export default function BlogCard({
             {/* Botão com SVG (chevron) */}
             <Link
               href={link}
+              aria-label={aria}
               className="group mt-8 inline-flex items-center px-4 py-3 bg-[#A4FF39] text-[#05294F] font-medium rounded-full hover:bg-[#b8ff66] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-[#9fe12a] cursor-pointer"
             >
-              <span className="select-none">Saiba mais</span>
+              <span className="select-none">{t.readMoreLabel}</span>
 
-              {/* Chevron SVG — usa currentColor para herdar a cor do texto */}
               <svg
                 className="ml-3 w-4 h-4 transform transition-transform duration-200 group-hover:translate-x-1"
                 viewBox="0 0 24 24"
@@ -125,12 +124,7 @@ export default function BlogCard({
         {/* Imagem - lado direito OU esquerdo, ocupando ~45% */}
         {!isImageLeft && (
           <div className="relative w-0 md:w-[45%] hidden md:block ml-auto py-4">
-            <Image
-              src={imageUrl}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-            />
+            <Image src={imageUrl} alt={imageAlt} fill className="object-cover" />
 
             {/* Overlay com bordas transparentes */}
             <div
@@ -150,7 +144,7 @@ export default function BlogCard({
                   linear-gradient(to bottom, rgba(5, 41, 79, 0.15) 0%, transparent 25%, transparent 75%, rgba(5, 41, 79, 0.15) 100%)
                 `,
               }}
-            ></div>
+            />
 
             {/* Gradiente radial sobre a imagem */}
             <div
@@ -160,13 +154,13 @@ export default function BlogCard({
                 opacity-65
                 mix-blend-multiply
               "
-            ></div>
+            />
           </div>
         )}
 
         {/* Gradiente de transição suave entre conteúdo e imagem (lado direito) */}
         {!isImageLeft && (
-          <div className="hidden md:block absolute left-[52%] top-0 bottom-0 w-28 bg-gradient-to-l from-transparent via-[#05294F] to-[#05294F] opacity-70 pointer-events-none"></div>
+          <div className="hidden md:block absolute left-[52%] top-0 bottom-0 w-28 bg-gradient-to-l from-transparent via-[#05294F] to-[#05294F] opacity-70 pointer-events-none" />
         )}
       </div>
 
@@ -181,9 +175,9 @@ export default function BlogCard({
             opacity-65
             mix-blend-multiply
           "
-        ></div>
+        />
 
-        <div className="absolute inset-0 bg-[#05294F] opacity-40"></div>
+        <div className="absolute inset-0 bg-[#05294F] opacity-40" />
       </div>
 
       {/* Conteúdo mobile */}
@@ -203,9 +197,10 @@ export default function BlogCard({
 
           <Link
             href={link}
+            aria-label={aria}
             className="group mt-4 inline-flex items-center px-6 py-3 bg-[#A4FF39] text-[#05294F] font-medium rounded-full hover:bg-[#b8ff66] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2 focus-visible:ring-[#9fe12a] cursor-pointer"
           >
-            <span className="select-none">Saiba mais</span>
+            <span className="select-none">{t.readMoreLabel}</span>
             <svg
               className="ml-3 w-4 h-4 transform transition-transform duration-200 group-hover:translate-x-1"
               viewBox="0 0 24 24"

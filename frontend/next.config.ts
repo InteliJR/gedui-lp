@@ -27,6 +27,12 @@ const nextConfig: NextConfig = {
     env: {
         // Apenas variáveis públicas aqui
     },
+
+    i18n: {
+        locales: ["pt-BR", "en", "es"],
+        defaultLocale: "pt-BR",
+        localeDetection: false,
+    },
 };
 
 export default nextConfig;

@@ -1,6 +1,19 @@
-import Link from "next/link"
+// src/components/blog/CTA.tsx
+import Link from "next/link";
 
-export default function CTA_Blog() {
+export type BlogCTADict = {
+    heading: {
+        text: string;
+        highlight: string;
+    };
+    button: {
+        label: string;
+        ariaLabel: string;
+        href: string;
+    };
+};
+
+export default function CTA_Blog({ t }: { t: BlogCTADict }) {
     return (
         <div className="bg-primary">
             <div
@@ -18,13 +31,13 @@ export default function CTA_Blog() {
                 "
             >
                 <h2 className="text-base sm:text-lg lg:text-3xl font-bold text-center text-white leading-snug">
-                    Inove, conecte áreas e{" "}
-                    <span className="text-secondary">aprenda!</span>
+                    {t.heading.text}{" "}
+                    <span className="text-secondary">{t.heading.highlight}</span>
                 </h2>
 
-
                 <Link
-                    href="/agendar"
+                    href={t.button.href}
+                    aria-label={t.button.ariaLabel}
                     className="
                         px-8 py-3
                         rounded-full
@@ -39,9 +52,9 @@ export default function CTA_Blog() {
                     "
                     role="menuitem"
                 >
-                    Agendar Demonstração
+                    {t.button.label}
                 </Link>
             </div>
         </div>
-    )
+    );
 }

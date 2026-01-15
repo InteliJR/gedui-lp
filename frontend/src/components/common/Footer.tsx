@@ -2,52 +2,47 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { CommonDict } from "@/i18n/loadCommonDictionary";
 
-export default function Footer() {
+interface FooterProps {
+  t: CommonDict["footer"];
+}
+
+export default function Footer({ t }: FooterProps) {
   const footerLinks = {
     solucoes: [
-      { name: "Gedui Edu", href: "/recursos" },
-      { name: "Gedui Corp", href: "/precos" },
+      { name: t.solutions.edu, href: "/recursos" },
+      { name: t.solutions.corp, href: "/precos" },
     ],
-    links: [
-      { name: "Blog", href: "/blog" },
-    ],
-    legal: [
-      { name: "Termos de Uso", href: "/termos" },
-      { name: "Política de Privacidade", href: "/privacidade" },
-      { name: "Cookies", href: "/cookies" },
-    ],
+    links: [{ name: t.links.blog, href: "/blog" }],
   };
 
   const socialLinks = [
     {
       name: "Whatsapp",
       href: "https://wa.link/mbg92f",
-      icon: (
-        <FaWhatsapp className="text-primary" />
-      ),
+      icon: <FaWhatsapp className="text-primary" />,
     },
     {
       name: "Facebook",
       href: "https://www.linkedin.com/company/gedui",
-      icon: (
-        <FaFacebookF className="text-primary" />
-      ),
+      icon: <FaFacebookF className="text-primary" />,
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/gedui",
-      icon: (
-        <FaInstagram className="text-primary" />
-      ),
+      icon: <FaInstagram className="text-primary" />,
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/company/gedui",
-      icon: (
-        <FaLinkedinIn className="text-primary" />
-      ),
+      icon: <FaLinkedinIn className="text-primary" />,
     },
   ];
 
@@ -58,30 +53,29 @@ export default function Footer() {
         {/* LOGO + COPYRIGHT */}
         <section
           className="gap-3 flex flex-col items-center text-center"
-          aria-label="Informações institucionais"
+          aria-label={t.aria.institutional}
         >
           <figure>
             <Image src={logo} width={300} height={150} alt="Logo da Gedui" />
           </figure>
 
           <p className="text-sm md:text-md lg:text-lg font-semibold text-white">
-            © {new Date().getFullYear()} Gedui. Todos os direitos reservados.
+            {t.copyright.replace(
+              "{year}",
+              new Date().getFullYear().toString()
+            )}
           </p>
         </section>
 
-        {/* LINKS DO FOOTER */}
+        {/* LINKS */}
         <nav
           className="flex gap-8 md:grid md:grid-cols-3"
-          aria-label="Navegação do rodapé"
+          aria-label={t.aria.footerNav}
         >
-
-          {/* Coluna: Soluções */}
-          <section aria-labelledby="footer-solucoes">
-            <h3
-              id="footer-solucoes"
-              className="text-secondary font-semibold mb-3 md:text-md lg:text-lg"
-            >
-              Soluções
+          {/* Soluções */}
+          <section>
+            <h3 className="text-secondary font-semibold mb-3 md:text-md lg:text-lg">
+              {t.columns.solutions}
             </h3>
 
             <ul className="space-y-1">
@@ -98,13 +92,10 @@ export default function Footer() {
             </ul>
           </section>
 
-          {/* Coluna: Links Gerais */}
-          <section aria-labelledby="footer-gerais">
-            <h3
-              id="footer-gerais"
-              className="text-secondary font-semibold mb-3 md:text-md lg:text-lg"
-            >
-              Links
+          {/* Links */}
+          <section>
+            <h3 className="text-secondary font-semibold mb-3 md:text-md lg:text-lg">
+              {t.columns.links}
             </h3>
 
             <ul className="space-y-1">
@@ -121,30 +112,26 @@ export default function Footer() {
             </ul>
           </section>
 
-          {/* Coluna: Contato */}
-          <section aria-labelledby="footer-contato">
-            <h3
-              id="footer-contato"
-              className="text-white font-semibold mb-1 md:text-md lg:text-lg"
-            >
-              Contato
+          {/* Contato */}
+          <section>
+            <h3 className="text-white font-semibold mb-1 md:text-md lg:text-lg">
+              {t.columns.contact}
             </h3>
 
             <address className="not-italic">
               <a
-                href="mailto:falecom@gedui.com.br"
+                href={`mailto:${t.contactEmailLabel}`}
                 className="text-white font-semibold md:text-md lg:text-lg hover:text-sky-500 transition-colors"
               >
-                falecom@gedui.com.br
+                {t.contactEmailLabel}
               </a>
             </address>
           </section>
-
         </nav>
 
         {/* REDES SOCIAIS */}
         <section
-          aria-label="Redes sociais"
+          aria-label={t.aria.social}
           className="flex justify-center md:flex-col gap-3"
         >
           <ul className="flex md:flex-col gap-3">
@@ -152,7 +139,10 @@ export default function Footer() {
               <li key={social.name}>
                 <a
                   href={social.href}
-                  aria-label={`Visitar o perfil da Gedui no ${social.name}`}
+                  aria-label={t.aria.visitProfile.replace(
+                    "{social}",
+                    social.name
+                  )}
                   className="bg-white p-2 md:p-4 rounded-full flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -163,10 +153,7 @@ export default function Footer() {
             ))}
           </ul>
         </section>
-
       </div>
     </footer>
-
-
   );
 }

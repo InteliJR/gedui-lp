@@ -1,0 +1,42 @@
+{
+    "header": {
+        "nav": {
+            "solutions": "Solutions",
+            "blog": "Blog"
+        },
+        "cta": "Schedule a Demo",
+        "aria": {
+            "mainNav": "Main navigation",
+            "logoLink": "Go to homepage",
+            "languageSwitcher": "Language selection",
+            "openCloseMenu": "Open or close menu"
+        },
+        "languages": {
+            "pt": "Portuguese",
+            "es": "Spanish",
+            "en": "English"
+        }
+    },
+    "footer": {
+        "copyright": "© {year} Gedui. All rights reserved.",
+        "columns": {
+            "solutions": "Solutions",
+            "links": "Links",
+            "contact": "Contact"
+        },
+        "solutions": {
+            "edu": "Gedui Edu",
+            "corp": "Gedui Corp"
+        },
+        "links": {
+            "blog": "Blog"
+        },
+        "contactEmailLabel": "falecom@gedui.com.br",
+        "aria": {
+            "institutional": "Institutional information",
+            "footerNav": "Footer navigation",
+            "social": "Social media",
+            "visitProfile": "Visit Gedui on {social}"
+        }
+    }
+}

@@ -2,27 +2,31 @@
  * Pagination - Componente de paginação para navegar entre páginas do blog
  * Exibe botões anterior/próximo e números de página com ellipsis quando necessário
  */
+export type PaginationDict = {
+  prevAriaLabel: string;
+  nextAriaLabel: string;
+  goToPageAriaLabel: string; // use "{page}"
+};
+
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  t: PaginationDict;
 }
 
 export default function Pagination({
   currentPage,
   totalPages,
   onPageChange,
+  t,
 }: PaginationProps) {
   const handlePrevious = () => {
-    if (currentPage > 1) {
-      onPageChange(currentPage - 1);
-    }
+    if (currentPage > 1) onPageChange(currentPage - 1);
   };
 
   const handleNext = () => {
-    if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
-    }
+    if (currentPage < totalPages) onPageChange(currentPage + 1);
   };
 
   const handlePageClick = (page: number) => {
@@ -31,43 +35,26 @@ export default function Pagination({
 
   // Gerar array de páginas para exibir
   const getPageNumbers = () => {
-    const pages = [];
+    const pages: Array<number | "..."> = [];
     const maxPagesToShow = 5;
 
     if (totalPages <= maxPagesToShow) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
-      // Mostrar sempre a primeira página
       pages.push(1);
 
-      // Calcular o intervalo ao redor da página atual
       let startPage = Math.max(2, currentPage - 1);
       let endPage = Math.min(totalPages - 1, currentPage + 1);
 
-      if (currentPage <= 2) {
-        endPage = 4;
-      } else if (currentPage >= totalPages - 1) {
-        startPage = totalPages - 3;
-      }
+      if (currentPage <= 2) endPage = 4;
+      else if (currentPage >= totalPages - 1) startPage = totalPages - 3;
 
-      // Adicionar reticências se necessário
-      if (startPage > 2) {
-        pages.push("...");
-      }
+      if (startPage > 2) pages.push("...");
 
-      // Adicionar páginas intermediárias
-      for (let i = startPage; i <= endPage; i++) {
-        pages.push(i);
-      }
+      for (let i = startPage; i <= endPage; i++) pages.push(i);
 
-      // Adicionar reticências se necessário
-      if (endPage < totalPages - 1) {
-        pages.push("...");
-      }
+      if (endPage < totalPages - 1) pages.push("...");
 
-      // Mostrar sempre a última página
       pages.push(totalPages);
     }
 
@@ -83,13 +70,15 @@ export default function Pagination({
         onClick={handlePrevious}
         disabled={currentPage === 1}
         className="flex items-center justify-center w-8 h-8 text-[#FFFFFF] hover:opacity-80 transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-        aria-label="Página anterior"
+        aria-label={t.prevAriaLabel}
       >
         <svg
           className="w-5 h-5"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
         >
           <path
             d="M15 19l-7-7 7-7"
@@ -122,12 +111,11 @@ export default function Pagination({
             <button
               key={pageNum}
               onClick={() => handlePageClick(pageNum)}
-              className={`text-[#FFFFFF] text-sm font-medium transition cursor-pointer ${
-                isActive
-                  ? "w-8 h-8 rounded border-[0.5px] border-[#A2A2A2]/50 bg-[#A2A2A2]/20 flex items-center justify-center"
-                  : "hover:opacity-80"
-              }`}
-              aria-label={`Ir para página ${pageNum}`}
+              className={`text-[#FFFFFF] text-sm font-medium transition cursor-pointer ${isActive
+                ? "w-8 h-8 rounded border-[0.5px] border-[#A2A2A2]/50 bg-[#A2A2A2]/20 flex items-center justify-center"
+                : "hover:opacity-80"
+                }`}
+              aria-label={t.goToPageAriaLabel.replace("{page}", String(pageNum))}
               aria-current={isActive ? "page" : undefined}
             >
               {pageNum}
@@ -141,13 +129,15 @@ export default function Pagination({
         onClick={handleNext}
         disabled={currentPage === totalPages}
         className="flex items-center justify-center w-8 h-8 text-[#FFFFFF] hover:opacity-80 transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-        aria-label="Próxima página"
+        aria-label={t.nextAriaLabel}
       >
         <svg
           className="w-5 h-5"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
         >
           <path
             d="M9 5l7 7-7 7"

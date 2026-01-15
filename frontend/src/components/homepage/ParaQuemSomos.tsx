@@ -1,37 +1,24 @@
 "use client";
 import Image from "next/image";
 
-// --- DADOS DOS CARDS ---
-const targets = [
-  {
-    icon: "/quem-somos/icon-schools.svg",
-    text: "Escolas particulares e públicas, infantil, fundamental, ensino médio, técnico e universidades.",
-    iconPosition: "right",
-    // Configurações individuais do ícone
-    iconSize: 190, // Tamanho em pixels
-    iconTop: "-top-16", // Posição vertical
-    iconHorizontal: "-right-22", // Posição horizontal
-  },
-  {
-    icon: "/quem-somos/icon-courses.svg",
-    text: "Cursos extracurriculares, livres ou especialização, mentoria e redes de franquias.",
-    iconPosition: "left",
-    // Configurações individuais do ícone
-    iconSize: 180,
-    iconTop: "-top-17",
-    iconHorizontal: "-left-22",
-  },
-  {
-    icon: "/quem-somos/icon-industry.svg",
-    text: "Indústrias, prestadores de serviços, empresas, call centers, consultoria de RH e redes de franquias.",
-    cta: "Saiba mais",
-    iconPosition: "right",
-    // Configurações individuais do ícone
-    iconSize: 140,
-    iconTop: "-top-9",
-    iconHorizontal: "-right-14",
-  },
-];
+export type ParaQuemSomosDict = {
+  notebook: {
+    eyebrow: string;
+    title: string;
+  };
+  cards: Array<{
+    text: string;
+    cta?: string;
+    icon: string;
+    iconSize: number;
+    iconTop: string;
+    iconHorizontal: string;
+  }>;
+  aria: {
+    notebookAlt: string;
+    logoAlt: string;
+  };
+};
 
 // --- COMPONENTE DO ÍCONE DE SETA ---
 const ArrowIcon = () => (
@@ -51,7 +38,9 @@ const ArrowIcon = () => (
   </svg>
 );
 
-export default function ParaQuemSomos() {
+export default function ParaQuemSomos({ t }: { t: ParaQuemSomosDict }) {
+  const targets = t.cards;
+
   return (
     <section className="w-full bg-[#05294F] py-20 lg:py-28 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 relative">
@@ -63,7 +52,7 @@ export default function ParaQuemSomos() {
               {/* Notebook */}
               <Image
                 src="/quem-somos/notebook.png"
-                alt="Notebook"
+                alt={t.aria.notebookAlt}
                 fill
                 className="object-contain"
                 priority
@@ -76,7 +65,7 @@ export default function ParaQuemSomos() {
               >
                 <Image
                   src="/quem-somos/logo.svg"
-                  alt="Logo Gedui"
+                  alt={t.aria.logoAlt}
                   width={200}
                   height={200}
                   className="w-full h-auto opacity-90"
@@ -89,12 +78,10 @@ export default function ParaQuemSomos() {
                 style={{ top: "28%", left: "8%", width: "60%" }}
               >
                 <p className="ttext-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.2em] text-[#95c743] mb-3">
-                  Para quem somos?
+                  {t.notebook.eyebrow}
                 </p>
                 <h2 className="mx-1 text-[0.6rem] sm:text-xs md:text-sm lg:text-base font-light leading-snug">
-                  As ferramentas inovadoras do nosso ecossistema educacional são
-                  versáteis e adaptáveis, e podem proporcionar a transformação
-                  no aprendizado em diversos setores.
+                  {t.notebook.title}
                 </h2>
               </div>
             </div>
@@ -108,9 +95,7 @@ export default function ParaQuemSomos() {
           {targets.map((item, index) => (
             <div key={index} className="relative">
               {/* Ícone flutuante com configurações individuais */}
-              <div
-                className={`absolute z-20 ${item.iconTop} ${item.iconHorizontal}`}
-              >
+              <div className={`absolute z-20 ${item.iconTop} ${item.iconHorizontal}`}>
                 <Image
                   src={item.icon}
                   alt=""

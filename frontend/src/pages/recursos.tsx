@@ -1,7 +1,7 @@
 // src/pages/recursos.tsx
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
-import CTA from "@/components/sections/CTA";
+import CTA from "@/components/homepage/CTA";
 
 export default function Recursos() {
   const recursos = [
