@@ -37,24 +37,3 @@ body {
     rgba(140, 191, 63, 0.9) 100%
   );
 }
-
-.trilha-glow {
-  stroke-dasharray: 140 3000;
-  stroke-dashoffset: 3000;
-  opacity: 0;
-}
-
-.trilha-glow.animate {
-  opacity: 1;
-  animation: trilhaGlowMove 15s linear infinite;
-  animation-delay: 2s;
-}
-
-@keyframes trilhaGlowMove {
-  from {
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-dashoffset: -2000;
-  }
-}

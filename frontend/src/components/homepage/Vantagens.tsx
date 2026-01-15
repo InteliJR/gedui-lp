@@ -148,7 +148,14 @@ export default function VantagensGestao({ t }: { t: VantagensGestaoDict }) {
          TRILHA — DESKTOP
       ======================= */}
       <div className="relative max-w-5xl mx-auto mt-24 hidden lg:block">
-        <TrilhaSVG animate={trilhaVisivel} />
+        <TrilhaSVG
+          animate={trilhaVisivel}
+          strokeWidth={12}
+          glowWidth={12}
+          speedSec={20}
+          lightLen={50}
+        />
+
 
         <div className="absolute inset-0 z-10">
           {cardPositions.map((pos, index) => (
