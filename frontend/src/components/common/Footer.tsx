@@ -17,8 +17,8 @@ interface FooterProps {
 export default function Footer({ t }: FooterProps) {
   const footerLinks = {
     solucoes: [
-      { name: t.solutions.edu, href: "/recursos" },
-      { name: t.solutions.corp, href: "/precos" },
+      { name: t.solutions.edu, href: "/solucoes#gedui-edu" },
+      { name: t.solutions.corp, href: "/solucoes#gedui-corp" },
     ],
     links: [{ name: t.links.blog, href: "/blog" }],
   };
@@ -49,7 +49,6 @@ export default function Footer({ t }: FooterProps) {
   return (
     <footer className="bg-gradient-to-b from-primary to-secondary/60 text-gray-300">
       <div className="flex flex-col md:flex-row justify-between mt-20 px-4 sm:px-6 lg:px-8 py-12 gap-8 xl:px-30">
-
         {/* LOGO + COPYRIGHT */}
         <section
           className="gap-3 flex flex-col items-center text-center"

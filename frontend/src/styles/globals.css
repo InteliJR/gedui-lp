@@ -37,3 +37,7 @@ body {
     rgba(140, 191, 63, 0.9) 100%
   );
 }
+
+html {
+  scroll-behavior: smooth;
+}

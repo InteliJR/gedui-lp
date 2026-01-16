@@ -19,7 +19,7 @@ export default function SecaoEducacaoCorporativa({
   t: EducacaoCorporativaDict;
 }) {
   return (
-    <section className="relative w-full bg-[#051D39] pt-20 pb-40 overflow-hidden">
+    <section id="gedui-corp" className="relative w-full bg-[#051D39] pt-20 pb-40 overflow-hidden">
       {/* Azul escuro de fundo */}
       <div className="absolute inset-0 bg-[#051D39] z-0" />
 
