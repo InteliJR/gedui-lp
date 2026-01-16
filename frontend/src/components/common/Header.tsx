@@ -37,12 +37,27 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
     };
   }, [router.locale]);
 
+  function getBasePath(asPath: string) {
+
+    const [pathname] = asPath.split(/[?#]/);
+
+    const cleaned = pathname.replace(/^\/(pt-br|en|es)(\/|$)/i, "/");
+
+    return cleaned === "" ? "/" : cleaned;
+  }
+
   const navigation = useMemo(
     () => [
       { name: tHeader.nav.solutions, href: "/solucoes" },
       { name: tHeader.nav.blog, href: "/blog" },
     ],
     [tHeader]
+  );
+
+
+  const currentPath = useMemo(
+    () => getBasePath(router.asPath),
+    [router.asPath]
   );
 
   const languages = useMemo(
@@ -71,7 +86,7 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
               className="flex items-center space-x-2 flex-shrink-0"
               aria-label={tHeader.aria.logoLink}
             >
-              <Image src={logo} width={100} height={100} alt="Logo da Gedui" priority />
+              <Image src={logo} width={120} height={100} alt="Logo da Gedui" priority />
             </Link>
 
             {/* Navegação Desktop */}
@@ -80,9 +95,14 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
                 <li key={item.href} role="none">
                   <Link
                     href={item.href}
-                    className="text-white hover:text-sky-600 transition-colors font-medium"
                     role="menuitem"
+                    className={`
+                      text-white transition-colors text-lg
+                      hover:text-sky-600
+                      ${currentPath.startsWith(item.href) ? "font-bold" : "font-medium"}
+                    `}
                   >
+
                     {item.name}
                   </Link>
                 </li>
@@ -104,7 +124,7 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
                     className="block cursor-pointer hover:opacity-80 transition-opacity"
                     aria-label={`${tHeader.aria.languageSwitcher}: ${flag.alt}`}
                   >
-                    <figure className="w-10 h-10 rounded-full overflow-hidden relative m-0">
+                    <figure className="w-8 h-8 rounded-full overflow-hidden relative m-0">
                       <Image
                         src={flag.src}
                         alt={`Idioma: ${flag.alt}`}
@@ -119,7 +139,7 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
 
             <Link
               href="/agendar"
-              className="hidden md:block border border-solid text-white px-6 py-2 rounded-3xl font-medium ml-6"
+              className="hidden md:block border border-solid text-white px-5 py-2 rounded-3xl font-medium ml-6"
             >
               {tHeader.cta}
             </Link>
@@ -157,12 +177,17 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
                 <li key={item.href} className="w-full">
                   <Link
                     href={item.href}
-                    className="block py-3 text-white hover:text-sky-200 transition-colors"
                     role="menuitem"
                     onClick={() => setMobileMenuOpen(false)}
+                    className={`
+                      block py-3 text-white transition-colors
+                      hover:text-sky-200
+                      ${currentPath.startsWith(item.href) ? "font-bold" : "font-medium"}
+                    `}
                   >
                     {item.name}
                   </Link>
+
                 </li>
               ))}
 
