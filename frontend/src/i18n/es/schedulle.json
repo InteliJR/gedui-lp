@@ -1,0 +1,82 @@
+{
+    "heading": {
+        "title": "Agenda una",
+        "highlight": "demo"
+    },
+    "success": {
+        "title": "¡Reserva confirmada!",
+        "line1": "Los detalles se enviaron a tu correo.",
+        "line2": "¡Tenemos muchas ganas de hablar contigo!",
+        "cta": "Nueva reserva"
+    },
+    "buttons": {
+        "scheduling": "Agendando...",
+        "submit": "Agendar demostración"
+    },
+    "loading": {
+        "initializing": "Cargando horarios disponibles..."
+    },
+    "errors": {
+        "connectLater": "No se pudo conectar con el sistema de agenda. Inténtalo más tarde.",
+        "loadTimes": "Error al cargar los horarios disponibles.",
+        "noTimes7Days": "No hay horarios disponibles en los próximos 7 días.",
+        "noEventTypes": "No hay tipos de evento configurados en Calendly.",
+        "selectDateTime": "Selecciona una fecha y hora para continuar.",
+        "fillNameEmail": "Completa nombre y correo para continuar.",
+        "createSchedule": "No se pudo crear la reserva. Elige otro horario.",
+        "connection": "Error de conexión. Inténtalo nuevamente.",
+        "acceptTermsAlert": "Por favor, acepta los Términos y Condiciones para continuar.",
+        "pickDateTime": "Por favor, selecciona una fecha y hora."
+    },
+    "fields": {
+        "name": "Nombre del responsable *",
+        "institutionName": "Nombre de la institución *",
+        "email": "Correo de contacto *",
+        "phone": "Teléfono *"
+    },
+    "selects": {
+        "positionPlaceholder": "Cargo *",
+        "institutionTypePlaceholder": "Tipo *",
+        "productInterestPlaceholder": "Producto de interés *",
+        "datePlaceholder": "Fecha *",
+        "timePlaceholder": "Horario *",
+        "selectDateFirst": "Selecciona la fecha",
+        "noDates": "Sin fechas",
+        "noTimes": "Sin horarios",
+        "loading": "Cargando..."
+    },
+    "options": {
+        "position": {
+            "director": "Director",
+            "coordinator": "Coordinador",
+            "teacher": "Profesor",
+            "other": "Otro"
+        },
+        "institutionType": {
+            "public": "Pública",
+            "private": "Privada",
+            "nonprofit": "Sin fines de lucro"
+        },
+        "product": {
+            "edu": "Gedu Edu",
+            "corp": "Gedu Corp",
+            "both": "Ambos"
+        }
+    },
+    "checkboxes": {
+        "newsletter": "¿Quieres recibir novedades y ofertas?",
+        "termsTitle": "Términos y uso de datos:",
+        "termsText": "Confirmo que he leído y acepto los Términos y Condiciones y autorizo el uso de mis datos personales para los fines descritos en la Política de Privacidad."
+    },
+    "meetingNotes": {
+        "header": "INFORMACIÓN DEL LEAD:",
+        "position": "Cargo",
+        "institution": "Institución",
+        "institutionType": "Tipo de institución",
+        "product": "Producto de interés",
+        "phone": "Teléfono",
+        "newsletterYes": "Sí, desea recibir",
+        "newsletterNo": "No",
+        "notProvided": "No informado"
+    }
+}
