@@ -17,7 +17,6 @@ type Props = {
     locale: "pt-br" | "es" | "en";
 };
 
-// ✅ (se você usa i18n do Next, locale vem daqui)
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
     const l = (locale as Props["locale"]) || "pt-br";
 
@@ -28,10 +27,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
         props: { common, t, locale: l },
     };
 };
-
-// ============================================
-// (SEU CÓDIGO) — só troquei strings por t.
-// ============================================
 
 const STYLES = {
     input:
@@ -482,7 +477,7 @@ Newsletter: ${formData.newsletter ? t.meetingNotes.newsletterYes : t.meetingNote
             <div
                 className="absolute top-0 left-0 right-0 z-0 bg-no-repeat"
                 style={{
-                    backgroundImage: `url('/777642295bdc87285106a64b5eef729025dd26ca.jpg')`,
+                    backgroundImage: `url('/og-bg-agendar.jpg')`,
                     backgroundSize: "100% auto",
                     backgroundPosition: "top center",
                     height: "100%",
