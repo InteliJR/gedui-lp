@@ -46,7 +46,7 @@ export default function NossosValores({ t }: { t: NossosValoresDict }) {
     <section className="relative w-full bg-primary py-20 lg:py-28 overflow-hidden min-h-screen flex items-center justify-center">
       {/* Grafismo de fundo */}
       <div className="absolute inset-0 opacity-100">
-        <Image src="/valores/grafismo.svg" alt="" fill className="object-cover" />
+        <Image src="/grafismo_horizontal.png" alt="" fill className="object-cover scale-y-[-1]" />
       </div>
 
       <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24">
@@ -90,7 +90,7 @@ export default function NossosValores({ t }: { t: NossosValoresDict }) {
                     }`}
                 >
                   <div
-                    className={`rounded-2xl bg-gradient-to-br from-[#A2A2A2]/20 backdrop-blur-sm border border-white/10 p-6 flex flex-col items-center justify-center shadow-xl transition-all duration-500 ${isCenter ? "h-[340px]" : "h-[260px]"
+                    className={`rounded-2xl bg-white-10 backdrop-blur-sm border border-white/10 p-6 flex flex-col items-center justify-center shadow-xl transition-all duration-500 ${isCenter ? "h-[340px]" : "h-[260px]"
                       }`}
                   >
                     {/* Título acima */}
