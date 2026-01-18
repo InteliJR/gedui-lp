@@ -72,7 +72,7 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
   const headerBgClass = variant === "primary" ? "bg-primary" : "bg-transparent";
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 ${headerBgClass}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 ${headerBgClass} backdrop-blur-md`}>
       <nav
         className="mx-auto sm:px-6"
         role="navigation"
@@ -169,7 +169,7 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
         {mobileMenuOpen && (
           <section
             id="mobile-menu"
-            className="flex flex-col md:hidden py-4 border-t border-white/15 text-center items-center bg-primary"
+            className="flex flex-col md:hidden py-4 border-t border-white/15 text-center items-center bg-transparent backdrop-blur-md"
             aria-label="Menu móvel"
           >
             <ul role="menu" className="w-full">
@@ -194,13 +194,24 @@ export default function Header({ variant = "transparent", t }: HeaderProps) {
               <li className="w-full">
                 <Link
                   href="/agendar"
-                  className="block mt-4 border border-solid text-white px-6 py-3 rounded-3xl text-center font-medium w-90"
+                  className="
+                    inline-block
+                    mt-4
+                    border border-solid text-white
+                    px-8 py-3
+                    rounded-3xl
+                    font-medium
+                    mx-auto
+                    text-center
+                  "
                   role="menuitem"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {tHeader.cta}
                 </Link>
               </li>
+
+
             </ul>
           </section>
         )}
