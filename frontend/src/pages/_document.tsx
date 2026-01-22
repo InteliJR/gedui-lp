@@ -22,7 +22,7 @@ export default function Document() {
                 <link rel="manifest" href="/site.webmanifest" />
 
                 {/* Theme Color */}
-                <meta name="theme-color" content="#0ea5e9" />
+                <meta name="theme-color" content="#05294f" />
 
                 {/* Fonts (exemplo - ajuste conforme identidade visual) */}
                 <link 

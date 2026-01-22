@@ -78,7 +78,7 @@ export default function VantagensGestao({ t }: { t: VantagensGestaoDict }) {
       className="relative w-full min-h-screen bg-primary py-14 md:pt-14 overflow-visible"
     >
       {/* Fundo infinito */}
-      <div className="absolute top-0 left-0 w-full h-[200%] z-0 pointer-events-none">
+      <div className="hidden lg:block absolute top-0 left-0 w-full h-[200%] z-0 pointer-events-none">
         <Image
           src="/grafismo_vertical.png"
           alt=""
@@ -87,6 +87,7 @@ export default function VantagensGestao({ t }: { t: VantagensGestaoDict }) {
           priority
         />
       </div>
+
 
       {/* Conteúdo principal */}
       <div className="relative z-10 container mx-auto px-4 sm:px-8 lg:px-16 xl:px-28 flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">

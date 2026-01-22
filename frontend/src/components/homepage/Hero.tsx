@@ -28,7 +28,7 @@ export default function Hero({ t }: { t: HeroDict }) {
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 lg:mx-20 pt-32 md:pt-40 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da esquerda (texto e botão) */}
-          <article className="text-center lg:text-left mt-20">
+          <article className="text-center lg:text-left mt-32">
             <h1
               id="hero-heading"
               className="text-2xl md:text-5xl lg:text-3xl font-bold mb-6 leading-tight max-w-lg"
