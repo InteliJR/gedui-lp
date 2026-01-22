@@ -1,4 +1,15 @@
 {
+  "seo": {
+    "title": "GEDUI | Complete Educational Platform & Learning Management",
+    "description": "GEDUI is a complete educational platform for schools, companies and courses. Smart management, innovation, technology and integrated learning.",
+    "keywords": [
+      "educational platform",
+      "learning management system",
+      "educational technology",
+      "corporate education",
+      "digital learning"
+    ]
+  },
   "hero": {
     "title": "All-in-one Education Platform",
     "paragraph1": "We transform education with innovative solutions through knowledge and information.",
@@ -64,10 +75,26 @@
       "goToValue": "Go to value {n}"
     },
     "items": [
-      { "id": 1, "title": "Innovation", "icon": "/valores/inovacao.png" },
-      { "id": 2, "title": "Ethics", "icon": "/valores/etica.png" },
-      { "id": 3, "title": "Knowledge", "icon": "/valores/conhecimento.png" },
-      { "id": 4, "title": "Results", "icon": "/valores/resultado.png" },
+      {
+        "id": 1,
+        "title": "Innovation",
+        "icon": "/valores/inovacao.png"
+      },
+      {
+        "id": 2,
+        "title": "Ethics",
+        "icon": "/valores/etica.png"
+      },
+      {
+        "id": 3,
+        "title": "Knowledge",
+        "icon": "/valores/conhecimento.png"
+      },
+      {
+        "id": 4,
+        "title": "Results",
+        "icon": "/valores/resultado.png"
+      },
       {
         "id": 5,
         "title": "Social responsibility",
@@ -125,7 +152,9 @@
         "id": 1,
         "nome": "Rosemary Aparecida Ribeiro",
         "titulo": "Administrative Assistant",
-        "formacao": ["Currently studying Pedagogy"],
+        "formacao": [
+          "Currently studying Pedagogy"
+        ],
         "imagem": "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
         "texto": "GEDUI is an excellent platform for students, providing strong support for studies and activities. During the pandemic, it became a priority tool for student access and communication with parents. The platform helps me save time on teachers’ records, report cards, meeting minutes, and assignment verification, contributing to efficient time and resource management."
       },
@@ -167,7 +196,9 @@
         "id": 5,
         "nome": "Silvia Graciete Oliveira De Almeida",
         "titulo": "School Secretary",
-        "formacao": ["Objetivo School – Salto de Pirapora"],
+        "formacao": [
+          "Objetivo School – Salto de Pirapora"
+        ],
         "imagem": "/depoimentos/Silvia_Objetivo.png",
         "texto": "Gedui’s interface is very easy and intuitive to use, greatly supporting administrative work and making management tasks much simpler and more objective."
       }

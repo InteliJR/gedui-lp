@@ -1,4 +1,15 @@
 {
+    "seo": {
+        "title": "Agenda una demo | GEDUI - Plataforma Educativa",
+        "description": "Agenda una demo de GEDUI y conoce soluciones para educación académica y corporativa. Elige fecha y hora y habla con especialistas.",
+        "keywords": [
+            "agendar demo",
+            "plataforma educativa",
+            "educación digital",
+            "educación corporativa",
+            "gestión del aprendizaje"
+        ]
+    },
     "heading": {
         "title": "Agenda una",
         "highlight": "demo"

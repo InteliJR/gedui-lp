@@ -1,4 +1,15 @@
 {
+    "seo": {
+        "title": "Soluções GEDUI | Educação Digital para Instituições e Empresas",
+        "description": "A GEDUI oferece soluções em educação digital para instituições de ensino e empresas, com ferramentas inovadoras que transformam o aprendizado.",
+        "keywords": [
+            "educação digital",
+            "plataforma educacional",
+            "educação corporativa",
+            "educação acadêmica",
+            "gestão do aprendizado"
+        ]
+    },
     "hero": {
         "aria": {
             "backgroundAlt": "Pessoas estudando"
