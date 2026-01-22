@@ -41,7 +41,7 @@ const STYLES = {
         "rounded-full py-3 font-semibold text-base transition text-slate-900 hover:opacity-90 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed",
     buttonGradient:
         "linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(153, 255, 0, 0.78) 100%)",
-    card: "bg-[#034A94] rounded-3xl p-8 md:p-10 shadow-2xl",
+    card: "bg-[#034A94] rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl",
     labelWhite: "text-white text-sm cursor-pointer leading-tight",
     errorBox: "bg-red-500/20 border border-red-400 rounded-lg p-3 mb-2",
     loadingSpinner:
@@ -493,25 +493,28 @@ Newsletter: ${formData.newsletter ? t.meetingNotes.newsletterYes : t.meetingNote
                         <div className="text-center mb-8">
                             <div className="flex justify-center mb-2">
                                 <Link href={homeHref} className="flex items-center space-x-2 shrink-0">
-                                    <Image src={logo} width={300} height={300} alt="Logo da Gedui" priority />
+                                    <Image src={logo} alt="Logo da Gedui" className="w-32 sm:w-36 md:w-44 lg:w-52 h-auto" priority />
                                 </Link>
                             </div>
 
                             {!isScheduled && (
-                                <h2 className="text-4xl md:text-5xl text-white">
+                                <h2 className="text-2xl sm:text-3xl md:text-5xl text-white leading-tight">
                                     {t.heading.title}{" "}
-                                    <span className="text-green-300 font-semibold">{t.heading.highlight}</span>
+                                    <span className="text-green-300 font-semibold">
+                                        {t.heading.highlight}
+                                    </span>
                                 </h2>
+
                             )}
                         </div>
 
                         {isScheduled ? (
                             <div className="text-center py-8">
                                 <div className="text-6xl mb-4">✅</div>
-                                <h3 className="text-2xl md:text-3xl text-white font-bold mb-4">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-4">
                                     {t.success.title}
                                 </h3>
-                                <p className="text-blue-100 text-lg mb-8">
+                               <p className="text-blue-100 text-sm sm:text-base md:text-lg mb-8">
                                     {t.success.line1}
                                     <br />
                                     {t.success.line2}

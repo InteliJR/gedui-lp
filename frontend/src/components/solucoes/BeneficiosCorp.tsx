@@ -48,7 +48,7 @@ export default function SecaoBeneficiosCorp({ t }: { t: BeneficiosCorpDict }) {
 
           <div className="lg:w-1/2 flex items-center justify-center">
             <Image
-              src="/logo_parcial.png"
+              src="/solucoes/logo_parcial.png"
               alt={t.aria.logoAlt}
               width={350}
               height={140}

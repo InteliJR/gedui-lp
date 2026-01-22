@@ -24,7 +24,7 @@ export default function SecaoBeneficiosEdu({ t }: { t: BeneficiosEduDict }) {
             <div className="w-full flex flex-col lg:flex-row justify-between space-y-6">
                 <div className="lg:w-1/2 flex items-center justify-center">
                     <Image
-                        src={"/logo_parcial.png"}
+                        src={"/solucoes/logo_parcial.png"}
                         alt={t.aria.logoAlt}
                         width={350}
                         height={140}

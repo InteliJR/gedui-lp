@@ -27,24 +27,25 @@ export default function Footer({ t }: FooterProps) {
     {
       name: "Whatsapp",
       href: "https://wa.link/mbg92f",
-      icon: <FaWhatsapp className="text-primary" />,
+      icon: <FaWhatsapp className="text-primary text-lg md:text-xl" />,
     },
     {
       name: "Facebook",
       href: "https://www.linkedin.com/company/gedui",
-      icon: <FaFacebookF className="text-primary" />,
+      icon: <FaFacebookF className="text-primary text-lg md:text-xl" />,
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/gedui",
-      icon: <FaInstagram className="text-primary" />,
+      icon: <FaInstagram className="text-primary text-lg md:text-xl" />,
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/company/gedui",
-      icon: <FaLinkedinIn className="text-primary" />,
+      icon: <FaLinkedinIn className="text-primary text-lg md:text-xl" />,
     },
   ];
+
 
   return (
     <footer className="bg-gradient-to-b from-primary to-secondary/60 text-gray-300">
@@ -55,7 +56,7 @@ export default function Footer({ t }: FooterProps) {
           aria-label={t.aria.institutional}
         >
           <figure>
-            <Image src={logo} width={300} height={150} alt="Logo da Gedui" />
+            <Image src={logo} alt="Logo da Gedui" className="w-50 sm:w-44 md:w-52 lg:w-64 h-auto" priority={false} />
           </figure>
 
           <p className="text-sm md:text-md lg:text-lg font-semibold text-white">
