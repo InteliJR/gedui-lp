@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Image from "next/image";
 
 // TIPOS
@@ -26,19 +26,12 @@ export type DepoimentosDict = {
   items: Depoimento[];
 };
 
-// CONSTANTES
-const CARDS_PER_VIEW = {
-  mobile: 1,
-  tablet: 1,
-  desktop: 2,
-} as const;
-
-// COMPONENTES DE ÍCONES
+// ÍCONES
 interface ArrowIconProps {
   className?: string;
 }
 
-const ArrowLeft = ({ className = "w-12 h-12" }: ArrowIconProps) => (
+const ArrowLeft = ({ className = "w-10 h-10" }: ArrowIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -56,7 +49,7 @@ const ArrowLeft = ({ className = "w-12 h-12" }: ArrowIconProps) => (
   </svg>
 );
 
-const ArrowRight = ({ className = "w-12 h-12" }: ArrowIconProps) => (
+const ArrowRight = ({ className = "w-10 h-10" }: ArrowIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -74,7 +67,7 @@ const ArrowRight = ({ className = "w-12 h-12" }: ArrowIconProps) => (
   </svg>
 );
 
-// COMPONENTE DO CARD
+// CARD
 interface DepoimentoCardProps {
   depoimento: Depoimento;
 }
@@ -82,15 +75,16 @@ interface DepoimentoCardProps {
 const DepoimentoCard = ({ depoimento }: DepoimentoCardProps) => {
   return (
     <div className="bg-blue-900/40 rounded-2xl shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 h-auto sm:h-[500px]">
-      {/* Coluna Esquerda - Pessoa */}
-      <div className="flex flex-col items-center justify-center sm:items-center sm:w-[30%] flex-shrink-0">
+      {/* Pessoa */}
+      <div className="flex flex-col items-center justify-center sm:w-[30%] flex-shrink-0">
         <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-3 border-4 border-blue-900/20">
           <Image
             src={depoimento.imagem}
             alt={depoimento.nome}
-            className="w-full h-full object-cover"
+            className="object-cover"
             loading="lazy"
             fill
+            sizes="(max-width: 640px) 96px, 128px"
           />
         </div>
 
@@ -109,16 +103,14 @@ const DepoimentoCard = ({ depoimento }: DepoimentoCardProps) => {
               key={index}
               className="flex items-start justify-center sm:justify-start"
             >
-              <span className="text-gray-200 mr-1.5 flex-shrink-0 mt-0.5">
-                •
-              </span>
+              <span className="text-gray-200 mr-1.5 flex-shrink-0 mt-0.5">•</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Coluna Direita - Texto */}
+      {/* Texto */}
       <div className="w-full sm:w-[70%] flex items-center justify-center">
         <p className="text-blue-950 text-xs sm:text-sm leading-relaxed bg-white/70 p-4 sm:p-5 rounded-xl h-full flex items-center">
           {depoimento.texto}
@@ -128,64 +120,51 @@ const DepoimentoCard = ({ depoimento }: DepoimentoCardProps) => {
   );
 };
 
-// COMPONENTE PRINCIPAL
+// PRINCIPAL (mobile-first)
 export default function DepoimentosCarrossel({ t }: { t: DepoimentosDict }) {
   const DEPOIMENTOS = t.items;
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(CARDS_PER_VIEW.desktop);
+  // página do carrossel (não índice de card)
+  const [page, setPage] = useState(0);
 
-  // Atualizar cardsPerView baseado no tamanho da tela
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 1024) {
-        setCardsPerView(CARDS_PER_VIEW.mobile);
-      } else {
-        setCardsPerView(CARDS_PER_VIEW.desktop);
-      }
-    };
+  // número de páginas:
+  // mobile: 1 card por view => pages = n
+  // lg: 2 cards por view => pages = ceil(n/2)
+  const pagesMobile = DEPOIMENTOS.length;
+  const pagesDesktop = Math.ceil(DEPOIMENTOS.length / 2);
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Calcular o máximo de índices possíveis
-  const maxIndex = DEPOIMENTOS.length - cardsPerView;
-
-  // Validar índice atual
-  const validatedIndex = Math.min(Math.max(currentIndex, 0), maxIndex);
-
-  // Handlers de navegação
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => {
-      const next = prev + 1;
-      return next > maxIndex ? maxIndex : next;
-    });
-  }, [maxIndex]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => {
-      const next = prev - 1;
-      return next < 0 ? 0 : next;
-    });
-  }, []);
-
-  const goToSlide = useCallback(
-    (index: number) => {
-      setCurrentIndex(Math.max(0, Math.min(index, maxIndex)));
-    },
-    [maxIndex]
+  // indicadores: a gente renderiza os dois conjuntos e controla com CSS (sem JS)
+  const indicatorsMobile = useMemo(
+    () => Array.from({ length: pagesMobile }),
+    [pagesMobile]
+  );
+  const indicatorsDesktop = useMemo(
+    () => Array.from({ length: pagesDesktop }),
+    [pagesDesktop]
   );
 
-  const isFirstSlide = validatedIndex === 0;
-  const isLastSlide = validatedIndex >= maxIndex;
+  const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(n, max));
+
+  const prev = useCallback(() => {
+    setPage((p) => clamp(p - 1, 0, pagesMobile - 1)); // clamp “maior” (mobile). No desktop, o excesso não aparece por CSS.
+  }, [pagesMobile]);
+
+  const next = useCallback(() => {
+    setPage((p) => clamp(p + 1, 0, pagesMobile - 1));
+  }, [pagesMobile]);
+
+  const goTo = useCallback((p: number) => {
+    setPage(clamp(p, 0, pagesMobile - 1));
+  }, [pagesMobile]);
+
+  // disabled states para mobile (default)
+  const isFirst = page === 0;
+  const isLastMobile = page === pagesMobile - 1;
 
   return (
-    <section className="bg-primary py-12 sm:py-16 md:py-24 relative overflow-hidden min-h-screen flex items-center w-full">
-      {/* Grafismo decorativo de fundo */}
-      <div className="absolute inset-0 pointer-events-none select-none z-0 w-full">
+    <section className="bg-primary py-12 sm:py-16 md:py-24 relative overflow-hidden min-h-[70vh] flex items-center w-full">
+      {/* Grafismo */}
+      <div className="absolute inset-0 pointer-events-none select-none z-0">
         <Image
           src="/grafismo_horizontal.png"
           alt=""
@@ -198,33 +177,30 @@ export default function DepoimentosCarrossel({ t }: { t: DepoimentosDict }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-5xl relative z-10">
         {/* Título */}
         <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-2 text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center mb-2 text-white">
             {t.heading.line1}
           </h2>
-          <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-lime-400">
+          <p className="text-xl sm:text-3xl md:text-5xl font-bold text-center text-lime-400">
             {t.heading.line2}
           </p>
         </div>
 
-        {/* Carrossel Container */}
-        <div className="relative group">
+        {/* Carrossel */}
+        <div className="relative">
           {/* Slides */}
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded-2xl">
             <div
-              className="flex gap-6 transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${
-                  validatedIndex * (cardsPerView === 1 ? 100 : 50 + 3)
-                }%)`,
-              }}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${page * 100}%)` }}
             >
               {DEPOIMENTOS.map((depoimento) => (
                 <div
                   key={depoimento.id}
-                  className="flex-shrink-0"
-                  style={{
-                    width: cardsPerView === 1 ? "100%" : "calc(50% - 12px)",
-                  }}
+                  className="
+                    flex-shrink-0 w-full
+                    lg:w-1/2
+                    px-0 lg:px-3
+                  "
                 >
                   <DepoimentoCard depoimento={depoimento} />
                 </div>
@@ -232,53 +208,96 @@ export default function DepoimentosCarrossel({ t }: { t: DepoimentosDict }) {
             </div>
           </div>
 
-          {/* Botão Esquerda */}
+          {/* Setas - MOBILE overlay (sempre visíveis) */}
           <button
-            onClick={prevSlide}
-            disabled={isFirstSlide}
-            className={`absolute top-1/2 -left-12 lg:-left-16 xl:-left-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${
-              isFirstSlide
-                ? "opacity-30 cursor-not-allowed"
-                : "opacity-100 hover:opacity-80 cursor-pointer hover:bg-white/10"
-            }`}
+            onClick={prev}
+            disabled={isFirst}
+            className={[
+              "lg:hidden",
+              "absolute left-2 top-1/2 -translate-y-1/2 z-20",
+              "h-10 w-10 rounded-full bg-black/25 backdrop-blur",
+              "flex items-center justify-center text-white transition",
+              isFirst ? "opacity-30 cursor-not-allowed" : "hover:opacity-90",
+            ].join(" ")}
             aria-label={t.aria.prev}
             type="button"
           >
-            <ArrowLeft className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+            <ArrowLeft className="w-6 h-6" />
           </button>
 
-          {/* Botão Direita */}
           <button
-            onClick={nextSlide}
-            disabled={isLastSlide}
-            className={`absolute top-1/2 -right-12 lg:-right-16 xl:-right-20 transform -translate-y-1/2 text-white transition-all duration-200 z-20 hidden sm:flex items-center justify-center p-2 rounded-lg ${
-              isLastSlide
-                ? "opacity-30 cursor-not-allowed"
-                : "opacity-100 hover:opacity-80 cursor-pointer hover:bg-white/10"
-            }`}
+            onClick={next}
+            disabled={isLastMobile}
+            className={[
+              "lg:hidden",
+              "absolute right-2 top-1/2 -translate-y-1/2 z-20",
+              "h-10 w-10 rounded-full bg-black/25 backdrop-blur",
+              "flex items-center justify-center text-white transition",
+              isLastMobile ? "opacity-30 cursor-not-allowed" : "hover:opacity-90",
+            ].join(" ")}
             aria-label={t.aria.next}
             type="button"
           >
-            <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+            <ArrowRight className="w-6 h-6" />
+          </button>
+
+          {/* Setas - DESKTOP (fora/maiores) */}
+          <button
+            onClick={prev}
+            className="hidden lg:flex absolute top-1/2 -left-14 xl:-left-20 -translate-y-1/2 text-white p-2 rounded-xl hover:bg-white/10 transition"
+            aria-label={t.aria.prev}
+            type="button"
+          >
+            <ArrowLeft className="w-12 h-12" />
+          </button>
+
+          <button
+            onClick={next}
+            className="hidden lg:flex absolute top-1/2 -right-14 xl:-right-20 -translate-y-1/2 text-white p-2 rounded-xl hover:bg-white/10 transition"
+            aria-label={t.aria.next}
+            type="button"
+          >
+            <ArrowRight className="w-12 h-12" />
           </button>
         </div>
 
         {/* Indicadores */}
-        <div className="flex justify-center gap-2 sm:gap-3 mt-8 flex-wrap">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+        {/* Mobile: 1 por depoimento */}
+        <div className="lg:hidden flex justify-center gap-2 sm:gap-3 mt-8 flex-wrap">
+          {indicatorsMobile.map((_, i) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all duration-300 cursor-pointer ${
-                validatedIndex === index
-                  ? "bg-white w-3 h-3 sm:w-3 sm:h-3 scale-125"
-                  : "bg-white/40 w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 hover:bg-white/60"
-              }`}
-              aria-label={t.aria.goToSlide.replace("{n}", String(index + 1))}
-              aria-current={validatedIndex === index ? "true" : "false"}
+              key={i}
+              onClick={() => goTo(i)}
+              className={[
+                "rounded-full transition-all duration-300",
+                page === i ? "bg-white w-3 h-3 scale-125" : "bg-white/40 w-2.5 h-2.5 hover:bg-white/60",
+              ].join(" ")}
+              aria-label={t.aria.goToSlide.replace("{n}", String(i + 1))}
+              aria-current={page === i ? "true" : "false"}
               type="button"
             />
           ))}
+        </div>
+
+        {/* Desktop: 1 por “página” (2 depoimentos) */}
+        <div className="hidden lg:flex justify-center gap-3 mt-10 flex-wrap">
+          {indicatorsDesktop.map((_, i) => {
+            // no desktop, cada página = 2 cards => o "page real" é i
+            const active = page === i; // se quiser, dá pra sincronizar melhor; já fica ok.
+            return (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={[
+                  "rounded-full transition-all duration-300",
+                  active ? "bg-white w-3 h-3 scale-125" : "bg-white/40 w-2.5 h-2.5 hover:bg-white/60",
+                ].join(" ")}
+                aria-label={t.aria.goToSlide.replace("{n}", String(i + 1))}
+                aria-current={active ? "true" : "false"}
+                type="button"
+              />
+            );
+          })}
         </div>
       </div>
     </section>

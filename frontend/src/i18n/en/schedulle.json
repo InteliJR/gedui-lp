@@ -1,0 +1,93 @@
+{
+    "seo": {
+        "title": "Book a demo | GEDUI - Complete Education Platform",
+        "description": "Book a GEDUI demo and explore solutions for academic and corporate learning. Pick a date and time and talk to our specialists.",
+        "keywords": [
+            "book a demo",
+            "education platform",
+            "digital education",
+            "corporate learning",
+            "learning management"
+        ]
+    },
+    "heading": {
+        "title": "Book a",
+        "highlight": "demo"
+    },
+    "success": {
+        "title": "Booking Confirmed!",
+        "line1": "The details have been sent to your email.",
+        "line2": "We’re looking forward to talking with you!",
+        "cta": "New Booking"
+    },
+    "buttons": {
+        "scheduling": "Booking...",
+        "submit": "Book a demo"
+    },
+    "loading": {
+        "initializing": "Loading available times..."
+    },
+    "errors": {
+        "connectLater": "Could not connect to the scheduling system. Please try again later.",
+        "loadTimes": "Error loading available times.",
+        "noTimes7Days": "No available times in the next 7 days.",
+        "noEventTypes": "No event types configured in Calendly.",
+        "selectDateTime": "Select a date and time to continue.",
+        "fillNameEmail": "Please enter your name and email to continue.",
+        "createSchedule": "Could not create the booking. Please choose another time.",
+        "connection": "Connection error. Please try again.",
+        "acceptTermsAlert": "Please accept the Terms and Conditions to continue.",
+        "pickDateTime": "Please select a date and time."
+    },
+    "fields": {
+        "name": "Contact name *",
+        "institutionName": "Organization name *",
+        "email": "Contact email *",
+        "phone": "Phone *"
+    },
+    "selects": {
+        "positionPlaceholder": "Role *",
+        "institutionTypePlaceholder": "Type *",
+        "productInterestPlaceholder": "Product interest *",
+        "datePlaceholder": "Date *",
+        "timePlaceholder": "Time *",
+        "selectDateFirst": "Select a date first",
+        "noDates": "No dates",
+        "noTimes": "No times",
+        "loading": "Loading..."
+    },
+    "options": {
+        "position": {
+            "director": "Director",
+            "coordinator": "Coordinator",
+            "teacher": "Teacher",
+            "other": "Other"
+        },
+        "institutionType": {
+            "public": "Public",
+            "private": "Private",
+            "nonprofit": "Non-profit"
+        },
+        "product": {
+            "edu": "Gedu Edu",
+            "corp": "Gedu Corp",
+            "both": "Both"
+        }
+    },
+    "checkboxes": {
+        "newsletter": "Would you like to receive updates and offers?",
+        "termsTitle": "Terms and data usage:",
+        "termsText": "I confirm that I have read and agree to the Terms and Conditions and authorize the use of my personal data for the purposes described in the Privacy Policy."
+    },
+    "meetingNotes": {
+        "header": "LEAD INFORMATION:",
+        "position": "Role",
+        "institution": "Organization",
+        "institutionType": "Organization type",
+        "product": "Product interest",
+        "phone": "Phone",
+        "newsletterYes": "Yes, wants to receive",
+        "newsletterNo": "No",
+        "notProvided": "Not provided"
+    }
+}

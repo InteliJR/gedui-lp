@@ -75,10 +75,16 @@ export default function BlogPreview({ t }: { t: BlogPreviewDict }) {
 
   return (
     <section
-      className="min-h-screen w-full bg-primary bg-[url('/grafismo_duplo.png')] bg-no-repeat bg-cover bg-center"
+      className="
+        min-h-screen w-full bg-primary
+        bg-[url('/grafismo_duplo.png')] bg-no-repeat bg-cover
+        bg-[position:center_95%]
+        md:bg-[position:center_center]
+      "
       aria-labelledby="blog-heading"
       role="region"
     >
+
       <div
         className="
           min-h-screen
@@ -130,13 +136,19 @@ export default function BlogPreview({ t }: { t: BlogPreviewDict }) {
               </button>
 
               {/* Card */}
-              <div className="mx-12">
-                <CardBlog
-                  img_url={posts[currentIndex].img_url}
-                  title={posts[currentIndex].title}
-                  url={posts[currentIndex].url}
-                />
+              <div className="mx-12 w-full overflow-hidden pt-32 pb-4">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                  {posts.map((post) => (
+                    <div key={post.slug} className="w-full flex-shrink-0 flex justify-center px-1">
+                      <CardBlog img_url={post.img_url} title={post.title} url={post.url} />
+                    </div>
+                  ))}
+                </div>
               </div>
+
 
               {/* Botão direita */}
               <button

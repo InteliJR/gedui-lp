@@ -19,7 +19,11 @@ export default function SecaoEducacaoAcademica({
   t: EducacaoAcademicaDict;
 }) {
   return (
-    <section className="relative w-full bg-[#051D39] pt-40 pb-20 overflow-hidden -mt-8">
+    <section
+      id="gedui-edu"
+      className="relative w-full bg-[#051D39] pt-40 pb-20 overflow-hidden -mt-8"
+      aria-labelledby="gedui-edu-heading"
+    >
       {/* Azul escuro de fundo */}
       <div className="absolute inset-0 bg-[#051D39] z-0" />
 
@@ -50,7 +54,10 @@ export default function SecaoEducacaoAcademica({
 
         {/* TEXTO */}
         <div className="max-w-xl text-white pb-10">
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          <h2
+            id="gedui-edu-heading"
+            className="text-3xl md:text-4xl font-bold leading-tight"
+          >
             {t.heading.line1} <br />
             <span className="text-[#8CBF3F]">{t.heading.highlight}</span>
           </h2>

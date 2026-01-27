@@ -1,4 +1,15 @@
 {
+  "seo": {
+    "title": "GEDUI | Plataforma Educacional Completa e Gestão de Aprendizado",
+    "description": "A GEDUI é uma plataforma educacional completa para escolas, empresas e cursos. Gestão inteligente, inovação, tecnologia e aprendizado integrado.",
+    "keywords": [
+      "plataforma educacional",
+      "gestão educacional",
+      "tecnologia educacional",
+      "educação corporativa",
+      "aprendizado digital"
+    ]
+  },
   "hero": {
     "title": "Plataforma Educacional Completa",
     "paragraph1": "Transformamos a educação com soluções inovadoras por meio do conhecimento e da informação.",
@@ -56,7 +67,7 @@
       }
     ]
   },
-   "nossosValores": {
+  "nossosValores": {
     "heading": "Nossos Valores",
     "aria": {
       "prev": "Anterior",
@@ -64,10 +75,26 @@
       "goToValue": "Ir para valor {n}"
     },
     "items": [
-      { "id": 1, "title": "Inovação", "icon": "/valores/inovacao.png" },
-      { "id": 2, "title": "Ética", "icon": "/valores/etica.png" },
-      { "id": 3, "title": "Conhecimento", "icon": "/valores/conhecimento.png" },
-      { "id": 4, "title": "Resultado", "icon": "/valores/resultado.png" },
+      {
+        "id": 1,
+        "title": "Inovação",
+        "icon": "/valores/inovacao.png"
+      },
+      {
+        "id": 2,
+        "title": "Ética",
+        "icon": "/valores/etica.png"
+      },
+      {
+        "id": 3,
+        "title": "Conhecimento",
+        "icon": "/valores/conhecimento.png"
+      },
+      {
+        "id": 4,
+        "title": "Resultado",
+        "icon": "/valores/resultado.png"
+      },
       {
         "id": 5,
         "title": "Responsabilidade social",
@@ -125,7 +152,9 @@
         "id": 1,
         "nome": "Rosemary Aparecida Ribeiro",
         "titulo": "Auxiliar de Secretaria",
-        "formacao": ["Cursando Pedagogia"],
+        "formacao": [
+          "Cursando Pedagogia"
+        ],
         "imagem": "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
         "texto": "A GEDUI é uma excelente plataforma para os alunos, proporcionando suporte para estudos e atividades. Durante a pandemia, tornou-se de utilidade prioritária para o acesso dos alunos e comunicação com os pais. A plataforma me auxilia a economizar tempo com os diários dos professores, boletins, atas e verificação dos trabalhos, contribuindo para uma gestão eficiente de tempo e recursos."
       },
@@ -167,7 +196,9 @@
         "id": 5,
         "nome": "Silvia Graciete Oliveira De Almeida",
         "titulo": "Secretária",
-        "formacao": ["Objetivo Salto de Pirapora"],
+        "formacao": [
+          "Objetivo Salto de Pirapora"
+        ],
         "imagem": "/depoimentos/Silvia_Objetivo.png",
         "texto": "A interface da Gedui é muito fácil e intuitiva de ser utilizada, ajudando muito na secretaria tornando a parte de gestão muito mais fácil e objetiva."
       }

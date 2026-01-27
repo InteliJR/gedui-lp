@@ -20,7 +20,7 @@ export function TrilhaBeneficiosEduSVG({
   const glowRef = useRef<SVGPathElement | null>(null);
   const [pathLen, setPathLen] = useState<number>(0);
 
-  const d = "M893 86 V289 H98 V523 H893 V755 H99 V1090.5 H302.5";
+  const d = "M920 20 V289 H88 V523 H893 V755 H99 V1090.5 H302.5";
 
   useEffect(() => {
     const el = glowRef.current;
