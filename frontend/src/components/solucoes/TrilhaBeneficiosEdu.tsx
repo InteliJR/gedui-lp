@@ -26,7 +26,7 @@ export default function TrilhaBeneficiosEdu({
     const cards = t.cards;
 
     return (
-        <section ref={sectionRef} className="relative w-full bg-primary overflow-hidden -mt-8">
+        <section ref={sectionRef} className="relative w-full bg-primary overflow-hidden -mt-15">
             {/* FUNDO: imagem beneficios (direita) */}
             <div className="absolute inset-0 pointer-events-none z-0 hidden lg:block">
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-1/2">
@@ -84,7 +84,7 @@ export default function TrilhaBeneficiosEdu({
                     animate={animate}
                     strokeWidth={12}
                     glowWidth={12}
-                    speedSec={15}
+                    speedSec={20}
                     lightLen={60}
                 />
 

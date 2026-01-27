@@ -20,8 +20,6 @@ export function TrilhaBeneficiosCorpSVG({
   const glowRef = useRef<SVGPathElement | null>(null);
   const [pathLen, setPathLen] = useState(0);
 
-  // ✅ centerline (igual EDU)
-  // Depois o <g> espelha e aplica o scale que você já usava
   const d = "M893 86 V289 H98 V523 H893 V755 H99 V1090.5 H316.5";
 
   useEffect(() => {
@@ -42,7 +40,6 @@ export function TrilhaBeneficiosCorpSVG({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* ✅ mantém seu espelhamento/scale aqui */}
       <g
         transform="
           translate(503.5, 0)
