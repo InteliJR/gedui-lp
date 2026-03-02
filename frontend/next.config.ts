@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
                 hostname: "gedui.blob.core.windows.net",
                 pathname: "/**",
             },
+            {
+                protocol: 'https',
+                hostname: 'gedui-gedui-files.6y5ref.easypanel.host',
+                port: '',
+                pathname: '/**',
+            },
         ],
     },
 

@@ -11,9 +11,10 @@ type CommonDict = Awaited<ReturnType<typeof loadCommonDictionary>>;
 
 interface LayoutProps {
   children: ReactNode;
+  headerVariant?: "transparent" | "primary";
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, headerVariant }: LayoutProps) {
   const [common, setCommon] = useState<CommonDict | null>(null);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header t={common.header} />
+      <Header t={common.header} variant={headerVariant} />
       <main className="flex-grow pt-16">{children}</main>
       <Footer t={common.footer} />
     </div>

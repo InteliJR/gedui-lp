@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export type BlogCardDict = {
   readMoreLabel: string;
-  readMoreAriaLabel: string; // pode usar com {title} se quiser
+  readMoreAriaLabel: string;
 };
 
 interface BlogCardProps {
   title: string;
-  subtitle: string;
-  description: string;
+  subtitle?: string;
+  description?: string;
   imageUrl: string;
   imageAlt: string;
   link: string;
@@ -81,17 +81,21 @@ export default function BlogCard({
             }`}
         >
           <div className="w-full">
-            <h2 className="text-2xl md:text-[32px] font-semibold text-white opacity-80">
-              {subtitle}
-            </h2>
+            {subtitle && (
+              <h2 className="text-2xl md:text-[32px] font-semibold text-white opacity-80">
+                {subtitle}
+              </h2>
+            )}
 
             <h1 className="text-3xl md:text-[40px] font-semibold leading-tight mt-2 text-white">
               {title}
             </h1>
 
-            <p className="mt-6 text-base md:text-[20px] leading-relaxed opacity-90 text-white font-light">
-              {description}
-            </p>
+            {description && (
+              <p className="mt-6 text-base md:text-[20px] leading-relaxed opacity-90 text-white font-light">
+                {description}
+              </p>
+            )}
 
             {/* Botão com SVG (chevron) */}
             <Link
