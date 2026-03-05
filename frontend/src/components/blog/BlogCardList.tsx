@@ -70,7 +70,7 @@ export default function BlogCardList({
     const sourcePosts = currentApiPosts.length > 0 ? currentApiPosts : (t.posts || []);
 
     return sourcePosts.map((apiPost: any, index: number) => {
-      if (apiPost.id) return apiPost; // Se for o mock antigo
+      if (apiPost.id) return apiPost;
 
       return {
         id: apiPost.slug || String(index),
