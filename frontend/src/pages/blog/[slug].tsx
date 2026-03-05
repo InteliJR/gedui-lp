@@ -7,6 +7,7 @@ import type { GetServerSideProps } from "next";
 import SEO from "@/components/common/SEO";
 import Layout from "@/components/common/Layout";
 import loadBlogPostDictionary from "@/i18n/loadBlogPostDictionary";
+import styles from './blog.module.css'
 
 type BlogPostPageDict = {
   notFound: {
@@ -105,13 +106,12 @@ export default function BlogPost({ post, t, intlLocale }: { post: any, t: BlogPo
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
               {post.title}
             </h1>
-
-            <p className="text-sm md:text-base text-gray-700 mb-8 leading-relaxed">
-              {post.excerpt}
-            </p>
-
             <div
-              className="space-y-8 text-sm md:text-base prose prose-lg"
+              className="text-sm md:text-base text-gray-700 mb-8 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.excerpt }}
+            />
+            <div
+              className={styles.excerpt}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
