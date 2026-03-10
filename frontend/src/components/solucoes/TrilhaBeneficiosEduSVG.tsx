@@ -1,0 +1,87 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+type Props = {
+  animate: boolean;
+  strokeWidth?: number;
+  glowWidth?: number;
+  speedSec?: number;
+  lightLen?: number;
+};
+
+export function TrilhaBeneficiosEduSVG({
+  animate,
+  strokeWidth = 4,
+  glowWidth = 6,
+  speedSec = 10,
+  lightLen = 60,
+}: Props) {
+  const glowRef = useRef<SVGPathElement | null>(null);
+  const [pathLen, setPathLen] = useState<number>(0);
+
+  const d = "M920 20 V289 H88 V523 H893 V755 H99 V1090.5 H302.5";
+
+  useEffect(() => {
+    const el = glowRef.current;
+    if (!el) return;
+
+    const len = el.getTotalLength();
+    setPathLen(len);
+
+    el.style.strokeDasharray = `${lightLen} ${len}`;
+    el.style.strokeDashoffset = `${len}`;
+  }, [lightLen]);
+
+  return (
+    <svg
+      className="absolute top-0 left-1/2 -translate-x-1/2 w-[1007px] h-[1201px] pointer-events-none"
+      viewBox="0 86 1007 1201"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* BASE */}
+      <path
+        d={d}
+        stroke="#91AF51"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+
+      {/* GLOW */}
+      <path
+        ref={glowRef}
+        d={d}
+        stroke="#91AF51"
+        strokeWidth={glowWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        filter="url(#edu-glow)"
+        opacity={animate ? 1 : 0}
+      >
+        {animate && pathLen > 0 && (
+          <animate
+            attributeName="stroke-dashoffset"
+            from={pathLen}
+            to={-pathLen}
+            dur={`${speedSec}s`}
+            repeatCount="indefinite"
+          />
+        )}
+      </path>
+
+      <defs>
+        <filter id="edu-glow">
+          <feGaussianBlur stdDeviation="10" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  );
+}

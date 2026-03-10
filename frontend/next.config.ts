@@ -1,16 +1,44 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-  reactStrictMode: true,
-  // ✅ Compressão de assets
-  compress: true,
-  // ✅ Power by header (segurança)
-  poweredByHeader: false,
+    // Removido output: "export" para suportar API routes na Vercel
+    trailingSlash: true,
+
+    images: {
+        // Usar otimização de imagens da Vercel
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "gedui.blob.core.windows.net",
+                pathname: "/**",
+            },
+            {
+                protocol: 'https',
+                hostname: 'gedui-gedui-files.6y5ref.easypanel.host',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
+
+    reactStrictMode: true,
+
+    // ✅ Compressão de assets
+    compress: true,
+
+    // ✅ Powered by header (segurança)
+    poweredByHeader: false,
+
+    // ✅ Variáveis de ambiente públicas (se necessário expor no client)
+    env: {
+        // Apenas variáveis públicas aqui
+    },
+
+    i18n: {
+        locales: ["pt-BR", "en", "es"],
+        defaultLocale: "pt-BR",
+        localeDetection: false,
+    },
 };
 
 export default nextConfig;

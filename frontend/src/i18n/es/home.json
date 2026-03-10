@@ -1,0 +1,240 @@
+{
+  "seo": {
+    "title": "GEDUI | Plataforma Educativa Completa y Gestión del Aprendizaje",
+    "description": "GEDUI es una plataforma educativa completa para escuelas, empresas y cursos. Gestión inteligente, innovación, tecnología y aprendizaje integrado.",
+    "keywords": [
+      "plataforma educativa",
+      "gestión educativa",
+      "tecnología educativa",
+      "educación corporativa",
+      "aprendizaje digital"
+    ]
+  },
+  "hero": {
+    "title": "Plataforma Educativa Completa",
+    "paragraph1": "Transformamos la educación con soluciones innovadoras a través del conocimiento y la información.",
+    "paragraph2": "Nuestro ecosistema educativo impulsa el desempeño individual de estudiantes y colaboradores y facilita el trabajo de gestores y docentes.",
+    "ctaPrimary": "Agendar demostración",
+    "ctaPrimaryAriaLabel": "Agendar una demostración",
+    "helperText": "Acceder a más información"
+  },
+  "quemSomos": {
+    "whoWeAre": {
+      "heading": "Quiénes somos",
+      "text": "Somos un equipo apasionado por la educación y la innovación, que valora el poder de la tecnología para romper las barreras tradicionales del aprendizaje e impactar positivamente el desarrollo personal, académico y profesional."
+    },
+    "whatWeDo": {
+      "heading": "Qué hacemos",
+      "text": "Contribuimos a la transformación social a través de la educación, preparando a las personas para los desafíos y oportunidades del futuro. Potenciamos el aprendizaje con soluciones que lo vuelven más dinámico, eficiente e inclusivo."
+    },
+    "video": {
+      "ariaLabel": "Video institucional",
+      "src": "/videos/gedui_espanhol.mp4",
+      "poster": "/videos/poster.png"
+    }
+  },
+  "paraQuemSomos": {
+    "aria": {
+      "notebookAlt": "Portátil mostrando la interfaz de Gedui",
+      "logoAlt": "Logo de Gedui"
+    },
+    "notebook": {
+      "eyebrow": "¿Para quién es?",
+      "title": "Las herramientas innovadoras de nuestro ecosistema educativo son versátiles y adaptables, y pueden transformar el aprendizaje en distintos sectores."
+    },
+    "cards": [
+      {
+        "icon": "/quem-somos/icon-schools.svg",
+        "text": "Escuelas privadas y públicas, infantil, primaria, secundaria, formación técnica y universidades.",
+        "iconSize": 190,
+        "iconTop": "-top-16",
+        "iconHorizontal": "-right-22"
+      },
+      {
+        "icon": "/quem-somos/icon-courses.svg",
+        "text": "Cursos extracurriculares, libres o de especialización, mentoría y redes de franquicias.",
+        "iconSize": 180,
+        "iconTop": "-top-17",
+        "iconHorizontal": "-left-22"
+      },
+      {
+        "icon": "/quem-somos/icon-industry.svg",
+        "text": "Industrias, proveedores de servicios, empresas, call centers, consultoría de RR. HH. y redes de franquicias.",
+        "cta": "Saber más",
+        "iconSize": 140,
+        "iconTop": "-top-9",
+        "iconHorizontal": "-right-14"
+      }
+    ]
+  },
+  "nossosValores": {
+    "heading": "Nuestros Valores",
+    "aria": {
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "goToValue": "Ir al valor {n}"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "Innovación",
+        "icon": "/valores/inovacao.png"
+      },
+      {
+        "id": 2,
+        "title": "Ética",
+        "icon": "/valores/etica.png"
+      },
+      {
+        "id": 3,
+        "title": "Conocimiento",
+        "icon": "/valores/conhecimento.png"
+      },
+      {
+        "id": 4,
+        "title": "Resultados",
+        "icon": "/valores/resultado.png"
+      },
+      {
+        "id": 5,
+        "title": "Responsabilidad social",
+        "icon": "/valores/responsabilidadesocial.png"
+      }
+    ]
+  },
+  "vantagensGestao": {
+    "heading": {
+      "line1": "Ventajas para",
+      "line2": "transformar y",
+      "highlight": "optimizar tu gestión"
+    },
+    "lists": {
+      "blue": [
+        "Estructura en la nube",
+        "Seguridad y confiabilidad",
+        "Mayor retención",
+        "Mejora en la comunicación",
+        "Acceso a recursos de alta calidad",
+        "Indicadores de resultados"
+      ],
+      "green": [
+        "Sostenibilidad",
+        "Aprendizaje personalizado",
+        "Adaptación a tendencias",
+        "Optimización de tiempo y recursos",
+        "Aumento de la productividad",
+        "Innovación continua"
+      ]
+    },
+    "cards": [
+      "White label",
+      "Gedui Box videos y archivos",
+      "Multilingüe",
+      "Gamificación",
+      "Creación de múltiples redes",
+      "Gestión de usuarios",
+      "Agenda digital activa",
+      "GEDUIVox"
+    ]
+  },
+  "depoimentos": {
+    "heading": {
+      "line1": "Lo que están diciendo",
+      "line2": "sobre nosotros"
+    },
+    "aria": {
+      "prev": "Diapositiva anterior",
+      "next": "Siguiente diapositiva",
+      "goToSlide": "Ir a la diapositiva {n}"
+    },
+    "items": [
+      {
+        "id": 1,
+        "nome": "Rosemary Aparecida Ribeiro",
+        "titulo": "Auxiliar Administrativa",
+        "formacao": [
+          "Cursando Pedagogía"
+        ],
+        "imagem": "/depoimentos/Rosemary-Aparecida-Ribeiro.png",
+        "texto": "GEDUI es una excelente plataforma para los estudiantes, ya que ofrece un gran apoyo para los estudios y las actividades. Durante la pandemia, se convirtió en una herramienta prioritaria para el acceso de los alumnos y la comunicación con los padres. La plataforma me ayuda a ahorrar tiempo en los registros de los docentes, boletines, actas y verificación de trabajos, contribuyendo a una gestión eficiente del tiempo y los recursos."
+      },
+      {
+        "id": 2,
+        "nome": "Soraia Véras",
+        "titulo": "Profesora",
+        "formacao": [
+          "Licenciatura en Letras y Pedagogía",
+          "Posgrado en Psicopedagogía"
+        ],
+        "imagem": "/depoimentos/Soraia_Veras.png",
+        "texto": "Gedui es un facilitador increíble para mi trabajo como profesora. Acceso fácil a las herramientas, diario digital disponible y eficacia en la duplicación de contenidos. Durante la pandemia, brindó a los estudiantes acceso total a las actividades y permitió a los padres el control en tiempo real de las clases. Agradezco al equipo de Gedui por su apoyo constante y por facilitar nuestra práctica educativa."
+      },
+      {
+        "id": 3,
+        "nome": "Rev. Heitor Beranger Junior",
+        "titulo": "Docente en Letras",
+        "formacao": [
+          "Colegios Tableau – Sorocaba",
+          "Colegio Objetivo – Salto de Pirapora"
+        ],
+        "imagem": "/depoimentos/Heitor_Beranger.png",
+        "texto": "Después de años buscando la solución ideal en softwares de gestión escolar, encontré en GEDUI un sistema sorprendente. Su rendimiento, practicidad y alcance son notables. La plataforma es ligera, accesible en red y responde eficientemente a las necesidades diarias del profesional de la educación. Encontrar esta solución fue un hito para optimizar mi práctica educativa y la gestión escolar."
+      },
+      {
+        "id": 4,
+        "nome": "Claudio Rodrigues de Proença",
+        "titulo": "Profesor de Geografía",
+        "formacao": [
+          "Colegio Tableau – Sorocaba",
+          "Seminario João Paulo II",
+          "Curso Direto, Universidad Abierta de Brasil"
+        ],
+        "imagem": "/depoimentos/Claudio-Rodrigues-de-Proenca.png",
+        "texto": "El ecosistema ofrece herramientas increíbles, proporcionando una conexión directa y eficiente entre alumnos, docentes, familias y la escuela. Con un uso sencillo, optimiza tareas diarias como el registro de calificaciones de forma clara y confiable. La seguridad y tranquilidad que ofrece marcan la diferencia, convirtiéndolo siempre en mi elección por los beneficios que proporciona."
+      },
+      {
+        "id": 5,
+        "nome": "Silvia Graciete Oliveira De Almeida",
+        "titulo": "Secretaria Escolar",
+        "formacao": [
+          "Objetivo – Salto de Pirapora"
+        ],
+        "imagem": "/depoimentos/Silvia_Objetivo.png",
+        "texto": "La interfaz de Gedui es muy fácil e intuitiva de usar, ayudando mucho en la secretaría y haciendo que la gestión sea mucho más simple y objetiva."
+      }
+    ]
+  },
+  "blogPreview": {
+    "heading": "Lo último del blog",
+    "loadingText": "Cargando...",
+    "aria": {
+      "prevPost": "Publicación anterior",
+      "nextPost": "Siguiente publicación"
+    },
+    "cta": {
+      "title": "Comienza la transformación hacia el",
+      "highlight": "futuro del aprendizaje.",
+      "button": "Agendar demostración"
+    },
+    "mockPosts": [
+      {
+        "title": "Educación corporativa y tecnología: tendencias y desafíos para 2025",
+        "slug": "educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "url": "/es/blog/educacao-corporativa-e-tecnologia-tendencias-e-desafios-para-2025",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post26.webp"
+      },
+      {
+        "title": "Impacto social de la educación tecnológica: inclusión y accesibilidad para todos",
+        "slug": "impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "url": "/es/blog/impacto-social-da-educacao-tecnologica-inclusao-e-acessibilidade-para-todos",
+        "img_url": "https://gedui.blob.core.windows.net/geral/25_blog_gedui.jpg"
+      },
+      {
+        "title": "Tecnología en la educación: la transformación de los cursos de pedagogía y el papel de la formación continua",
+        "slug": "tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "url": "/es/blog/tecnologia-na-educacao-a-transformacao-dos-cursos-de-pedagogia-e-o-papel-da-formacao-continuada",
+        "img_url": "https://gedui.blob.core.windows.net/geral/post_24.jpg"
+      }
+    ]
+  }
+}

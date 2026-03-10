@@ -1,0 +1,129 @@
+{
+    "seo": {
+        "title": "GEDUI Solutions | Digital Education for Schools and Companies",
+        "description": "GEDUI offers digital education solutions for academic institutions and companies. Innovative tools to transform learning and optimize results.",
+        "keywords": [
+            "digital education solutions",
+            "educational platform",
+            "corporate learning",
+            "academic education",
+            "learning management system"
+        ]
+    },
+    "hero": {
+        "aria": {
+            "backgroundAlt": "People studying"
+        },
+        "title": {
+            "line1": "Solutions that transform",
+            "line2": "learning in your",
+            "line3": "institution or company."
+        },
+        "description": "GEDUI is the platform that helps transform traditional methods by bringing innovation and making learning more dynamic, efficient, and inclusive."
+    },
+    "cta": {
+        "heading": {
+            "text": "With innovation and knowledge,",
+            "highlight": "we boost individual learning"
+        },
+        "description": "An educational ecosystem where management is strengthened through information, training, and certification to support individual development.",
+        "button": {
+            "label": "Schedule a demo",
+            "ariaLabel": "Schedule a demo"
+        }
+    },
+    "educacaoAcademica": {
+        "aria": {
+            "imageAlt": "Person typing on a laptop using GEDUI"
+        },
+        "heading": {
+            "line1": "Academic Education",
+            "highlight": "digital with Gedui Edu"
+        },
+        "description": "GEDUI enhances your institution’s digital education with smart tools that strengthen the teaching and learning process."
+    },
+    "beneficiosEdu": {
+        "heading": "Benefits with Gedui Edu",
+        "description": "Explore the benefits that can transform your educational institution by providing an innovative learning exchange experience for students, teachers, and managers. Discover some of these benefits. For more details, schedule a demo with our specialists.",
+        "aria": {
+            "logoAlt": "Gedui logo"
+        },
+        "benefits": [
+            "Training and certifications",
+            "Boost your institution’s results",
+            "Security and reliability",
+            "Individual follow-up",
+            "User and group management",
+            "Participatory education",
+            "Enhances and guides experiences and outcomes",
+            "Support for your students’ learning",
+            "Reduced learning gaps",
+            "Learning curve analysis"
+        ],
+        "trilha": {
+            "cards": [
+                "Reports",
+                "Assignment and assessment management",
+                "Custom class management",
+                "Class schedule",
+                "Grade management",
+                "Reminders and alerts",
+                "Question bank",
+                "Digital class journal"
+            ],
+            "cta": {
+                "title": "Looking for the perfect solution to expand knowledge in your company?",
+                "subtitle": "Talk to our specialists.",
+                "button": "Schedule a demo",
+                "buttonAriaLabel": "Schedule a demo"
+            }
+        }
+    },
+    "educacaoCorporativa": {
+        "aria": {
+            "phoneAlt": "Mobile phone with GEDUI logo"
+        },
+        "heading": {
+            "line1": "Corporate Education",
+            "highlight": "digital with Gedui Corp"
+        },
+        "description": "GEDUI supports the improvement of learning across all areas of your company."
+    },
+    "beneficiosCorp": {
+        "heading": "Benefits with Gedui Corp",
+        "description": "Discover the benefits of our dynamic, efficient, and inclusive ecosystem solutions for learning new skills and knowledge. They help boost results and optimize time and resources for your company. Schedule a demo with our specialists for more details.",
+        "aria": {
+            "logoAlt": "Gedui logo"
+        },
+        "benefits": [
+            "Training and certifications",
+            "Cloud-based structure",
+            "Individual follow-up",
+            "Marketing campaigns and incentives",
+            "User and group management",
+            "Time and resource savings for training participation",
+            "Enhances and guides experiences and outcomes",
+            "Greater satisfaction, motivation, and performance",
+            "Learning engagement analysis",
+            "Integrated environment – everything in one place"
+        ],
+        "trilha": {
+            "cards": [
+                "User support management",
+                "Smart news feed",
+                "Interactive adaptive wall",
+                "Digital interaction",
+                "Certification",
+                "Network admin",
+                "Unit admin",
+                "Create multiple organizations"
+            ],
+            "cta": {
+                "title": "Looking for the perfect solution to expand knowledge in your company?",
+                "subtitle": "Talk to our specialists.",
+                "button": "Schedule a demo",
+                "buttonAriaLabel": "Schedule a demo"
+            }
+        }
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "seo": {
+        "title": "Soluções GEDUI | Educação Digital para Instituições e Empresas",
+        "description": "A GEDUI oferece soluções em educação digital para instituições de ensino e empresas, com ferramentas inovadoras que transformam o aprendizado.",
+        "keywords": [
+            "educação digital",
+            "plataforma educacional",
+            "educação corporativa",
+            "educação acadêmica",
+            "gestão do aprendizado"
+        ]
+    },
+    "hero": {
+        "aria": {
+            "backgroundAlt": "Pessoas estudando"
+        },
+        "title": {
+            "line1": "Soluções que transformam",
+            "line2": "o aprendizado em sua",
+            "line3": "instituição ou empresa."
+        },
+        "description": "A GEDUI é a plataforma para ajudar na transformação dos métodos tradicionais, adaptando-os com inovação e tornando o aprendizado mais dinâmico, eficiente e inclusivo."
+    },
+    "cta": {
+        "heading": {
+            "text": "Com inovação e conhecimento",
+            "highlight": "impulsionamos o aprendizado dos indivíduos"
+        },
+        "description": "Um ecossistema educacional, onde a gestão se consolida à informação, capacitação e certificação para fortalecer o desenvolvimento do indivíduo.",
+        "button": {
+            "label": "Agendar demonstração",
+            "ariaLabel": "Agendar uma demonstração"
+        }
+    },
+    "educacaoAcademica": {
+        "aria": {
+            "imageAlt": "Pessoa digitando em notebook com GEDUI"
+        },
+        "heading": {
+            "line1": "Educação Acadêmica",
+            "highlight": "digital com Gedui Edu"
+        },
+        "description": "A GEDUI impulsiona a educação digital da sua instituição com ferramentas inteligentes que fortalecem o processo de ensino."
+    },
+    "beneficiosEdu": {
+        "heading": "Benefícios com Gedui Edu",
+        "description": "Explore os benefícios que podem transformar a sua instituição educacional, proporcionando uma experiência de troca de aprendizado inovadora para alunos, professores e gestores. Conheça alguns destes benefícios. Para maiores detalhes, agende uma demonstração com os nossos especialistas.",
+        "aria": {
+            "logoAlt": "Logo da Gedui"
+        },
+        "benefits": [
+            "Treinamentos e certificações",
+            "Potencialize os resultados de sua Instituição",
+            "Segurança e confiabilidade",
+            "Acompanhamento individual",
+            "Gestão de usuários e grupos",
+            "Educação participativa",
+            "Potencializa e direciona as experiências e resultados",
+            "Assistência na aprendizagem de seus alunos",
+            "Redução na defasagem no aprendizado",
+            "Análise da curva de aprendizagem"
+        ],
+        "trilha": {
+            "cards": [
+                "Relatórios",
+                "Gestão de atividades e avaliações",
+                "Gestão de turmas customizadas",
+                "Grade de aulas",
+                "Gestão de notas",
+                "Compromissos e alertas",
+                "Banco de questões",
+                "Diário de classe digital"
+            ],
+            "cta": {
+                "title": "Quer a solução perfeita para ampliar conhecimento em sua empresa?",
+                "subtitle": "Fale com os nossos especialistas.",
+                "button": "Agendar demonstração",
+                "buttonAriaLabel": "Agendar uma demonstração"
+            }
+        }
+    },
+    "educacaoCorporativa": {
+        "aria": {
+            "phoneAlt": "Celular com logo GEDUI"
+        },
+        "heading": {
+            "line1": "Educação Corporativa",
+            "highlight": "digital com Gedui Corp"
+        },
+        "description": "A GEDUI vai auxiliar no aprimoramento de aprendizagem em todas as esferas da sua empresa."
+    },
+    "beneficiosCorp": {
+        "heading": "Benefícios com Gedui Corp",
+        "description": "Conheça os benefícios das soluções dinâmicas, eficientes e inclusivas de nosso ecossistema para o aprendizado de novas habilidades e conhecimento de suas equipes que potencializam seus resultados, otimizam tempo e recursos para sua empresa. Agende uma demonstração com nossos especialistas para mais detalhes.",
+        "aria": {
+            "logoAlt": "Logo da Gedui"
+        },
+        "benefits": [
+            "Treinamentos e certificações",
+            "Estrutura em nuvem",
+            "Acompanhamento individual",
+            "Campanha de marketing e incentivos",
+            "Gestão de usuários e grupos",
+            "Economia de tempo e recursos para participar de treinamentos",
+            "Potencializa e direciona as experiências e resultados",
+            "Maior satisfação, motivação e desempenho",
+            "Análise do envolvimento na aprendizagem",
+            "Ambiente integrado - tudo em um único acesso"
+        ],
+        "trilha": {
+            "cards": [
+                "Gestão de suporte ao usuário",
+                "Feed de notícias inteligente",
+                "Mural adaptativo interativo",
+                "Interação digital",
+                "Certificação",
+                "Admin de rede",
+                "Admin de unidades",
+                "Criação de múltiplas organizações"
+            ],
+            "cta": {
+                "title": "Quer a solução perfeita para ampliar conhecimento em sua empresa?",
+                "subtitle": "Fale com os nossos especialistas.",
+                "button": "Agendar demonstração",
+                "buttonAriaLabel": "Agendar uma demonstração"
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "seo": {
+        "title": "Agendar demonstração | GEDUI - Plataforma Educacional",
+        "description": "Agende uma demonstração da GEDUI e conheça soluções para educação acadêmica e corporativa. Escolha data e horário e fale com nossos especialistas.",
+        "keywords": [
+            "agendar demonstração",
+            "plataforma educacional",
+            "educação digital",
+            "educação corporativa",
+            "gestão do aprendizado"
+        ]
+    },
+    "heading": {
+        "title": "Agende uma",
+        "highlight": "demo"
+    },
+    "success": {
+        "title": "Agendamento Confirmado!",
+        "line1": "Os detalhes foram enviados para o seu email.",
+        "line2": "Estamos ansiosos para conversar com você!",
+        "cta": "Novo Agendamento"
+    },
+    "buttons": {
+        "scheduling": "Agendando...",
+        "submit": "Agendar demonstração"
+    },
+    "loading": {
+        "initializing": "Carregando horários disponíveis..."
+    },
+    "errors": {
+        "connectLater": "Erro ao conectar com o sistema de agendamento. Tente novamente mais tarde.",
+        "loadTimes": "Erro ao carregar horários disponíveis.",
+        "noTimes7Days": "Nenhum horário disponível nos próximos 7 dias.",
+        "noEventTypes": "Nenhum tipo de evento configurado no Calendly.",
+        "selectDateTime": "Selecione uma data e horário para continuar.",
+        "fillNameEmail": "Preencha nome e email para continuar.",
+        "createSchedule": "Erro ao criar agendamento. Tente outro horário.",
+        "connection": "Erro de conexão. Tente novamente.",
+        "acceptTermsAlert": "Por favor, aceite os Termos e Condições para continuar.",
+        "pickDateTime": "Por favor, selecione uma data e horário."
+    },
+    "fields": {
+        "name": "Nome do Responsável *",
+        "institutionName": "Nome da Instituição *",
+        "email": "E-mail de Contato *",
+        "phone": "Telefone *"
+    },
+    "selects": {
+        "positionPlaceholder": "Cargo *",
+        "institutionTypePlaceholder": "Tipo *",
+        "productInterestPlaceholder": "Produto de interesse *",
+        "datePlaceholder": "Data *",
+        "timePlaceholder": "Horário *",
+        "selectDateFirst": "Selecione a data",
+        "noDates": "Sem datas",
+        "noTimes": "Sem horários",
+        "loading": "Carregando..."
+    },
+    "options": {
+        "position": {
+            "director": "Diretor",
+            "coordinator": "Coordenador",
+            "teacher": "Professor",
+            "other": "Outro"
+        },
+        "institutionType": {
+            "public": "Pública",
+            "private": "Privada",
+            "nonprofit": "Não Lucrativa"
+        },
+        "product": {
+            "edu": "Gedu Edu",
+            "corp": "Gedu Corp",
+            "both": "Ambos"
+        }
+    },
+    "checkboxes": {
+        "newsletter": "Deseja receber novidades e ofertas?",
+        "termsTitle": "Termos e Condições e uso de dados:",
+        "termsText": "Confirmo que li e concordo com os Termos e Condições e autorizo o uso dos meus dados pessoais para as finalidades descritas na Política de Privacidade."
+    },
+    "meetingNotes": {
+        "header": "INFORMACOES DO LEAD:",
+        "position": "Cargo",
+        "institution": "Instituicao",
+        "institutionType": "Tipo de Instituicao",
+        "product": "Produto de Interesse",
+        "phone": "Telefone",
+        "newsletterYes": "Sim, deseja receber",
+        "newsletterNo": "Nao",
+        "notProvided": "Nao informado"
+    }
+}

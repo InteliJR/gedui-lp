@@ -1,0 +1,14 @@
+{
+    "notFound": {
+        "seoTitle": "Post not found | Gedui Blog",
+        "seoDescription": "The post you are looking for was not found.",
+        "title": "Post not found",
+        "body": "The post you are looking for doesn’t exist.",
+        "backToBlog": "Back to blog"
+    },
+    "meta": {
+        "published": "Published on:",
+        "readTime": "Reading time:"
+    },
+    "backButtonAria": "Back to blog"
+}

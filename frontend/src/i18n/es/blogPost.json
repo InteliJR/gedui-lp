@@ -1,0 +1,14 @@
+{
+    "notFound": {
+        "seoTitle": "Publicación no encontrada | Blog Gedui",
+        "seoDescription": "La publicación que buscas no fue encontrada.",
+        "title": "Publicación no encontrada",
+        "body": "La publicación que buscas no existe.",
+        "backToBlog": "Volver al blog"
+    },
+    "meta": {
+        "published": "Publicado el:",
+        "readTime": "Tiempo de lectura:"
+    },
+    "backButtonAria": "Volver al blog"
+}

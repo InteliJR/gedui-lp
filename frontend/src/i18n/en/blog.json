@@ -1,0 +1,78 @@
+{
+    "hero": {
+        "heading": "Learning is evolving. Here, you’ll find knowledge to go further.",
+        "cta": {
+            "prefix": "Discover our",
+            "highlight": "blog"
+        }
+    },
+    "cardList": {
+        "posts": [
+            {
+                "id": "1",
+                "title": "Trends and Challenges for 2025",
+                "subtitle": "Corporate Education and Technology:",
+                "description": "Corporate education, essential for organizational success and growth, is undergoing a revolution driven by technological advances and changes in work dynamics.",
+                "imageUrl": "/blog/educacaocorporativa.png",
+                "imageAlt": "Charts and documents",
+                "link": "/blog/tendencias-educacao-2025"
+            },
+            {
+                "id": "2",
+                "title": "Inclusion and Accessibility for Everyone",
+                "subtitle": "The Social Impact of Educational Technology:",
+                "description": "Accessible educational technology plays a central role in the challenge of ensuring quality, inclusive, and equitable education for all people, regardless of limitations or socioeconomic circumstances.",
+                "imageUrl": "/blog/inclusao.png",
+                "imageAlt": "People working together",
+                "link": "/blog/inclusao-acessibilidade"
+            },
+            {
+                "id": "3",
+                "title": "How Pedagogy Programs Are Changing and the Role of Continuous Training",
+                "subtitle": "Technology in Education:",
+                "description": "An increasingly present need in modern education—especially to enable teachers and teams to integrate technology effectively and meaningfully into their teaching practices.",
+                "imageUrl": "/blog/transformacao.png",
+                "imageAlt": "Modern classroom",
+                "link": "/blog/transformacao-pedagogia"
+            },
+            {
+                "id": "4",
+                "title": "The Transformation Redefining the Future of Schools",
+                "subtitle": "AI in Education:",
+                "description": "An Education Next article explores how artificial intelligence is transforming education—from personalized learning to the automation of administrative tasks.",
+                "imageUrl": "/blog/futuro.png",
+                "imageAlt": "Student using technology",
+                "link": "/blog/futuro-escolas"
+            },
+            {
+                "id": "5",
+                "title": "Promoting Diversity and Inclusion Through Corporate Education",
+                "subtitle": "Corporate Education:",
+                "description": "In today’s competitive corporate landscape, promoting diversity and inclusion is not only a social responsibility, but also a key strategy for organizational success and innovation.",
+                "imageUrl": "/blog/diversidade.png",
+                "imageAlt": "Diversity and inclusion",
+                "link": "/blog/diversidade-inclusao-corporativa"
+            }
+        ],
+        "card": {
+            "readMoreLabel": "Learn more",
+            "readMoreAriaLabel": "Learn more about: {title}"
+        },
+        "pagination": {
+            "prevAriaLabel": "Previous page",
+            "nextAriaLabel": "Next page",
+            "goToPageAriaLabel": "Go to page {page}"
+        }
+    },
+    "cta": {
+        "heading": {
+            "text": "Innovate, connect teams and",
+            "highlight": "learn!"
+        },
+        "button": {
+            "label": "Schedule a Demo",
+            "ariaLabel": "Schedule a demo",
+            "href": "/agendar"
+        }
+    }
+}

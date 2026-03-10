@@ -1,0 +1,18 @@
+.excerpt {
+    font-size: 0.875rem;
+    color: #374151 !important;
+    margin-bottom: 2rem;
+    line-height: 2;
+}
+
+.excerpt strong,
+.excerpt b {
+    color: inherit;
+}
+
+/* Media Query para o breakpoint 'md' */
+@media (min-width: 768px) {
+    .excerpt {
+        font-size: 1rem;
+    }
+}
