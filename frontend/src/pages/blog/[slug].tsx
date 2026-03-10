@@ -9,22 +9,6 @@ import Layout from "@/components/common/Layout";
 import loadBlogPostDictionary from "@/i18n/loadBlogPostDictionary";
 import styles from './blog.module.css'
 
-type BlogPostPageDict = {
-  notFound: {
-    seoTitle: string;
-    seoDescription: string;
-    title: string;
-    body: string;
-    backToBlog: string;
-  };
-  meta: {
-    published: string;
-    readTime: string;
-  };
-  backButtonAria: string;
-};
-
-type DictLocale = "pt-BR" | "en" | "es";
 type ContentLocale = "pt-br" | "en" | "es";
 
 type BlogPostPageDict = {

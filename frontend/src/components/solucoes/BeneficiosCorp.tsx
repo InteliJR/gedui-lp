@@ -8,6 +8,7 @@ export type BeneficiosCorpDict = {
     logoAlt: string;
   };
   benefits: string[];
+  trilha: any;
 };
 
 export default function SecaoBeneficiosCorp({ t }: { t: BeneficiosCorpDict }) {
