@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function CardBlog({ img_url, title, url }) {
+export default function CardBlog({ img_url, title, url }: { img_url: string, title: string, url: string }) {
     return (
         <div className="flex flex-col bg-white/1 backdrop-blur-sm border border-white/20 max-w-xs items-center p-5 rounded-lg space-y-5 hover:scale-105 hover:underline">
             <Image

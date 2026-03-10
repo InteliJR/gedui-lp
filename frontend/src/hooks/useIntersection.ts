@@ -2,7 +2,7 @@
 import { useEffect, useState, RefObject } from "react";
 
 export function useIntersection(
-  ref: RefObject<Element>,
+  ref: RefObject<Element | null>,
   threshold = 0.4
 ) {
   const [isVisible, setIsVisible] = useState(false);

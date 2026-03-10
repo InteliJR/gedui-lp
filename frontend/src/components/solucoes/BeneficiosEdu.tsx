@@ -8,6 +8,7 @@ export type BeneficiosEduDict = {
         logoAlt: string;
     };
     benefits: string[];
+    trilha: any;
 };
 
 export default function SecaoBeneficiosEdu({ t }: { t: BeneficiosEduDict }) {

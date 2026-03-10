@@ -2,11 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Props = {
+    src: string;
+    poster: string;
+    className?: string;
+};
+
+
 export default function SmartVideo({
     src,
     poster,
     className = "",
-}) {
+}: Props) {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [isMuted, setIsMuted] = useState(true);
 
