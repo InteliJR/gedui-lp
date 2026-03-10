@@ -1,12 +1,10 @@
 .excerpt {
     font-size: 0.875rem;
     color: #374151 !important;
-    /* Força a cor cinza */
     margin-bottom: 2rem;
-    line-height: 1.625;
+    line-height: 2;
 }
 
-/* Isso garante que qualquer tag strong dentro do excerpt herde a cor correta */
 .excerpt strong,
 .excerpt b {
     color: inherit;
