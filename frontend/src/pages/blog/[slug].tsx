@@ -107,10 +107,6 @@ export default function BlogPost({ post, t, intlLocale }: { post: any, t: BlogPo
               {post.title}
             </h1>
             <div
-              className="text-sm md:text-base text-gray-700 mb-8 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: post.excerpt }}
-            />
-            <div
               className={styles.excerpt}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
